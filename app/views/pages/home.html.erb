@@ -1,0 +1,245 @@
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.5&appId=417722455041718";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<!-- Navigation -->
+<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">La Pesca Tamaulipas</a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="#">Conoce La Pesca</a>
+                </li>
+                <li>
+                    <a href="#">Galería</a>
+                </li>
+                <li>
+                    <a href="#">Contacto</a>
+                </li>
+            </ul>
+
+            <ul class="nav navbar-nav" style="float:right">
+                <li>
+                    <a href="#">Inicia sesión</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-md-3">
+            <p class="lead">Reservaciones en La Pesca</p>
+            <div class="list-group">
+                <a href="#" class="list-group-item">Hoteles</a>
+                <a href="#" class="list-group-item">Comidas</a>
+            </div>
+        </div>
+
+        <div class="col-md-9">
+
+            <div class="row carousel-holder">
+
+                <div class="col-md-12">
+                    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                <%= image_tag('palmareal.jpg') %>
+                            </div>
+                            <div class="item">
+                                <%= image_tag('tropicana.jpg') %>
+                            </div>
+                            <div class="item">
+                                <%= image_tag('lapescalinda.jpg') %>
+                            </div>
+                        </div>
+                        <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left"></span>
+                        </a>
+                        <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right"></span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="col-sm-4 col-lg-4 col-md-4">
+                    <div class="thumbnail">
+                        <%= image_tag('lapescalinda_thumb.jpg') %>
+                        <div class="caption">
+                            <h4 class="pull-right">$700.00</h4>
+                            <h4><%= link_to 'La Pescalinda', lapescalinda_path %>
+                            </h4>
+                            <p>Ubicacion Carretera Soto La Marina - La Pesca Km 50, <a target="_blank" href="#">reserva aquí</a>.</p>
+                        </div>
+                        <div class="ratings">
+                            <p class="pull-right">22 habitaciones</p>
+                            <p>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-4 col-lg-4 col-md-4">
+                    <div class="thumbnail">
+                        <%= image_tag('palmareal_thumb.jpg') %>
+                        <div class="caption">
+                            <h4 class="pull-right">$1,050.00</h4>
+                            <h4><a href="#">Palma Real INN</a>
+                            </h4>
+                            <p>Ubicación Carretera Soto La Marina - La Pesca Km 42.5, <a target="_blank" href="#">reserva aquí</a>.</p>
+                        </div>
+                        <div class="ratings">
+                            <p class="pull-right">26 habitaciones</p>
+                            <p>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star-empty"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-4 col-lg-4 col-md-4">
+                    <div class="thumbnail">
+                        <%= image_tag('riveradelrio_thumb.jpg') %>
+                        <div class="caption">
+                            <h4 class="pull-right">$1,000.00</h4>
+                            <h4><a href="#">Rivera del Río</a>
+                            </h4>
+                            <p>Ubicación Carretera Soto La Marina - La Pesca Km 49, <a target="_blank" href="#">reserva aquí</a>.</p>
+                        </div>
+                        <div class="ratings">
+                            <p class="pull-right">30 habitaciones</p>
+                            <p>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star-empty"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-4 col-lg-4 col-md-4">
+                    <div class="thumbnail">
+                        <%= image_tag('nuevoamanecer_thumb.jpg') %>
+                        <div class="caption">
+                            <h4 class="pull-right">$650.00</h4>
+                            <h4><a href="#">Nuevo Amanecer</a>
+                            </h4>
+                            <p>Ubicacion Carretera Soto La Marina - La Pesca Km 48, <a target="_blank" href="#">reserva aquí</a>.</p>
+                        </div>
+                        <div class="ratings">
+                            <p class="pull-right">36 habitaciones</p>
+                            <p>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star-empty"></span>
+                                <span class="glyphicon glyphicon-star-empty"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-4 col-lg-4 col-md-4">
+                    <div class="thumbnail">
+                        <%= image_tag('tropicana_thumb.jpg') %>
+                        <div class="caption">
+                            <h4 class="pull-right">$700.00</h4>
+                            <h4><a href="#">Bungalows Tropi...</a>
+                            </h4>
+                            <p>Ubicacion Carretera Soto La Marina - La Pesca Km 51, <a target="_blank" href="#">reserva aquí</a>.</p>
+                        </div>
+                        <div class="ratings">
+                            <p class="pull-right">4 habitaciones</p>
+                            <p>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star-empty"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-4 col-lg-4 col-md-4">
+                    <h4><a href="#">Quieres reservar?</a>
+                    </h4>
+                    <p>Si prefieres separar tu habitación haciendo un depósito bancario puedes llamar a nuestra <a target="_blank" href="http://maxoffsky.com/code-blog/laravel-shop-tutorial-1-building-a-review-system/">línea de atención al cliente</a>. O si lo deseas puedes usar nuestro sistema de reservación por internet:</p>
+                    <a class="btn btn-primary" target="_blank" href="http://maxoffsky.com/code-blog/laravel-shop-tutorial-1-building-a-review-system/">¡Reserva en línea!</a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<!-- /.container -->
+
+<div class="container">
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+        <div class="row">
+            <div class="col-lg-8">
+                <p>Copyright &copy; Lapescatamaulipas.com 2016</p>
+            </div>
+            <div class="col-lg-2 right">
+                <p><a href="#">Términos y Condiciones</a></p>
+            </div>
+            <div class="col-lg-2 right">
+                <p><a href="#">FAQS</a></p>
+            </div>
+            <div class="col-lg-2 right">
+            <div class="fb-like" data-href="https://www.facebook.com/PuertoLaPesca/" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+            </div>
+        </div>
+    </footer>
+
+</div>
+<!-- /.container -->

@@ -1,0 +1,3 @@
+web: bundle exec puma -C ./config/puma.rb
+worker:  bundle exec sidekiq if Rails.env.production?
+worker:  bundle exec sidekiq if Rails.env.staging?
