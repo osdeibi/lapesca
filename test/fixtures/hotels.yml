@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  cost_per_night: 9.99
+  description: MyText
+  grill: false
+  pool: false
+  dock: false
+  restaurant: false
+  shacks: false
+  pet_friendly: false
+  available: 1
+  review_score: 1
+
+two:
+  name: MyString
+  cost_per_night: 9.99
+  description: MyText
+  grill: false
+  pool: false
+  dock: false
+  restaurant: false
+  shacks: false
+  pet_friendly: false
+  available: 1
+  review_score: 1

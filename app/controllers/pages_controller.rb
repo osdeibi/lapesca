@@ -1,6 +1,18 @@
 class PagesController < ApplicationController
+  layout "home"
 
   def home
-    render 'video_bar.html.erb', layout: false
+  end
+
+  def privacy
+  end
+
+  def about
+  end
+
+  def faqs
+  end
+
+  def terms
   end
 end

@@ -1,0 +1,278 @@
+<!-- INNER-BANNER -->
+<div class="inner-banner style-6">
+  <%= image_tag 'detail-banner.jpg', class:'center-image' %>
+	<div class="vertical-align">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-md-8 col-md-offset-2">
+		  			<ul class="banner-breadcrumb color-white clearfix">
+		  				<li><a class="link-blue-2" href="#">inicio</a> /</li>
+		  				<li><a class="link-blue-2" href="#">hoteles</a> /</li>
+		  				<li><span><%= @hotel.name %></span></li>
+		  			</ul>
+		  			<h2 class="color-white">hoteles en la pesca</h2>
+  				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- DETAIL WRAPPER -->
+<div class="detail-wrapper">
+	<div class="container">
+		<div class="detail-header">
+			<div class="row">
+				<div class="col-xs-12 col-sm-8">
+					<div class="detail-category color-grey-3">Ubicación <%= @hotel.location %>, Soto La Marina Tamaulipas.</div>
+					<h2 class="detail-title color-dark-2"><%= @hotel.name %></h2>
+					<div class="detail-rate rate-wrap clearfix">
+				        <div class="rate">
+							<span class="fa fa-star color-yellow"></span>
+							<span class="fa fa-star color-yellow"></span>
+							<span class="fa fa-star color-yellow"></span>
+							<span class="fa fa-star color-yellow"></span>
+							<span class="fa fa-star color-white"></span>
+						</div>
+				      	<i>Disponible</i>
+			       	</div>
+			    </div>
+			    <div class="col-xs-12 col-sm-4">
+			    	<div class="detail-price color-dark-2">precio desde  <span class="color-dr-blue"> $<%= number_with_delimiter(@hotel.cost_per_night.to_i, :delimiter => ',') %></span> /noche</div>
+			    </div>
+	       	</div>
+       	</div>
+       	<div class="row padd-90">
+       		<div class="col-xs-12 col-md-8">
+       			<div class="detail-content color-1">
+       				<div class="detail-top slider-wth-thumbs style-2">
+						<div class="swiper-container thumbnails-preview" data-autoplay="0" data-loop="1" data-speed="500" data-center="0" data-slides-per-view="1">
+			                <div class="swiper-wrapper">
+		                    	<div class="swiper-slide active" data-val="0">
+		                    		 <img class="img-responsive img-full" src="img/detail/m_slide_1.jpg" alt="">
+		                    	</div>
+		                    	<div class="swiper-slide" data-val="1">
+		                    		 <img class="img-responsive img-full" src="img/detail/m_slide_2.jpg" alt="">
+		                    	</div>
+		                    	<div class="swiper-slide" data-val="2">
+		                    		 <img class="img-responsive img-full" src="img/detail/m_slide_3.jpg" alt="">
+		                    	</div>
+		                    	<div class="swiper-slide" data-val="3">
+		                    		 <img class="img-responsive img-full" src="img/detail/m_slide_4.jpg" alt="">
+		                    	</div>
+		                    	<div class="swiper-slide" data-val="4">
+		                    		 <img class="img-responsive img-full" src="img/detail/m_slide_5.jpg" alt="">
+		                    	</div>
+		                    </div>
+			                <div class="pagination pagination-hidden"></div>
+			            </div>
+			            <div class="swiper-container thumbnails" data-autoplay="0"
+			            data-loop="0" data-speed="500" data-center="0"
+			            data-slides-per-view="responsive" data-xs-slides="3"
+			            data-sm-slides="5" data-md-slides="5" data-lg-slides="5"
+			            data-add-slides="5">
+			                <div class="swiper-wrapper">
+								<div class="swiper-slide current active" data-val="0">
+									<img class="img-responsive img-full" src="img/detail/m_slide_1s.jpg" alt="">
+								</div>
+								<div class="swiper-slide" data-val="1">
+									<img class="img-responsive img-full" src="img/detail/m_slide_2s.jpg" alt="">
+								</div>
+								<div class="swiper-slide" data-val="2">
+									<img class="img-responsive img-full" src="img/detail/m_slide_3s.jpg" alt="">
+								</div>
+								<div class="swiper-slide" data-val="3">
+									<img class="img-responsive img-full" src="img/detail/m_slide_4s.jpg" alt="">
+								</div>
+								<div class="swiper-slide" data-val="4">
+									<img class="img-responsive img-full" src="img/detail/m_slide_5s.jpg" alt="">
+								</div>
+							</div>
+							<div class="pagination hidden"></div>
+						</div>
+					</div>
+
+					<div class="detail-content-block">
+						<h3>General Information About tour</h3>
+						<p>Pellentesque ac turpis egestas, varius justo et, condimentum augue. Praesent aliquam, nisl feugiat vehicula condimentum, justo tellus scelerisque metus. Pellentesque ac turpis egestas, varius justo et, condimentum augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+						<h5>interesting for you</h5>
+
+						<div class="embed-responsive embed-responsive-16by9">
+							<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/7t9bfSXgmII" frameborder="0" allowfullscreen></iframe>
+						</div>
+					</div>
+					<div class="detail-content-block">
+						<h3>Pregunas frecuentes</h3>
+	                    <div class="accordion style-2">
+	                        <div class="acc-panel">
+	                            <div class="acc-title"><span class="acc-icon"></span>How can I manage Instant Book settings?</div>
+	                            <div class="acc-body">
+									<h5>metus Aenean eget massa</h5>
+									<p>Mauris posuere diam at enim malesuada, ac malesuada erat auctor. Ut porta mattis tellus eu sagittis. Nunc maximus ipsum a mattis dignissim. Suspendisse id pharetra lacus, et hendrerit mi. Praesent at vestibulum tortor. Ut porta mattis tellus eu sagittis. Nunc maximus ipsum a mattis dignissim.</p>
+									<div class="row">
+										<div class="col-xs-12 col-sm-6">
+											<ul>
+												<li>Shopping history</li>
+												<li>Hot offers according your settings</li>
+												<li>Multi-product search</li>
+												<li>Opportunity to share with friends</li>
+												<li>User-friendly interface</li>
+											</ul>
+										</div>
+										<div class="col-xs-12 col-sm-6">
+											<ul>
+												<li>Shopping history</li>
+												<li>Hot offers according your settings</li>
+												<li>Multi-product search</li>
+												<li>Opportunity to share with friends</li>
+												<li>User-friendly interface</li>
+											</ul>
+										</div>
+									</div>
+	                            </div>
+	                        </div>
+	                        <div class="acc-panel">
+	                            <div class="acc-title"><span class="acc-icon"></span>How do I list multiple rooms?</div>
+	                            <div class="acc-body">
+									<h5>metus Aenean eget massa</h5>
+									<p>Mauris posuere diam at enim malesuada, ac malesuada erat auctor. Ut porta mattis tellus eu sagittis. Nunc maximus ipsum a mattis dignissim. Suspendisse id pharetra lacus, et hendrerit mi. Praesent at vestibulum tortor. Ut porta mattis tellus eu sagittis. Nunc maximus ipsum a mattis dignissim.</p>
+									<div class="row">
+										<div class="col-xs-12 col-sm-6">
+											<ul>
+												<li>Shopping history</li>
+												<li>Hot offers according your settings</li>
+												<li>Multi-product search</li>
+												<li>Opportunity to share with friends</li>
+												<li>User-friendly interface</li>
+											</ul>
+										</div>
+										<div class="col-xs-12 col-sm-6">
+											<ul>
+												<li>Shopping history</li>
+												<li>Hot offers according your settings</li>
+												<li>Multi-product search</li>
+												<li>Opportunity to share with friends</li>
+												<li>User-friendly interface</li>
+											</ul>
+										</div>
+									</div>
+	                            </div>
+	                        </div>
+	                        <div class="acc-panel">
+	                            <div class="acc-title"><span class="acc-icon"></span>How do I use my calendar?</div>
+	                            <div class="acc-body">
+									<h5>metus Aenean eget massa</h5>
+									<p>Mauris posuere diam at enim malesuada, ac malesuada erat auctor. Ut porta mattis tellus eu sagittis. Nunc maximus ipsum a mattis dignissim. Suspendisse id pharetra lacus, et hendrerit mi. Praesent at vestibulum tortor. Ut porta mattis tellus eu sagittis. Nunc maximus ipsum a mattis dignissim.</p>
+									<div class="row">
+										<div class="col-xs-12 col-sm-6">
+											<ul>
+												<li>Shopping history</li>
+												<li>Hot offers according your settings</li>
+												<li>Multi-product search</li>
+												<li>Opportunity to share with friends</li>
+												<li>User-friendly interface</li>
+											</ul>
+										</div>
+										<div class="col-xs-12 col-sm-6">
+											<ul>
+												<li>Shopping history</li>
+												<li>Hot offers according your settings</li>
+												<li>Multi-product search</li>
+												<li>Opportunity to share with friends</li>
+												<li>User-friendly interface</li>
+											</ul>
+										</div>
+									</div>
+	                            </div>
+	                        </div>
+	                    </div>
+					</div>
+				</div>
+       		</div>
+       		<div class="col-xs-12 col-md-4">
+       			<div class="right-sidebar">
+       				<div class="detail-block bg-dr-blue">
+       					<h4 class="color-white">detalle</h4>
+       					<div class="details-desc">
+							<p class="color-grey-9">Categoría:  <span class="color-white"><%= Hotel.get_category_string(@hotel.category) %></span></p>
+							<p class="color-grey-9">Costo por noche: <span class="color-white">$<%= number_with_delimiter(@hotel.cost_per_night.to_i, :delimiter => ',') %></span></p>
+							<p class="color-grey-9">rate: <span class="fa fa-star color-yellow"></span><span class="fa fa-star color-yellow"></span><span class="fa fa-star color-yellow"></span><span class="fa fa-star color-yellow"></span><span class="fa fa-star color-yellow"></span></p>
+							<p class="color-grey-9">muelle: <span class="color-white"><%= Hotel.boolean_to_string(@hotel.dock) %></span></p>
+							<p class="color-grey-9">hotel class: <span class="color-white">4 <span class="fa fa-star color-yellow"></span></span></p>
+							<p class="color-grey-9">alberca: <span class="color-white"><%= Hotel.boolean_to_string(@hotel.pool) %></span></p>
+							<p class="color-grey-9">Cable TV: <span class="color-white">FREE</span></p>
+							<p class="color-grey-9">palapas: <span class="color-white"><%= Hotel.boolean_to_string(@hotel.shacks) %></span></p>
+							<p class="color-grey-9">aire a/c: <span class="color-white">Included</span></p>
+							<p class="color-grey-9">asadores: <span class="color-white"><%= Hotel.boolean_to_string(@hotel.grill) %></span></p>
+							<p class="color-grey-9">restaurante: <span class="color-white"><%= Hotel.boolean_to_string(@hotel.restaurant) %></span></p>
+							<p class="color-grey-9">pet friendly: <span class="color-white"><%= Hotel.boolean_to_string(@hotel.pet_friendly) %></span></p>
+						</div>
+						<div class="details-btn">
+							<a href="#" class="c-button b-40 bg-tr-1 hv-white"><span>ver en mapa</span></a>
+							<a href="#" class="c-button b-40 bg-white hv-transparent"><span>reservar ahora</span></a>
+						</div>
+       				</div>
+
+					<div class="popular-tours bg-grey-2">
+						<h4 class="color-dark-2">hoteles similares</h4>
+
+            <% @similar.each do |hotel| %>
+						<div class="hotel-small style-2 clearfix">
+							<a class="hotel-img black-hover" href="#">
+                <%= image_tag hotel.small.url, class:'img-responsive radius-3' %>
+								<div class="tour-layer delay-1"></div>
+							</a>
+							<div class="hotel-desc">
+		    					<h5><span class="color-dark-2">desde <strong>$<%= number_with_delimiter(hotel.cost_per_night.to_i, :delimiter => ',') %></strong></span></h5>
+		    					<h4><%= hotel.name %></h4>
+								<div class="hotel-loc">Ubicación: <%= hotel.location %></div>
+							</div>
+						</div>
+            <% end %>
+					</div>
+
+					<div class="sidebar-text-label bg-dr-blue color-white">información útil</div>
+
+					<div class="help-contact bg-grey-2">
+						<h4 class="color-dark-2">¿Necesitas ayuda?</h4>
+						<p class="color-grey">Si tienes alguna duda respecto a tu reservación, contamos con un horario de atención al cliente de 9:00 AM a 5:00 PM de Lunes a Sábado.</p>
+						<a class="help-phone color-dark-2 link-dr-blue" href="tel:0200059600"><img src="img/detail/phone24-dark.png" alt="">01 (835) 327-12-12</a>
+						<a style="font-size: 12px" class="help-mail color-dark-2 link-dr-blue" href="mailto:contacto@lapescatamaulipas.com"><img src="img/detail/letter-dark.png" alt="">contacto@lapescatamaulipas.com</a>
+					</div>
+       			</div>
+       		</div>
+       	</div>
+       	<div class="may-interested padd-90">
+	       	<div class="row">
+
+            <% @recommended.each do |hotel| %>
+	       		<div class="col-mob-12 col-xs-6 col-sm-6 col-md-3">
+		          <div class="hotel-item">
+		          	 <div class="radius-top">
+		          	 	 <%= image_tag hotel.index.url %>
+		          	 	   <div class="price price-s-1">$<%= number_with_delimiter(hotel.cost_per_night.to_i, :delimiter => ',') %></div>
+		          	 </div>
+		          	 <div class="title clearfix">
+		          	     <h4><b><%= hotel.name %></b></h4>
+	          	           <div class="rate-wrap">
+		          	          <div class="rate">
+								<span class="fa fa-star color-yellow"></span>
+								<span class="fa fa-star color-yellow"></span>
+								<span class="fa fa-star color-yellow"></span>
+								<span class="fa fa-star color-yellow"></span>
+								<span class="fa fa-star color-yellow"></span>
+							  </div>
+						      <i>485 rewies</i>
+	                       </div>
+		             <span class="f-14 color-dark-2"><%= hotel.location %></span>
+		             <p class="f-14"><%= hotel.description %></p>
+		             <a href="#" class="c-button bg-dr-blue hv-dr-blue-o b-50 fl">Ver más</a>
+		             <a href="#" class="c-button color-dr-blue hv-o b-50 fr"><img src="img/loc_icon_small_drak.png" alt="">ver en mapa</a>
+		             </div>
+		          </div>
+	       		</div>
+            <% end %>
+	       	</div>
+       	</div>
+	</div>
+</div>

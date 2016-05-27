@@ -5,7 +5,18 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'pages#home'
 
-  get '/lapescalinda', to: 'hotels#lapescalinda', as: 'lapescalinda'
+  get '/hoteles', to: 'hotels#index', as: 'hotels_index'
+  get '/hoteles/la_pescalinda', to: 'hotels#la_pescalinda', as: 'la_pescalinda'
+  get '/hoteles/tropicana', to: 'hotels#tropicana', as: 'tropicana'
+  get '/hoteles/palma_real', to: 'hotels#palma_real', as: 'palma_real'
+  get '/hoteles/riviera_del_rio', to: 'hotels#riviera_del_rio', as: 'riviera_del_rio'
+  get '/hoteles/nuevo_amanecer', to: 'hotels#nuevo_amanecer', as: 'nuevo_amanecer'
+  get '/hoteles/marina_del_rio', to: 'hotels#marina_del_rio', as: 'marina_del_rio'
+
+  get '/privacidad', to: 'pages#privacy', as: 'privacy'
+  get '/acerca', to: 'pages#about', as: 'about'
+  get '/faqs', to: 'pages#faqs', as: 'faqs'
+  get '/terminos', to: 'pages#terms', as: 'terms'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

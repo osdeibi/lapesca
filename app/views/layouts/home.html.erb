@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+		<meta name="format-detection" content="telephone=no" />
+
+		<link rel="shortcut icon" href="favicon.ico"/>
+    <%= csrf_meta_tags %>
+		<%= stylesheet_link_tag 'bootstrap.min.css' %>
+		<%= stylesheet_link_tag 'jquery-ui.structure.min.css' %>
+		<%= stylesheet_link_tag 'jquery-ui.min.css' %>
+		<%= stylesheet_link_tag 'DateTimePicker.min.css' %>
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+		<%= stylesheet_link_tag 'style.css' %>
+		<title>La Pesca Tamaulipas</title>
+	</head>
+<body data-color="theme-1">
+
+ <div class="style-page">
+        <div class="wrappers">
+         <div class="conf-button">
+         	<span class="fa fa-cog"></span>
+         	 <h6>Theme options</h6>
+         </div>
+         <a href="index.html" class="site-logo"><%= image_tag 'logo-lapesca.png' %></a>
+		  <div class="color-block">
+		    <h5>change color</h5>
+		     <div class="entry bg-1" data-color="theme-1"></div>
+			 <div class="entry bg-2" data-color="theme-2"></div>
+			 <div class="entry bg-3" data-color="theme-3"></div>
+			 <div class="entry bg-4" data-color="theme-4"></div>
+			 <div class="entry bg-5" data-color="theme-5"></div>
+			 <div class="entry bg-6" data-color="theme-6"></div>
+			 <div class="entry bg-7" data-color="theme-7"></div>
+			 <div class="entry bg-8" data-color="theme-8"></div>
+			 <div class="entry bg-9" data-color="theme-9"></div>
+		  </div>
+		  <div class="color-block">
+		    <h5>Layout style</h5>
+		      <div class="check-option active"><span class="boxed">Boxed</span></div>
+			  <div class="check-option"><span class="noboxed">Wide</span></div>
+		  </div>
+		  <div class="color-block">
+		    <h5>Elements style</h5>
+			  <div class="check-option active"><span class="rounded">Rounded</span></div>
+			  <div class="check-option"><span class="norounded">Not rounded</span></div>
+		  </div>
+		  <div class="color-block">
+		     <h5>Header style</h5>
+		     <div class="header-style">
+		      <a href="menu_style_1.html" class="active">
+		        <img src="img/landing/header_1.png" alt="">
+		      </a>
+			  <a href="menu_style_2.html">
+			    <img src="img/landing/header_2.png" alt="">
+			  </a>
+			  <a href="menu_style_3.html">
+			    <img src="img/landing/header_3.png" alt="">
+			  </a>
+			  <a href="menu_style_4.html">
+			    <img src="img/landing/header_4.png" alt="">
+			  </a>
+			  <a href="menu_style_5.html">
+			    <img src="img/landing/header_5.png" alt="">
+			  </a>
+			  <a href="menu_style_6.html">
+			     <img src="img/landing/header_6.png" alt="">
+			  </a>
+			 </div>
+		  </div>
+		  <div class="color-block">
+		     <h5>Footer style</h5>
+	         <div class="header-style">
+		       <a href="footer_style_1.html" class="active">
+		        <img src="img/landing/footer_1.png" alt="">
+		       </a>
+		       <a href="footer_style_2.html">
+		        <img src="img/landing/footer_2.png" alt="">
+		       </a>
+		       <a href="footer_style_3.html">
+		        <img src="img/landing/footer_3.png" alt="">
+		       </a>
+		       <a href="footer_style_4.html">
+		        <img src="img/landing/footer_4.png" alt="">
+		       </a>
+		       <a href="footer_style_5.html">
+		        <img src="img/landing/footer_5.png" alt="">
+		       </a>
+			 </div>
+		  </div>
+		</div>
+	  </div>
+
+<!-- LOADER -->
+<div class="loading">
+	<div class="loading-center">
+		<div class="loading-center-absolute">
+			<div class="object object_four"></div>
+			<div class="object object_three"></div>
+			<div class="object object_two"></div>
+			<div class="object object_one"></div>
+		</div>
+	</div>
+</div>
+
+<!-- HEADER -->
+  <header class="color-1 hovered menu-3">
+   <div class="container">
+   	  <div class="row">
+   	  	 <div class="col-md-12">
+  	  	    <div class="nav">
+   	  	    <a href="/" class="logo">
+   	  	    	<%= image_tag 'logo-lapesca.png' %>
+   	  	    </a>
+   	  	    <div class="nav-menu-icon">
+		      <a href="#"><i></i></a>
+		    </div>
+   	  	 	<nav class="menu">
+			  	<ul>
+					<li class="type-1 sactive">
+						<a href="/">inicio<span class="fa fa-angle-down"></span></a>
+					</li>
+					<li class="type-1"><a href="/">La Pesca<span class="fa fa-angle-down"></span></a>
+						<ul class="dropmenu">
+							<li><a href="#">El puerto la pesca</a></li>
+                            <li><a href="#">¿Cómo llegar?</a></li>
+						</ul>
+					</li>
+					<li class="type-1"><a href="/hoteles">Hoteles<span class="fa fa-angle-down"></span></a>
+						<ul class="dropmenu">
+							<li><a href="/hoteles">Ver todos</a></li>
+                            <li><a href="/hoteles/la_pescalinda">La Pescalinda</a></li>
+                            <li><a href="/hoteles/tropicana">Bungalows tropicana</a></li>
+                            <li><a href="/hoteles/palma_real">Palma Real Inn</a></li>
+                            <li><a href="/hoteles/riviera_del_rio">Riviera del Rio</a></li>
+														<li><a href="/hoteles/nuevo_amanecer">Nuevo Amanecer</a></li>
+														<li><a href="/hoteles/marina_del_rio">Marina del Rio</a></li>
+														<li><a href="/hoteles/la_gaviota">La Gaviota</a></li>
+														<li><a href="/hoteles/la_escollera">La Escollera</a></li>
+														<li><a href="/hoteles/villa_del_mar">Villa del mar</a></li>
+														<li><a href="/hoteles/hotel_blanquita">Hotel Blanquita</a></li>
+						</ul>
+					</li>
+					<li class="type-1"><a href="#">Actividades<span class="fa fa-angle-down"></span></a>
+						<ul class="dropmenu">
+							<li><a href="#">Tortuga Lora</a></li>
+                            <li><a href="#">Lancha con guía</a></li>
+                            <li><a href="#">Renta cuatrimotos</a></li>
+                            <li><a href="#">El Sabinito</a></li>
+						</ul>
+					</li>
+					<li class="type-1"><a href="#">Galeria<span class="fa fa-angle-down"></span></a>
+						<ul class="dropmenu">
+							<li><a href="#">Fotos</a></li>
+                            <li><a href="#">Videos</a></li>
+						</ul>
+					</li>
+			  	</ul>
+		   </nav>
+		   </div>
+   	  	 </div>
+   	  </div>
+   </div>
+  </header>
+
+  <%= yield %>
+
+  <!-- FOOTER -->
+  <footer class="bg-dark type-2">
+      	<div class="container">
+      		<div class="row">
+      			<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+      				<div class="footer-block">
+      					<%= image_tag 'logo-lapesca.png' %>
+      					<div class="f_text color-grey-7">Lapescatamaulipas.com es un portal de enlace con los servicios hoteleros del Puerto La Pesca, en Soto La Marina Tamaulipas.</div>
+      					<div class="footer-share">
+      						<a href="https://www.facebook.com/PuertoLaPesca"><span class="fa fa-facebook"></span></a>
+      						<a href="#"><span class="fa fa-twitter"></span></a>
+      						<a href="#"><span class="fa fa-google-plus"></span></a>
+      						<a href="https://www.instagram.com/lapescatamaulipas"><span class="fa fa-instagram"></span></a>
+      					</div>
+      				</div>
+      			</div>
+      			<div class="col-lg-3 col-md-3 col-sm-6 col-sm-6 no-padding">
+  				   <div class="footer-block">
+  						<h6>La Pesca en la Web</h6>
+  						<div class="f_news clearfix">
+  							<a class="f_news-img black-hover" href="#">
+  								<%= image_tag 'playas-limpias.jpeg', class: 'img-responsive' %>
+  								<div class="tour-layer delay-1"></div>
+  							</a>
+  							<div class="f_news-content">
+  								<a class="f_news-tilte color-white link-red" href="#">playas mas limpias de mexico</a>
+  								<span class="date-f">Mar 16, 2016</span>
+  								<a href="http://expansion.mx/lifestyle/2016/03/16/aguas-contaminadas-las-playas-mas-sucias-de-mexico" class="r-more">leer más</a>
+  							</div>
+  						</div>
+  						<div class="f_news clearfix">
+  							<a class="f_news-img black-hover" href="#">
+  								<img class="img-responsive" src="img/home_6/news_2.jpg" alt="">
+  								<div class="tour-layer delay-1"></div>
+  							</a>
+  							<div class="f_news-content">
+  								<a class="f_news-tilte color-white link-red" href="#">amazing place</a>
+  								<span class="date-f">Mar 18, 2015</span>
+  								<a href="#" class="r-more">read more</a>
+  							</div>
+  						</div>
+  						<div class="f_news clearfix">
+  							<a class="f_news-img black-hover" href="#">
+  								<img class="img-responsive" src="img/home_6/news_1.jpg" alt="">
+  								<div class="tour-layer delay-1"></div>
+  							</a>
+  							<div class="f_news-content">
+  								<a class="f_news-tilte color-white link-red" href="#">amazing place</a>
+  								<span class="date-f">Mar 18, 2015</span>
+  								<a href="#" class="r-more">read more</a>
+  							</div>
+  						</div>
+  				   </div>
+  				</div>
+      			<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+      			   <div class="footer-block">
+                       <h6>Tags:</h6>
+      			      <a href="#" class="tags-b">la pesca</a>
+      			      <a href="#" class="tags-b">tamaulipas</a>
+      			      <a href="#" class="tags-b">playa</a>
+      			      <a href="#" class="tags-b">soto la marina</a>
+      			      <a href="#" class="tags-b">torneo de pesca</a>
+      			      <a href="#" class="tags-b">tortuga lora</a>
+      			      <a href="#" class="tags-b">hoteles</a>
+      			      <a href="#" class="tags-b">actividades</a>
+  				   </div>
+  				</div>
+  				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                     <div class="footer-block">
+                       <h6>Contacto</h6>
+                         <div class="contact-info">
+                          <div class="contact-line color-grey-3"><i class="fa fa-map-marker"></i><span>Soto La Marina, Tamaulipas</span></div>
+  						<div class="contact-line color-grey-3"><i class="fa fa-phone"></i><a href="tel:93123456789">01 (835) 327-12-12</a></div>
+  						<div class="contact-line color-grey-3"><i class="fa fa-envelope-o"></i><a href="mailto:">contacto@lapescatamaulipas.com</a></div>
+  						<div class="contact-line color-grey-3"><i class="fa fa-globe"></i><a href="#">www.lapescatamaulipas.com</a></div>
+
+  					</div>
+  				   </div>
+  				</div>
+      		</div>
+      	</div>
+      	<div class="footer-link bg-black">
+      	  <div class="container">
+      	  	<div class="row">
+      	  		<div class="col-md-12">
+      	  		    <div class="copyright">
+  						<span>&copy; 2016 Todos los derechos reservados. Lapescatamaulipas.com</span>
+  					</div>
+      	  			<ul>
+  						<li><a class="link-aqua" href="/privacidad">Políticas de Privacidad </a></li>
+  						<li><a class="link-aqua" href="/acerca">Acerca de Nosotros</a></li>
+  						<li><a class="link-aqua" href="/faqs">Preguntas frecuentes</a></li>
+  						<li><a class="link-aqua" href="/terminos">Terminos del servicio</a></li>
+  					</ul>
+      	  		</div>
+      	  	</div>
+      	  </div>
+      	</div>
+      </footer>
+  <%= javascript_include_tag 'booking.js' %>
+  <%= javascript_include_tag 'jquery-2.1.4.min.js' %>
+  <%= javascript_include_tag 'bootstrap.min.js' %>
+  <%= javascript_include_tag 'jquery-ui.min.js' %>
+  <%= javascript_include_tag 'idangerous.swiper.min.js' %>
+  <%= javascript_include_tag 'jquery.viewportchecker.min.js' %>
+  <%= javascript_include_tag 'isotope.pkgd.min.js' %>
+  <%= javascript_include_tag 'DateTimePicker.min.js' %>
+  <%= javascript_include_tag 'jquery.mousewheel.min.js' %>
+  <%= javascript_include_tag 'jquery.circliful.min.js' %>
+  <%= javascript_include_tag 'jquery.countTo.js' %>
+  <%= javascript_include_tag 'all.js' %>
+
+</body>
+</html>

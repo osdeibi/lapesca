@@ -22,6 +22,8 @@ gem 'autoprefixer-rails'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
+gem 'paperclip'
+
 
 ########
 # => API
