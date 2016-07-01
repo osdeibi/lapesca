@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'pages#home'
 
+  get '/galeria', to: 'pages#gallery', as: 'gallery'
+
   get '/hoteles', to: 'hotels#index', as: 'hotels_index'
   get '/hoteles/la_pescalinda', to: 'hotels#la_pescalinda', as: 'la_pescalinda'
   get '/hoteles/tropicana', to: 'hotels#tropicana', as: 'tropicana'
@@ -17,6 +19,8 @@ Rails.application.routes.draw do
   get '/acerca', to: 'pages#about', as: 'about'
   get '/faqs', to: 'pages#faqs', as: 'faqs'
   get '/terminos', to: 'pages#terms', as: 'terms'
+
+  get '/dashboard', to: 'dashboard#index', as: 'dashboard_index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
