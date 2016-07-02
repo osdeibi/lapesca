@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160522220352) do
+ActiveRecord::Schema.define(version: 20160702174736) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 20160522220352) do
     t.string   "small_content_type"
     t.integer  "small_file_size"
     t.datetime "small_updated_at"
+    t.boolean  "tv"
   end
 
   create_table "users", force: :cascade do |t|
