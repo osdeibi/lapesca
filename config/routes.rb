@@ -14,6 +14,11 @@ Rails.application.routes.draw do
   get '/hoteles/riviera_del_rio', to: 'hotels#riviera_del_rio', as: 'riviera_del_rio'
   get '/hoteles/nuevo_amanecer', to: 'hotels#nuevo_amanecer', as: 'nuevo_amanecer'
   get '/hoteles/marina_del_rio', to: 'hotels#marina_del_rio', as: 'marina_del_rio'
+  get '/hoteles/la_escollera', to: 'hotels#la_escollera', as: 'la_escollera'
+  get '/hoteles/hotel_blanquita', to: 'hotels#hotel_blanquita', as: 'hotel_blanquita'
+  get '/hoteles/villa_del_mar', to: 'hotels#villa_del_mar', as: 'villa_del_mar'
+  get '/hoteles/punta_piedra', to: 'hotels#punta_piedra', as: 'punta_piedra'
+  get '/hoteles/maria_esperanza', to: 'hotels#maria_esperanza', as: 'maria_esperanza'
 
   get '/privacidad', to: 'pages#privacy', as: 'privacy'
   get '/acerca', to: 'pages#about', as: 'about'
