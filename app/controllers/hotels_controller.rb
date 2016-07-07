@@ -41,6 +41,30 @@ class HotelsController < ApplicationController
     render 'hotel_detail.html.erb'
   end
 
+  def villa_del_mar
+    @hotel = Hotel.find(9)
+    get_recommended_similar
+    render 'hotel_detail.html.erb'
+  end
+
+  def la_escollera
+    @hotel = Hotel.find(8)
+    get_recommended_similar
+    render 'hotel_detail.html.erb'
+  end
+
+  def punta_piedra
+    @hotel = Hotel.find(10)
+    get_recommended_similar
+    render 'hotel_detail.html.erb'
+  end
+
+  def maria_esperanza
+    @hotel = Hotel.find(11)
+    get_recommended_similar
+    render 'hotel_detail.html.erb'
+  end
+
   private
   def get_recommended_similar
     @recommended = Hotel.where(id:1..4)
