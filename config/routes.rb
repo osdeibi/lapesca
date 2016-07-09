@@ -24,6 +24,7 @@ Rails.application.routes.draw do
   get '/acerca', to: 'pages#about', as: 'about'
   get '/faqs', to: 'pages#faqs', as: 'faqs'
   get '/terminos', to: 'pages#terms', as: 'terms'
+  get '/quienes_somos', to: 'pages#about_us', as: 'about_us'
 
   get '/dashboard', to: 'dashboard#index', as: 'dashboard_index'
 

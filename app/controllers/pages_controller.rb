@@ -18,4 +18,7 @@ class PagesController < ApplicationController
 
   def terms
   end
+
+  def about_us
+  end
 end
