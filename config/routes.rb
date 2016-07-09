@@ -7,7 +7,6 @@ Rails.application.routes.draw do
 
   get '/galeria', to: 'pages#gallery', as: 'gallery'
 
-  get '/hoteles', to: 'hotels#index', as: 'hotels_index'
   get '/hoteles/la_pescalinda', to: 'hotels#la_pescalinda', as: 'la_pescalinda'
   get '/hoteles/tropicana', to: 'hotels#tropicana', as: 'tropicana'
   get '/hoteles/palma_real', to: 'hotels#palma_real', as: 'palma_real'
@@ -19,6 +18,8 @@ Rails.application.routes.draw do
   get '/hoteles/villa_del_mar', to: 'hotels#villa_del_mar', as: 'villa_del_mar'
   get '/hoteles/punta_piedra', to: 'hotels#punta_piedra', as: 'punta_piedra'
   get '/hoteles/maria_esperanza', to: 'hotels#maria_esperanza', as: 'maria_esperanza'
+
+  resources :hotels
 
   get '/privacidad', to: 'pages#privacy', as: 'privacy'
   get '/acerca', to: 'pages#about', as: 'about'

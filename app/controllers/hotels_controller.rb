@@ -65,6 +65,11 @@ class HotelsController < ApplicationController
     render 'hotel_detail.html.erb'
   end
 
+  def show
+    @hotel = Hotel.find(params[:id])
+    get_recommended_similar
+  end
+
   private
   def get_recommended_similar
     @recommended = Hotel.where(id:1..4)
