@@ -71,8 +71,10 @@
                   <div class="slider-tweet">
                     <div class="s-tweet-icon"><i class="fa fa-facebook"></i></div>
                     <div class="s-tweet-title color-white">PuertoLaPesca</div>
-                    <p class="color-white-light">Lorem ipsum dolor sit amet, <a class="color-white link-blue" href="#"># consectetur</a> adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad  commodo consequat.</p>
-                    <div class="s-tweet-date color-white">Hace 16 días</div>
+                    <p class="color-white-light">PRÓXIMAMENTE LIBERACIONES DE TORTUGA LORA 2016.</p>
+                    <p class="color-white-light">El programa de conservación de tortugas marinas inicia su temporada de liberación de crías del 18 de Junio al 30 de Julio del 2016.</p>
+                    <% @date = Date.new(2016, 6, 18) %>
+                    <div class="s-tweet-date color-white">Hace <%= (Date.today - @date).to_i %> días</div>
                   </div>
                 </div>
               </div>
@@ -85,8 +87,10 @@
                   <div class="slider-tweet">
                     <div class="s-tweet-icon"><i class="fa fa-facebook"></i></div>
                     <div class="s-tweet-title color-white">PuertoLaPesca</div>
-                    <p class="color-white-light">Lorem ipsum dolor sit amet, <a class="color-white link-blue" href="#"># consectetur</a> adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad  commodo consequat.</p>
-                    <div class="s-tweet-date color-white">Hace 16 días</div>
+                    <p class="color-white-light">Te invitamos a hacer "Check INN" en nuestra página Puerto La Pesca, Tamaulipas al momento de subir tus fotografías en cualquier época del año.</p>
+                    <p class="color-white-light"> ¡Que tengan unas excelentes vacaciones!</p>
+                    <% @date = Date.new(2016, 3, 23) %>
+                    <div class="s-tweet-date color-white">Hace <%= (Date.today - @date).to_i %> días</div>
                   </div>
                 </div>
               </div>
