@@ -26,6 +26,7 @@ Rails.application.routes.draw do
   get '/faqs', to: 'pages#faqs', as: 'faqs'
   get '/terminos', to: 'pages#terms', as: 'terms'
   get '/quienes_somos', to: 'pages#about_us', as: 'about_us'
+  get '/como_llegar', to: 'pages#map', as: 'map'
 
   get '/dashboard', to: 'dashboard#index', as: 'dashboard_index'
 
