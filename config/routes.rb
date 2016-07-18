@@ -27,6 +27,10 @@ Rails.application.routes.draw do
   get '/terminos', to: 'pages#terms', as: 'terms'
   get '/quienes_somos', to: 'pages#about_us', as: 'about_us'
   get '/como_llegar', to: 'pages#map', as: 'map'
+  get '/pesca_en_lancha', to: 'pages#pesca_en_lancha', as: 'pesca_en_lancha'
+  get '/paseo_en_lancha', to: 'pages#paseo_en_lancha', as: 'paseo_en_lancha'
+  get '/renta_de_kayaks', to: 'pages#renta_de_kayaks', as: 'renta_de_kayaks'
+  get '/tortuga_lora', to: 'pages#tortuga_lora', as: 'tortuga_lora'
 
   get '/dashboard', to: 'dashboard#index', as: 'dashboard_index'
 
