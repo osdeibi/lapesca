@@ -1,198 +1,204 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
-		<meta name="format-detection" content="telephone=no" />
+<head>
+	<meta charset="utf-8">
+	<meta property="og:type"   content="article" />
+	<meta property="og:url"    content="http://lapesca.herokuapp.com" />
+	<meta property="og:title"  content="Puerto La Pesca" />
+	<meta property="og:description" content="Visita el Puerto La Pesca en Tamaulipas, hogar de la tortuga lora!" />
+	<meta property="og:image"  content="<%= image_tag 'lapescatamaulipas.jpg' %>" />
 
-		<link rel="shortcut icon" href="favicon.ico"/>
-    <%= csrf_meta_tags %>
-		<%= stylesheet_link_tag 'home' %>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAiUoUtDPdfeOsARiAGKagvzA_3gM2swGU&amp;language=en"></script>
-		<title>La Pesca Tamaulipas</title>
-	</head>
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+	<meta name="format-detection" content="telephone=no" />
+
+	<link rel="shortcut icon" href="favicon.ico"/>
+	<%= csrf_meta_tags %>
+	<%= stylesheet_link_tag 'home' %>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAiUoUtDPdfeOsARiAGKagvzA_3gM2swGU&amp;language=en"></script>
+	<title>La Pesca Tamaulipas</title>
+</head>
 <body data-color="theme-1">
 	<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.6&appId=417722455041718";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+	<script>(function(d, s, id) {
+		var js, fjs = d.getElementsByTagName(s)[0];
+		if (d.getElementById(id)) return;
+		js = d.createElement(s); js.id = id;
+		js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.6&appId=417722455041718";
+		fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
 
-<!-- LOADER -->
-<div class="loading">
-	<div class="loading-center">
-		<div class="loading-center-absolute">
-			<div class="object object_four"></div>
-			<div class="object object_three"></div>
-			<div class="object object_two"></div>
-			<div class="object object_one"></div>
+	<!-- LOADER -->
+	<div class="loading">
+		<div class="loading-center">
+			<div class="loading-center-absolute">
+				<div class="object object_four"></div>
+				<div class="object object_three"></div>
+				<div class="object object_two"></div>
+				<div class="object object_one"></div>
+			</div>
 		</div>
 	</div>
-</div>
 
-<!-- HEADER -->
-  <header class="color-1 hovered menu-3">
-   <div class="container">
-   	  <div class="row">
-   	  	 <div class="col-md-12">
-  	  	    <div class="nav">
-   	  	    <a href="/" class="logo">
-   	  	    	<%= image_tag 'logo-lapesca.png' %>
-   	  	    </a>
-   	  	    <div class="nav-menu-icon">
-		      <a href="#"><i></i></a>
-		    </div>
-   	  	 	<nav class="menu">
-			  	<ul>
-						<li class="type-1"><a href="/">La Pesca<span class="fa fa-angle-down"></span></a>
-							<ul class="dropmenu">
-								<li><a href="/puerto_la_pesca">El puerto la pesca</a></li>
+	<!-- HEADER -->
+	<header class="color-1 hovered menu-3">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="nav">
+						<a href="/" class="logo">
+							<%= image_tag 'logo-lapesca.png' %>
+						</a>
+						<div class="nav-menu-icon">
+							<a href="#"><i></i></a>
+						</div>
+						<nav class="menu">
+							<ul>
+								<li class="type-1"><a href="/">La Pesca<span class="fa fa-angle-down"></span></a>
+									<ul class="dropmenu">
+										<li><a href="/puerto_la_pesca">El puerto la pesca</a></li>
+									</ul>
+								</li>
+								<li class="type-1"><a href="#">Actividades<span class="fa fa-angle-down"></span></a>
+									<ul class="dropmenu">
+										<li><a href="/tortuga_lora">Tortuga Lora</a></li>
+										<li><a href="/paseo_en_lancha">Paseo en lancha</a></li>
+										<li><a href="/renta_de_kayaks">Renta de kayaks</a></li>
+										<li><a href="/pesca_en_lancha">Pesca en Lancha</a></li>
+										<li><a href="#">El Sabinito</a></li>
+									</ul>
+								</li>
+								<li class="type-1"><a href="/hotels">Hoteles<span class="fa fa-angle-down"></span></a>
+									<ul class="dropmenu">
+										<li><a href="/hotels">Ver todos</a></li>
+										<li><a href="/hoteles/la_pescalinda">La Pescalinda</a></li>
+										<li><a href="/hoteles/tropicana">Bungalows tropicana</a></li>
+										<li><a href="/hoteles/palma_real">Palma Real Inn</a></li>
+										<li><a href="/hoteles/riviera_del_rio">Riviera del Rio</a></li>
+										<li><a href="/hoteles/nuevo_amanecer">Nuevo Amanecer</a></li>
+										<li><a href="/hoteles/marina_del_rio">Marina del Rio</a></li>
+										<li><a href="/hoteles/maria_esperanza">Maria Esperanza</a></li>
+										<li><a href="/hoteles/la_escollera">La Escollera</a></li>
+										<li><a href="/hoteles/villa_del_mar">Villa del mar</a></li>
+										<li><a href="/hoteles/hotel_blanquita">Hotel Blanquita</a></li>
+										<li><a href="/hoteles/punta_piedra">Punta Piedra</a></li>
+									</ul>
+								</li>
+								<li class="type-1"><a href="/quienes_somos">Quienes somos<span class="fa fa-angle-down"></span></a>
+
+								</li>
+								<li class="type-1"><a href="/como_llegar">Como llegar<span class="fa fa-angle-down"></span></a>
+
+								</li>
+								<li class="type-1"><a href="/galeria">Galeria<span class="fa fa-angle-down"></span></a>
+									<ul class="dropmenu">
+										<li><a href="/galeria">Fotos</a></li>
+										<li><a href="#">Videos</a></li>
+									</ul>
+								</li>
 							</ul>
-						</li>
-					<li class="type-1"><a href="#">Actividades<span class="fa fa-angle-down"></span></a>
-						<ul class="dropmenu">
-							<li><a href="/tortuga_lora">Tortuga Lora</a></li>
-                            <li><a href="/paseo_en_lancha">Paseo en lancha</a></li>
-														<li><a href="/renta_de_kayaks">Renta de kayaks</a></li>
-														<li><a href="/pesca_en_lancha">Pesca en Lancha</a></li>
-                            <li><a href="#">El Sabinito</a></li>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<%= yield %>
+
+	<!-- FOOTER -->
+	<footer class="bg-dark type-2">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+					<div class="footer-block">
+						<%= image_tag 'logo-lapesca.png' %>
+						<div class="f_text color-grey-7">Lapescatamaulipas.com es un portal de enlace con los servicios hoteleros del Puerto La Pesca, en Soto La Marina Tamaulipas.</div>
+						<div class="footer-share">
+							<a href="https://www.facebook.com/PuertoLaPesca"><span class="fa fa-facebook"></span></a>
+							<a href="#"><span class="fa fa-twitter"></span></a>
+							<a href="#"><span class="fa fa-google-plus"></span></a>
+							<a href="https://www.instagram.com/lapescatamaulipas"><span class="fa fa-instagram"></span></a>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-6 col-sm-6 no-padding">
+					<div class="footer-block">
+						<h6>La Pesca en la Web</h6>
+						<div class="f_news clearfix">
+							<a class="f_news-img black-hover" href="#">
+								<%= image_tag 'playas-limpias.jpeg', class: 'img-responsive' %>
+								<div class="tour-layer delay-1"></div>
+							</a>
+							<div class="f_news-content">
+								<a class="f_news-tilte color-white link-red" href="#">playas mas limpias de mexico</a>
+								<span class="date-f">Mar 16, 2016</span>
+								<a href="http://expansion.mx/lifestyle/2016/03/16/aguas-contaminadas-las-playas-mas-sucias-de-mexico" class="r-more">leer más</a>
+							</div>
+						</div>
+						<div class="f_news clearfix">
+							<a class="f_news-img black-hover" href="#">
+								<%= image_tag 'bancada.jpeg', class: 'img-responsive' %>
+								<div class="tour-layer delay-1"></div>
+							</a>
+							<div class="f_news-content">
+								<a class="f_news-tilte color-white link-red" href="#">Buscan inversión en La Pesca</a>
+								<span class="date-f">Jun 20, 2016</span>
+								<a href="http://tamaulipeco.com.mx/bancada-panista-exige-impulsar-inversiones-en-la-pesca/" class="r-more">leer más</a>
+							</div>
+						</div>
+						<div class="f_news clearfix">
+							<a class="f_news-img black-hover" href="#">
+								<%= image_tag 'riesgos.jpg', class: 'img-responsive' %>
+								<div class="tour-layer delay-1"></div>
+							</a>
+							<div class="f_news-content">
+								<a class="f_news-tilte color-white link-red" href="#">No hay riesgos en playas</a>
+								<span class="date-f">Jul 4, 2016</span>
+								<a href="http://www.milenio.com/region/playa_miramar-bacterias_miramar-contaminacion_Miramar-playa_Tamaulipas_0_767923516.html" class="r-more">leer más</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+					<div class="footer-block">
+						<h6>Facebook:</h6>
+						<div class="fb-page" data-href="https://www.facebook.com/PuertoLaPesca" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/PuertoLaPesca" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/PuertoLaPesca">Puerto La Pesca, Tamaulipas</a></blockquote></div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+					<div class="footer-block">
+						<h6>Contacto</h6>
+						<div class="contact-info">
+							<div class="contact-line color-grey-3"><i class="fa fa-map-marker"></i><span>Soto La Marina, Tamaulipas</span></div>
+							<div class="contact-line color-grey-3"><i class="fa fa-phone"></i><a href="tel:93123456789">01 (835) 327-12-12</a></div>
+							<div class="contact-line color-grey-3"><i class="fa fa-envelope-o"></i><a href="mailto:">contacto@lapescatamaulipas.com</a></div>
+							<div class="contact-line color-grey-3"><i class="fa fa-globe"></i><a href="#">www.lapescatamaulipas.com</a></div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="footer-link bg-black">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="copyright">
+							<span>&copy; 2016 Todos los derechos reservados. Lapescatamaulipas.com</span>
+						</div>
+						<ul>
+							<li><a class="link-aqua" href="/privacidad">Políticas de Privacidad </a></li>
+							<li><a class="link-aqua" href="/quienes_somos">Acerca de Nosotros</a></li>
+							<li><a class="link-aqua" href="/faqs">Preguntas frecuentes</a></li>
+							<li><a class="link-aqua" href="/terminos">Terminos del servicio</a></li>
 						</ul>
-					</li>
-					<li class="type-1"><a href="/hotels">Hoteles<span class="fa fa-angle-down"></span></a>
-						<ul class="dropmenu">
-							<li><a href="/hotels">Ver todos</a></li>
-                            <li><a href="/hoteles/la_pescalinda">La Pescalinda</a></li>
-                            <li><a href="/hoteles/tropicana">Bungalows tropicana</a></li>
-                            <li><a href="/hoteles/palma_real">Palma Real Inn</a></li>
-                            <li><a href="/hoteles/riviera_del_rio">Riviera del Rio</a></li>
-														<li><a href="/hoteles/nuevo_amanecer">Nuevo Amanecer</a></li>
-														<li><a href="/hoteles/marina_del_rio">Marina del Rio</a></li>
-														<li><a href="/hoteles/maria_esperanza">Maria Esperanza</a></li>
-														<li><a href="/hoteles/la_escollera">La Escollera</a></li>
-														<li><a href="/hoteles/villa_del_mar">Villa del mar</a></li>
-														<li><a href="/hoteles/hotel_blanquita">Hotel Blanquita</a></li>
-														<li><a href="/hoteles/punta_piedra">Punta Piedra</a></li>
-						</ul>
-					</li>
-					<li class="type-1"><a href="/quienes_somos">Quienes somos<span class="fa fa-angle-down"></span></a>
-
-					</li>
-					<li class="type-1"><a href="/como_llegar">Como llegar<span class="fa fa-angle-down"></span></a>
-
-					</li>
-					<li class="type-1"><a href="/galeria">Galeria<span class="fa fa-angle-down"></span></a>
-						<ul class="dropmenu">
-							<li><a href="/galeria">Fotos</a></li>
-                            <li><a href="#">Videos</a></li>
-						</ul>
-					</li>
-			  	</ul>
-		   </nav>
-		   </div>
-   	  	 </div>
-   	  </div>
-   </div>
-  </header>
-
-  <%= yield %>
-
-  <!-- FOOTER -->
-  <footer class="bg-dark type-2">
-      	<div class="container">
-      		<div class="row">
-      			<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-      				<div class="footer-block">
-      					<%= image_tag 'logo-lapesca.png' %>
-      					<div class="f_text color-grey-7">Lapescatamaulipas.com es un portal de enlace con los servicios hoteleros del Puerto La Pesca, en Soto La Marina Tamaulipas.</div>
-      					<div class="footer-share">
-      						<a href="https://www.facebook.com/PuertoLaPesca"><span class="fa fa-facebook"></span></a>
-      						<a href="#"><span class="fa fa-twitter"></span></a>
-      						<a href="#"><span class="fa fa-google-plus"></span></a>
-      						<a href="https://www.instagram.com/lapescatamaulipas"><span class="fa fa-instagram"></span></a>
-      					</div>
-      				</div>
-      			</div>
-      			<div class="col-lg-3 col-md-3 col-sm-6 col-sm-6 no-padding">
-  				   <div class="footer-block">
-  						<h6>La Pesca en la Web</h6>
-  						<div class="f_news clearfix">
-  							<a class="f_news-img black-hover" href="#">
-  								<%= image_tag 'playas-limpias.jpeg', class: 'img-responsive' %>
-  								<div class="tour-layer delay-1"></div>
-  							</a>
-  							<div class="f_news-content">
-  								<a class="f_news-tilte color-white link-red" href="#">playas mas limpias de mexico</a>
-  								<span class="date-f">Mar 16, 2016</span>
-  								<a href="http://expansion.mx/lifestyle/2016/03/16/aguas-contaminadas-las-playas-mas-sucias-de-mexico" class="r-more">leer más</a>
-  							</div>
-  						</div>
-  						<div class="f_news clearfix">
-  							<a class="f_news-img black-hover" href="#">
-  								<%= image_tag 'bancada.jpeg', class: 'img-responsive' %>
-  								<div class="tour-layer delay-1"></div>
-  							</a>
-  							<div class="f_news-content">
-  								<a class="f_news-tilte color-white link-red" href="#">Buscan inversión en La Pesca</a>
-  								<span class="date-f">Jun 20, 2016</span>
-  								<a href="http://tamaulipeco.com.mx/bancada-panista-exige-impulsar-inversiones-en-la-pesca/" class="r-more">leer más</a>
-  							</div>
-  						</div>
-  						<div class="f_news clearfix">
-  							<a class="f_news-img black-hover" href="#">
-  								<%= image_tag 'riesgos.jpg', class: 'img-responsive' %>
-  								<div class="tour-layer delay-1"></div>
-  							</a>
-  							<div class="f_news-content">
-  								<a class="f_news-tilte color-white link-red" href="#">No hay riesgos en playas</a>
-  								<span class="date-f">Jul 4, 2016</span>
-  								<a href="http://www.milenio.com/region/playa_miramar-bacterias_miramar-contaminacion_Miramar-playa_Tamaulipas_0_767923516.html" class="r-more">leer más</a>
-  							</div>
-  						</div>
-  				   </div>
-  				</div>
-      			<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-      			   <div class="footer-block">
-                       <h6>Facebook:</h6>
-      			    <div class="fb-page" data-href="https://www.facebook.com/PuertoLaPesca" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/PuertoLaPesca" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/PuertoLaPesca">Puerto La Pesca, Tamaulipas</a></blockquote></div>
-  				   </div>
-  				</div>
-  				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                     <div class="footer-block">
-                       <h6>Contacto</h6>
-                         <div class="contact-info">
-                          <div class="contact-line color-grey-3"><i class="fa fa-map-marker"></i><span>Soto La Marina, Tamaulipas</span></div>
-  						<div class="contact-line color-grey-3"><i class="fa fa-phone"></i><a href="tel:93123456789">01 (835) 327-12-12</a></div>
-  						<div class="contact-line color-grey-3"><i class="fa fa-envelope-o"></i><a href="mailto:">contacto@lapescatamaulipas.com</a></div>
-  						<div class="contact-line color-grey-3"><i class="fa fa-globe"></i><a href="#">www.lapescatamaulipas.com</a></div>
-
-  					</div>
-  				   </div>
-  				</div>
-      		</div>
-      	</div>
-      	<div class="footer-link bg-black">
-      	  <div class="container">
-      	  	<div class="row">
-      	  		<div class="col-md-12">
-      	  		    <div class="copyright">
-  						<span>&copy; 2016 Todos los derechos reservados. Lapescatamaulipas.com</span>
-  					</div>
-      	  			<ul>
-  						<li><a class="link-aqua" href="/privacidad">Políticas de Privacidad </a></li>
-  						<li><a class="link-aqua" href="/quienes_somos">Acerca de Nosotros</a></li>
-  						<li><a class="link-aqua" href="/faqs">Preguntas frecuentes</a></li>
-  						<li><a class="link-aqua" href="/terminos">Terminos del servicio</a></li>
-  					</ul>
-      	  		</div>
-      	  	</div>
-      	  </div>
-      	</div>
-      </footer>
-  <%= javascript_include_tag 'home' %>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<%= javascript_include_tag 'home' %>
 </body>
 </html>
