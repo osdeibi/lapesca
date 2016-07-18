@@ -24,4 +24,7 @@ class PagesController < ApplicationController
 
   def map
   end
+
+  def puerto_la_pesca
+  end
 end

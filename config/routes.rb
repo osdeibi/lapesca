@@ -21,6 +21,7 @@ Rails.application.routes.draw do
 
   resources :hotels
 
+  get '/puerto_la_pesca', to: 'pages#puerto_la_pesca', as: 'puerto_la_pesca'
   get '/privacidad', to: 'pages#privacy', as: 'privacy'
   get '/acerca', to: 'pages#about', as: 'about'
   get '/faqs', to: 'pages#faqs', as: 'faqs'
