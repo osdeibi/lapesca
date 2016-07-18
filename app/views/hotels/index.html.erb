@@ -45,17 +45,17 @@
             <h4 class="sidebar-title color-dark-2">categorias</h4>
             <ul class="sidebar-category color-1">
               <li class="active">
-                <a class="cat-drop" href="#">hoteles <span class="fr">(68)</span></a>
+                <a class="cat-drop" href="#">hoteles <span class="fr">(<%= @hotels.count %>)</span></a>
                 <ul>
-                  <li><a href="#">todos (785)</a></li>
-                  <li><a href="#">habitaciones (85)</a></li>
-                  <li><a href="#">bungalows (125)</a></li>
+                  <li><a href="#">todos (<%= @hotels.count %>)</a></li>
+                  <li><a href="#">habitaciones (<%= @hotels.count - 2 %>)</a></li>
+                  <li><a href="#">bungalows (2)</a></li>
                 </ul>
               </li>
               <li>
-                <a class="cat-drop" href="#">casas <span class="fr">(125)</span></a>
+                <a class="cat-drop" href="#">casas <span class="fr">(0)</span></a>
                 <ul>
-                  <li><a href="#">todas (785)</a></li>
+                  <li><a href="#">todas (0)</a></li>
                 </ul>
               </li>
             </ul>
@@ -70,7 +70,7 @@
             <input type="submit" class="c-button b-40 bg-blue-2 hv-blue-2-o" value="search">
           </div>
           <div class="sidebar-block">
-            <h4 class="sidebar-title color-dark-2">recomendación</h4>
+            <h4 class="sidebar-title color-dark-2">Categoría</h4>
             <div class="sidebar-rating">
               <div class="input-entry color-1">
                 <input class="checkbox-form" id="star-5" type="checkbox" name="checkbox" value="climat control">
@@ -157,7 +157,7 @@
                 <input class="checkbox-form" id="text-4" type="checkbox" name="checkbox" value="climat control">
                 <label class="clearfix" for="text-4" >
                   <span class="sp-check"><i class="fa fa-check"></i></span>
-                  <span class="checkbox-text">Amigable con mascotas</span>
+                  <span class="checkbox-text">Mascotas</span>
                 </label>
               </div>
               <div class="input-entry color-1">
@@ -257,7 +257,7 @@
           </div>
           <div class="drop-wrap drop-wrap-s-4 color-4 list-sort">
             <div class="drop">
-              <b>Sort by ranking</b>
+              <b>Ordenar por categoría</b>
               <a href="#" class="drop-list"><i class="fa fa-angle-down"></i></a>
               <span>
                 <a href="#">ASC</a>
