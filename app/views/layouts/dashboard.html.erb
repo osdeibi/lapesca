@@ -10,12 +10,43 @@
 
   <title>La Pesca | Dashboard </title>
   <%= csrf_meta_tags %>
-  <%= stylesheet_link_tag 'dashboard' %>
-  <%= javascript_include_tag 'dashboard' %>
+  <!--<%= stylesheet_link_tag 'dashboard' %>
+  <%= javascript_include_tag 'dashboard' %>-->
+
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <link href="fonts/css/font-awesome.min.css" rel="stylesheet">
+  <link href="css/animate.min.css" rel="stylesheet">
+
+  <!-- Custom styling plus plugins -->
+  <link href="css/custom.css" rel="stylesheet">
+  <link href="css/icheck/flat/green.css" rel="stylesheet">
+
+  <link href="css/calendar/fullcalendar.css" rel="stylesheet">
+  <link href="css/calendar/fullcalendar.print.css" rel="stylesheet" media="print">
+
+  <script src="js/jquery.min.js"></script>
+
+  <script src="js/bootstrap.min.js"></script>
+
+  <script src="js/nprogress.js"></script>
+
+  <!-- bootstrap progress js -->
+  <script src="js/progressbar/bootstrap-progressbar.min.js"></script>
+
+  <!-- icheck -->
+  <script src="js/icheck/icheck.min.js"></script>
+
+  <script src="js/custom.js"></script>
+
+  <script src="js/moment/moment.min.js"></script>
+  <script src="js/calendar/fullcalendar.min.js"></script>
+  <!-- pace -->
+  <script src="js/pace/pace.min.js"></script>
 
   <!-- Bootstrap core CSS -->
 
-  <!--<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
   <!--[if lt IE 9]>
   <script src="../assets/js/ie8-responsive-file-warning.js"></script>
@@ -29,7 +60,123 @@
 
 </head>
 
-<%= yield %>
+<body class="nav-md">
 
+  <div class="container body">
+
+
+    <div class="main_container">
+
+      <div class="col-md-3 left_col">
+        <div class="left_col scroll-view">
+
+          <div class="navbar nav_title" style="border: 0;">
+            <a href="index.html" class="site_title"><i class="fa fa-bed"></i> <span>La Pesca</span></a>
+          </div>
+          <div class="clearfix"></div>
+
+
+          <!-- menu prile quick info -->
+          <div class="profile">
+            <div class="profile_pic">
+              <%= image_tag 'hugo-perfil.png', class: 'img-circle profile_img', alt: '...' %>
+            </div>
+            <div class="profile_info">
+              <span>Bienvenido,</span>
+              <h2>Hugo De la Garza</h2>
+            </div>
+          </div>
+          <!-- /menu prile quick info -->
+
+          <br />
+
+          <!-- sidebar menu -->
+          <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+
+            <div class="menu_section">
+              <h3>Menu</h3>
+              <ul class="nav side-menu">
+                <li><a><i class="fa fa-edit"></i> Registro <span class="fa fa-chevron-down"></span></a>
+                  <ul class="nav child_menu" style="display: none">
+                    <li><a href="index.html">Reservaciones</a>
+                    </li>
+                    <li><a href="index2.html">Hoteles</a>
+                    </li>
+                  </ul>
+                </li>
+                <li><a><i class="fa fa-calendar"></i> Calendarios <span class="fa fa-chevron-down"></span></a>
+                  <ul class="nav child_menu" style="display: none">
+                    <li><a href="form.html">La Pescalinda</a>
+                    </li>
+                    <li><a href="form_advanced.html">Bungalows Tropicana</a>
+                    </li>
+                    <li><a href="form_validation.html">Palma Real</a>
+                    </li>
+                    <li><a href="form_wizards.html">Marina del rio</a>
+                    </li>
+                    <li><a href="form_upload.html">Nuevo Amanecer</a>
+                    </li>
+                    <li><a href="form_buttons.html">La Escollera</a>
+                    </li>
+                    <li><a href="form_buttons.html">Hotel Blanquita</a>
+                    </li>
+                    <li><a href="form_buttons.html">Maria Esperanza</a>
+                    </li>
+                    <li><a href="form_buttons.html">Punta Piedra</a>
+                    </li>
+                  </ul>
+                </li>
+                <li><a><i class="fa fa-file-text"></i> Reportes <span class="fa fa-chevron-down"></span></a>
+                  <ul class="nav child_menu" style="display: none">
+                    <li><a href="general_elements.html">Reporte de reservaciones</a>
+                    </li>
+                    <li><a href="media_gallery.html">Factura a hoteles</a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- /sidebar menu -->
+        </div>
+      </div>
+
+      <!-- top navigation -->
+      <div class="top_nav">
+
+        <div class="nav_menu">
+          <nav class="" role="navigation">
+            <div class="nav toggle">
+              <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+            </div>
+          </nav>
+        </div>
+
+      </div>
+      <!-- /top navigation -->
+
+      <%= yield %>
+
+      <!-- footer content -->
+      <footer>
+        <div class="pull-right">
+          Copyright 2016 <a href="http://www.lapescatamaulipas.com">Lapescatamaulipas.com</a>
+        </div>
+        <div class="clearfix"></div>
+      </footer>
+      <!-- /footer content -->
+      </div>
+
+    </div>
+  </div>
+
+  <div id="custom_notifications" class="custom-notifications dsp_none">
+    <ul class="list-unstyled notifications clearfix" data-tabbed_notifications="notif-group">
+    </ul>
+    <div class="clearfix"></div>
+    <div id="notif-group" class="tabbed_notifications"></div>
+  </div>
+
+</body>
 
 </html>
