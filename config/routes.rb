@@ -19,7 +19,11 @@ Rails.application.routes.draw do
   get '/hoteles/punta_piedra', to: 'hotels#punta_piedra', as: 'punta_piedra'
   get '/hoteles/maria_esperanza', to: 'hotels#maria_esperanza', as: 'maria_esperanza'
 
-  resources :hotels
+  resources :hotels do
+    member do
+      get 'reservar'
+    end
+  end
 
   get '/puerto_la_pesca', to: 'pages#puerto_la_pesca', as: 'puerto_la_pesca'
   get '/privacidad', to: 'pages#privacy', as: 'privacy'

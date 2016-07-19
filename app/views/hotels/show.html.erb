@@ -149,8 +149,8 @@
             <p class="color-grey-9">pet friendly: <span class="color-white"><%= Hotel.boolean_to_string(@hotel.pet_friendly) %></span></p>
           </div>
           <div class="details-btn">
-            <a href="#" class="c-button b-40 bg-tr-1 hv-white"><span>ver en mapa</span></a>
-            <a href="#" class="c-button b-40 bg-white hv-transparent"><span>reservar ahora</span></a>
+            <a href="/como_llegar" class="c-button b-40 bg-tr-1 hv-white"><span>ver en mapa</span></a>
+            <%= link_to 'Reservar ahora', reservar_hotel_path(@hotel), class: "c-button b-40 bg-white hv-transparent" %>
           </div>
         </div>
 
@@ -208,7 +208,7 @@
             <span class="f-14 color-dark-2"><%= hotel.location %></span>
             <p class="f-14"><%= hotel.description %></p>
             <a href="#" class="c-button bg-dr-blue hv-dr-blue-o b-50 fl">Ver más</a>
-            <a href="#" class="c-button color-dr-blue hv-o b-50 fr"><img src="/img/loc_icon_small_drak.png" alt="">ver en mapa</a>
+            <a href="/como_llegar" class="c-button color-dr-blue hv-o b-50 fr"><img src="/img/loc_icon_small_drak.png" alt="">ver en mapa</a>
           </div>
         </div>
       </div>

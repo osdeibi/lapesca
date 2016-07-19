@@ -5,6 +5,10 @@ class HotelsController < ApplicationController
     @hotels = Hotel.all
   end
 
+  def reservar
+    @hotel = Hotel.find(params[:id])
+  end
+
   def la_pescalinda
     @hotel = Hotel.find(1) # Id 1: La Pescalinda
     get_recommended_similar
