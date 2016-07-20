@@ -4,8 +4,10 @@ class HotelsController < ApplicationController
   def index
     @page = 1
     @page = params[:page].to_i if params[:page]
-    @hotels = Hotel.order(:id).page params[:page]
+    @q = Hotel.ransack(params[:q])
+    @hotels = @q.result(distinct: true).order(:id).page params[:page]
     paginate
+
   end
 
   def reservar
