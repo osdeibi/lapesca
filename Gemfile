@@ -23,6 +23,8 @@ gem 'autoprefixer-rails'
 gem 'jquery-rails'
 #gem 'therubyracer'
 gem 'paperclip'
+gem 'kaminari'
+gem 'ransack'
 
 
 ########
