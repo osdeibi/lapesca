@@ -4,7 +4,8 @@ class HotelsController < ApplicationController
   def index
     @page = 1
     @page = params[:page].to_i if params[:page]
-    paginate(@page)
+    @hotels = Hotel.order(:id).page params[:page]
+    paginate
   end
 
   def reservar
@@ -82,8 +83,8 @@ class HotelsController < ApplicationController
     @similar = Hotel.where(id:4..6)
   end
 
-  def paginate(page)
-    @hotels = Hotel.order(:id).where(id: (((page - 1) * 6) + 1)..(((page - 1) * 6) + 6) )
+  def paginate
+    @last_page = (@hotels.total_count / 6)
+    @last_page += 1 if @hotels.total_count % 6 > 0
   end
-
 end

@@ -11,6 +11,8 @@ class Hotel < ActiveRecord::Base
   has_attached_file :small
   validates_attachment_content_type :page, content_type: /\Aimage\/.*\Z/
 
+  paginates_per 6
+
   def self.boolean_to_string(value)
     str = "No"
     str = "Si" if value == true
