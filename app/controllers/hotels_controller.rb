@@ -2,7 +2,9 @@ class HotelsController < ApplicationController
   layout "home"
 
   def index
-    @hotels = Hotel.all
+    @page = 1
+    @page = params[:page].to_i if params[:page]
+    paginate(@page)
   end
 
   def reservar
@@ -78,6 +80,10 @@ class HotelsController < ApplicationController
   def get_recommended_similar
     @recommended = Hotel.where(id:1..4)
     @similar = Hotel.where(id:4..6)
+  end
+
+  def paginate(page)
+    @hotels = Hotel.order(:id).where(id: (((page - 1) * 6) + 1)..(((page - 1) * 6) + 6) )
   end
 
 end
