@@ -46,10 +46,10 @@
             <h4 class="sidebar-title color-dark-2">categorias</h4>
             <ul class="sidebar-category color-1">
               <li class="active">
-                <a class="cat-drop" href="#">hoteles <span class="fr">(<%= @hotels.count %>)</span></a>
+                <a class="cat-drop" href="#">hoteles <span class="fr">(<%= Hotel.count %>)</span></a>
                 <ul>
-                  <li><a href="#">todos (<%= @hotels.count %>)</a></li>
-                  <li><a href="#">habitaciones (<%= @hotels.count - 2 %>)</a></li>
+                  <li><a href="#">todos (<%= Hotel.count %>)</a></li>
+                  <li><a href="#">habitaciones (<%= Hotel.count - 2 %>)</a></li>
                   <li><a href="#">bungalows (2)</a></li>
                 </ul>
               </li>
@@ -134,42 +134,42 @@
             <h4 class="sidebar-title color-dark-2">Amenidades</h4>
             <div class="sidebar-rating">
               <div class="input-entry color-1">
-                <input class="checkbox-form" id="text-1" type="checkbox" name="checkbox" value="climat control">
+                <input id="text-1" name="q[dock_true]" value="1" type="checkbox" class="checkbox-form"></input>
                 <label class="clearfix" for="text-1" >
                   <span class="sp-check"><i class="fa fa-check"></i></span>
                   <span class="checkbox-text">Muelle</span>
                 </label>
               </div>
               <div class="input-entry color-1">
-                <input class="checkbox-form" id="text-2" type="checkbox" name="checkbox" value="climat control">
+                <input id="text-2" name="q[pool_true]" value="1" type="checkbox" class="checkbox-form"></input>
                 <label class="clearfix" for="text-2" >
                   <span class="sp-check"><i class="fa fa-check"></i></span>
                   <span class="checkbox-text">Alberca</span>
                 </label>
               </div>
               <div class="input-entry color-1">
-                <input class="checkbox-form" id="text-3" type="checkbox" name="checkbox" value="climat control">
+                <input id="text-3" name="q[grill_true]" value="1" type="checkbox" class="checkbox-form"></input>
                 <label class="clearfix" for="text-3" >
                   <span class="sp-check"><i class="fa fa-check"></i></span>
                   <span class="checkbox-text">Asadores</span>
                 </label>
               </div>
               <div class="input-entry color-1">
-                <input class="checkbox-form" id="text-4" type="checkbox" name="checkbox" value="climat control">
+                <input id="text-4" name="q[pet_friendly_true]" value="1" type="checkbox" class="checkbox-form"></input>
                 <label class="clearfix" for="text-4" >
                   <span class="sp-check"><i class="fa fa-check"></i></span>
                   <span class="checkbox-text">Mascotas</span>
                 </label>
               </div>
               <div class="input-entry color-1">
-                <input class="checkbox-form" id="text-5" type="checkbox" name="checkbox" value="climat control">
+                <input id="text-5" name="q[shacks_true]" value="1" type="checkbox" class="checkbox-form"></input>
                 <label class="clearfix" for="text-5" >
                   <span class="sp-check"><i class="fa fa-check"></i></span>
                   <span class="checkbox-text">Palapas</span>
                 </label>
               </div>
               <div class="input-entry color-1">
-                <input class="checkbox-form" id="text-6" type="checkbox" name="checkbox" value="climat control">
+                <input id="text-6" name="q[restaurant_true]" value="1" type="checkbox" class="checkbox-form"></input>
                 <label class="clearfix" for="text-6" >
                   <span class="sp-check"><i class="fa fa-check"></i></span>
                   <span class="checkbox-text">Restaurante</span>

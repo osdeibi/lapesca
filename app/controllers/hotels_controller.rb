@@ -7,7 +7,7 @@ class HotelsController < ApplicationController
     @q = Hotel.ransack(params[:q])
     @hotels = @q.result(distinct: true).order(:id).page params[:page]
     paginate
-
+    @dock = true if params[:dock]
   end
 
   def reservar
