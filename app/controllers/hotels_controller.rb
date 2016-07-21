@@ -2,12 +2,12 @@ class HotelsController < ApplicationController
   layout "home"
 
   def index
-    @page = 1
-    @page = params[:page].to_i if params[:page]
-    @q = Hotel.ransack(params[:q])
+    parse_amounts if params[:amount_end]
+    @q = Hotel.all
+    @q = Hotel.where('cost_per_night BETWEEN ? AND ?', @amount_start, @amount_end) if @amount_end
+    @q = @q.ransack(params[:q])
     @hotels = @q.result(distinct: true).order(:id).page params[:page]
     paginate
-    @dock = true if params[:dock]
   end
 
   def reservar
@@ -86,7 +86,15 @@ class HotelsController < ApplicationController
   end
 
   def paginate
+    @page = 1
+    @page = params[:page].to_i if params[:page]
     @last_page = (@hotels.total_count / 6)
     @last_page += 1 if @hotels.total_count % 6 > 0
+  end
+
+  def parse_amounts
+    @amount_start = 0.0
+    @amount_start = params[:amount_start][1, params[:amount_start].length].to_f if params[:amount_start]
+    @amount_end = params[:amount_end][1, params[:amount_end].length].to_f
   end
 end
