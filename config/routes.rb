@@ -38,6 +38,7 @@ Rails.application.routes.draw do
   get '/tortuga_lora', to: 'pages#tortuga_lora', as: 'tortuga_lora'
 
   get '/dashboard', to: 'dashboard#index', as: 'dashboard_index'
+  get '/dashboard/calendar/:id', to: 'dashboard#calendar', as: 'calendar'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

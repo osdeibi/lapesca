@@ -13,36 +13,36 @@
   <!--<%= stylesheet_link_tag 'dashboard' %>
   <%= javascript_include_tag 'dashboard' %>-->
 
-  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
 
-  <link href="fonts/css/font-awesome.min.css" rel="stylesheet">
-  <link href="css/animate.min.css" rel="stylesheet">
+  <link href="/fonts/css/font-awesome.min.css" rel="stylesheet">
+  <link href="/css/animate.min.css" rel="stylesheet">
 
   <!-- Custom styling plus plugins -->
-  <link href="css/custom.css" rel="stylesheet">
-  <link href="css/icheck/flat/green.css" rel="stylesheet">
+  <link href="/css/custom.css" rel="stylesheet">
+  <link href="/css/icheck/flat/green.css" rel="stylesheet">
 
-  <link href="css/calendar/fullcalendar.css" rel="stylesheet">
-  <link href="css/calendar/fullcalendar.print.css" rel="stylesheet" media="print">
+  <link href="/css/calendar/fullcalendar.css" rel="stylesheet">
+  <link href="/css/calendar/fullcalendar.print.css" rel="stylesheet" media="print">
 
-  <script src="js/jquery.min.js"></script>
+  <script src="/js/jquery.min.js"></script>
 
-  <script src="js/bootstrap.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
 
-  <script src="js/nprogress.js"></script>
+  <script src="/js/nprogress.js"></script>
 
   <!-- bootstrap progress js -->
-  <script src="js/progressbar/bootstrap-progressbar.min.js"></script>
+  <script src="/js/progressbar/bootstrap-progressbar.min.js"></script>
 
   <!-- icheck -->
-  <script src="js/icheck/icheck.min.js"></script>
+  <script src="/js/icheck/icheck.min.js"></script>
 
-  <script src="js/custom.js"></script>
+  <script src="/js/custom.js"></script>
 
-  <script src="js/moment/moment.min.js"></script>
-  <script src="js/calendar/fullcalendar.min.js"></script>
+  <script src="/js/moment/moment.min.js"></script>
+  <script src="/js/calendar/fullcalendar.min.js"></script>
   <!-- pace -->
-  <script src="js/pace/pace.min.js"></script>
+  <script src="/js/pace/pace.min.js"></script>
 
   <!-- Bootstrap core CSS -->
 
@@ -71,7 +71,7 @@
         <div class="left_col scroll-view">
 
           <div class="navbar nav_title" style="border: 0;">
-            <a href="index.html" class="site_title"><i class="fa fa-bed"></i> <span>La Pesca</span></a>
+            <a href="/dashboard" class="site_title"><i class="fa fa-bed"></i> <span>La Pesca</span></a>
           </div>
           <div class="clearfix"></div>
 
@@ -106,23 +106,27 @@
                 </li>
                 <li><a><i class="fa fa-calendar"></i> Calendarios <span class="fa fa-chevron-down"></span></a>
                   <ul class="nav child_menu" style="display: none">
-                    <li><a href="form.html">La Pescalinda</a>
+                    <li><a href="/dashboard/calendar/1"><%= Hotel.find(1).name %></a>
                     </li>
-                    <li><a href="form_advanced.html">Bungalows Tropicana</a>
+                    <li><a href="/dashboard/calendar/2"><%= Hotel.find(2).name %></a>
                     </li>
-                    <li><a href="form_validation.html">Palma Real</a>
+                    <li><a href="/dashboard/calendar/3"><%= Hotel.find(3).name %></a>
                     </li>
-                    <li><a href="form_wizards.html">Marina del rio</a>
+                    <li><a href="/dashboard/calendar/4"><%= Hotel.find(4).name %></a>
                     </li>
-                    <li><a href="form_upload.html">Nuevo Amanecer</a>
+                    <li><a href="/dashboard/calendar/5"><%= Hotel.find(5).name %></a>
                     </li>
-                    <li><a href="form_buttons.html">La Escollera</a>
+                    <li><a href="/dashboard/calendar/6"><%= Hotel.find(6).name %></a>
                     </li>
-                    <li><a href="form_buttons.html">Hotel Blanquita</a>
+                    <li><a href="/dashboard/calendar/8"><%= Hotel.find(8).name %></a>
                     </li>
-                    <li><a href="form_buttons.html">Maria Esperanza</a>
+                    <li><a href="/dashboard/calendar/9"><%= Hotel.find(9).name %></a>
                     </li>
-                    <li><a href="form_buttons.html">Punta Piedra</a>
+                    <li><a href="/dashboard/calendar/10"><%= Hotel.find(10).name %></a>
+                    </li>
+                    <li><a href="/dashboard/calendar/11"><%= Hotel.find(11).name %></a>
+                    </li>
+                    <li><a href="/dashboard/calendar/12"><%= Hotel.find(12).name %></a>
                     </li>
                   </ul>
                 </li>
