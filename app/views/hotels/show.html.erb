@@ -27,11 +27,9 @@
           <h2 class="detail-title color-dark-2"><%= @hotel.name %></h2>
           <div class="detail-rate rate-wrap clearfix">
             <div class="rate">
+              <% @hotel.review_score.times do %>
               <span class="fa fa-star color-yellow"></span>
-              <span class="fa fa-star color-yellow"></span>
-              <span class="fa fa-star color-yellow"></span>
-              <span class="fa fa-star color-yellow"></span>
-              <span class="fa fa-star color-white"></span>
+              <% end %>
             </div>
             <i style="background: green; color: white">Disponible</i>
           </div>
@@ -159,10 +157,10 @@
 
           <% @similar.each do |hotel| %>
           <div class="hotel-small style-2 clearfix">
-            <a class="hotel-img black-hover" href="#">
+              <%= link_to hotel_path(hotel), class: "hotel-img black-hover" do %>
               <%= image_tag hotel.small.url, class:'img-responsive radius-3' %>
               <div class="tour-layer delay-1"></div>
-            </a>
+            <% end %>
             <div class="hotel-desc">
               <h5><span class="color-dark-2">desde <strong>$<%= number_with_delimiter(hotel.cost_per_night.to_i, :delimiter => ',') %></strong></span></h5>
               <h4><%= hotel.name %></h4>
@@ -190,20 +188,20 @@
       <div class="col-mob-12 col-xs-6 col-sm-6 col-md-3">
         <div class="hotel-item">
           <div class="radius-top">
+            <%= link_to hotel_path(hotel) do %>
             <%= image_tag hotel.index.url %>
+            <% end %>
             <div class="price price-s-1">$<%= number_with_delimiter(hotel.cost_per_night.to_i, :delimiter => ',') %></div>
           </div>
           <div class="title clearfix">
             <h4><b><%= hotel.name %></b></h4>
             <div class="rate-wrap">
               <div class="rate">
+                <% hotel.review_score.times do %>
                 <span class="fa fa-star color-yellow"></span>
-                <span class="fa fa-star color-yellow"></span>
-                <span class="fa fa-star color-yellow"></span>
-                <span class="fa fa-star color-yellow"></span>
-                <span class="fa fa-star color-yellow"></span>
+                <% end %>
               </div>
-              <i>485 rewies</i>
+              <i>Disponible</i>
             </div>
             <span class="f-14 color-dark-2"><%= hotel.location %></span>
             <p class="f-14"><%= hotel.description %></p>
