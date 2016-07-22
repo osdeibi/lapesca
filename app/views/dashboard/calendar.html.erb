@@ -12,16 +12,6 @@
         </h3>
       </div>
 
-      <div class="title_right">
-        <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
-          <div class="input-group">
-            <input type="text" class="form-control" placeholder="Search for...">
-            <span class="input-group-btn">
-              <button class="btn btn-default" type="button">Go!</button>
-            </span>
-          </div>
-        </div>
-      </div>
     </div>
     <div class="clearfix"></div>
 
@@ -29,18 +19,12 @@
       <div class="col-md-12">
         <div class="x_panel">
           <div class="x_title">
-            <h2>Calendar Events <small>Sessions</small></h2>
+            <h2>Dias libres <small>Editar</small></h2>
             <ul class="nav navbar-right panel_toolbox">
               <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
               </li>
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                <ul class="dropdown-menu" role="menu">
-                  <li><a href="#">Settings 1</a>
-                  </li>
-                  <li><a href="#">Settings 2</a>
-                  </li>
-                </ul>
               </li>
               <li><a class="close-link"><i class="fa fa-close"></i></a>
               </li>
@@ -67,29 +51,23 @@
 
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-        <h4 class="modal-title" id="myModalLabel">New Calendar Entry</h4>
+        <h4 class="modal-title" id="myModalLabel">Editar disponibilidad <small><%= @hotel.name %></small></h4>
       </div>
       <div class="modal-body">
         <div id="testmodal" style="padding: 5px 20px;">
           <form id="antoform" class="form-horizontal calender" role="form">
             <div class="form-group">
-              <label class="col-sm-3 control-label">Title</label>
+              <label class="col-sm-3 control-label">Llenar cupo de</label>
               <div class="col-sm-9">
-                <input type="text" class="form-control" id="title" name="title">
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="col-sm-3 control-label">Description</label>
-              <div class="col-sm-9">
-                <textarea class="form-control" style="height:55px;" id="descr" name="descr"></textarea>
+                <input type="text" class="form-control" id="title" name="title" value="<%= @hotel.name %>" readonly>
               </div>
             </div>
           </form>
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default antoclose" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary antosubmit">Save changes</button>
+        <button type="button" class="btn btn-default antoclose" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary antosubmit">Llenar</button>
       </div>
     </div>
   </div>
@@ -100,31 +78,24 @@
 
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-        <h4 class="modal-title" id="myModalLabel2">Edit Calendar Entry</h4>
+        <h4 class="modal-title" id="myModalLabel2">Editar Disponibilidad <small><%= @hotel.name %></small></h4>
       </div>
       <div class="modal-body">
 
         <div id="testmodal2" style="padding: 5px 20px;">
-          <form id="antoform2" class="form-horizontal calender" role="form">
+          <form action id="antoform2" class="form-horizontal calender" role="form">
             <div class="form-group">
-              <label class="col-sm-3 control-label">Title</label>
+              <label class="col-sm-3 control-label">Llenar cupo de</label>
               <div class="col-sm-9">
-                <input type="text" class="form-control" id="title2" name="title2">
+                <input type="text" class="form-control" id="title" name="title" value="<%= @hotel.name %>" readonly>
               </div>
             </div>
-            <div class="form-group">
-              <label class="col-sm-3 control-label">Description</label>
-              <div class="col-sm-9">
-                <textarea class="form-control" style="height:55px;" id="descr2" name="descr"></textarea>
-              </div>
-            </div>
-
           </form>
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default antoclose2" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary antosubmit2">Save changes</button>
+        <button type="button" class="btn btn-default antoclose2" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary antosubmit">Llenar</button>
       </div>
     </div>
   </div>
@@ -150,7 +121,7 @@
       header: {
         left: 'prev,next today',
         center: 'title',
-        right: 'month,agendaWeek,agendaDay'
+        right: 'month'
       },
       selectable: true,
       selectHelper: true,
@@ -166,16 +137,10 @@
             ended = end
           }
           categoryClass = $("#event_type").val();
-
           if (title) {
-            calendar.fullCalendar('renderEvent', {
-                title: title,
-                start: started,
-                end: end,
-                allDay: allDay
-              },
-              true // make the event "stick"
-            );
+            //$('#insert_form').html('<form action="http://localhost:3000/dashboard/calendar/<%= @hotel.id %>"' + ' name="fill_calendar_date" method="post" style="display:none;"><input type="hidden" name="started" value="" /></form>');
+            //document.forms['fill_calendar_date'].submit();
+            window.location.href = "http://localhost:3000/dashboard/fill_calendar/" + <%= @hotel.id %> + "?started=" + started.toString();
           }
           $('#title').val('');
           calendar.fullCalendar('unselect');
@@ -201,33 +166,7 @@
         calendar.fullCalendar('unselect');
       },
       editable: true,
-      events: [{
-        title: 'All Day Event',
-        start: new Date(y, m, 1)
-      }, {
-        title: 'Long Event',
-        start: new Date(y, m, d - 5),
-        end: new Date(y, m, d - 2)
-      }, {
-        title: 'Meeting',
-        start: new Date(y, m, d, 10, 30),
-        allDay: false
-      }, {
-        title: 'Lunch',
-        start: new Date(y, m, d + 14, 12, 0),
-        end: new Date(y, m, d, 14, 0),
-        allDay: false
-      }, {
-        title: 'Birthday Party',
-        start: new Date(y, m, d + 1, 19, 0),
-        end: new Date(y, m, d + 1, 22, 30),
-        allDay: false
-      }, {
-        title: 'Click for Google',
-        start: new Date(y, m, 28),
-        end: new Date(y, m, 29),
-        url: 'http://google.com/'
-      }]
+      events: <%= raw @dates.to_json %>
     });
   });
 </script>

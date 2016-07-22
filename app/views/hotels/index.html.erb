@@ -146,11 +146,9 @@
                     <% end %></b></h4>
                     <div class="rate-wrap">
                       <div class="rate">
+                        <% hotel.review_score.times do %>
                         <span class="fa fa-star color-yellow"></span>
-                        <span class="fa fa-star color-yellow"></span>
-                        <span class="fa fa-star color-yellow"></span>
-                        <span class="fa fa-star color-yellow"></span>
-                        <span class="fa fa-star color-yellow"></span>
+                        <% end %>
                       </div>
                       <i style="background: green; color: white">Disponible</i>
                     </div>

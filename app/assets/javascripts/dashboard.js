@@ -5,3 +5,4 @@
 //= require moment.min
 //= require chart.min
 //= require skycons.min
+//= require turbolinks
