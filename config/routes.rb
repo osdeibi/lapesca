@@ -25,6 +25,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :reservations
+
   get '/puerto_la_pesca', to: 'pages#puerto_la_pesca', as: 'puerto_la_pesca'
   get '/privacidad', to: 'pages#privacy', as: 'privacy'
   get '/acerca', to: 'pages#about', as: 'about'

@@ -12,7 +12,9 @@ class HotelsController < ApplicationController
   end
 
   def reservar
+    get_recommended_similar
     @hotel = Hotel.find(params[:id])
+    @reservation = Reservation.new(hotel_id: @hotel.id)
   end
 
   def la_pescalinda

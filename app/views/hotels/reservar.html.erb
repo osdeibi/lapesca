@@ -21,10 +21,26 @@
 	<div class="container">
        	<div class="row padd-90">
        		<div class="col-xs-12 col-md-8">
-				<form class="simple-from">
+            <%= form_for @reservation, class:"simple-form" do %>
 					<div class="simple-group">
 						<h3 class="small-title">Informacion personal</h3>
 						<div class="row">
+              <div class="col-xs-12 col-sm-6">
+                <div class="form-block type-2 clearfix">
+                  <div class="form-label color-dark-2">Fecha de entrada (Check-in)</div>
+                  <div class="input-style-1 b-50 brd-0 type-2 color-3">
+                    <input type="date">
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-6">
+                <div class="form-block type-2 clearfix">
+                  <div class="form-label color-dark-2">Fecha de salida (Check-out)</div>
+                  <div class="input-style-1 b-50 brd-0 type-2 color-3">
+                    <input type="date">
+                  </div>
+                </div>
+              </div>
 							<div class="col-xs-12 col-sm-6">
 								<div class="form-block type-2 clearfix">
 									<div class="form-label color-dark-2">Nombre</div>
@@ -97,158 +113,29 @@
 						</div>
 					</div>
 
-					<div class="simple-group">
-						<h3 class="small-title">Información de tarjeta</h3>
-						<div class="row">
-							<div class="col-xs-12 col-sm-6">
-								<div class="form-block type-2 clearfix">
-									<div class="form-label color-dark-2">Tarjeta de crédito</div>
-									<div class="drop-wrap drop-wrap-s-4 color-5">
-									  <div class="drop">
-										 <b>Seleccione una tarjeta</b>
-											<a href="#" class="drop-list"><i class="fa fa-angle-down"></i></a>
-											<span>
-											    <a href="#">USD 1254 6524 2541 6212</a>
-												<a href="#">EUR 6524 1254 6212 2541</a>
-											    <a href="#">USD 1254 6524 2541 6212</a>
-												<a href="#">EUR 6524 1254 6212 2541</a>
-											</span>
-									   </div>
-									</div>
-								</div>
-							</div>
-							<div class="col-xs-12 col-sm-6">
-								<div class="form-block type-2 clearfix">
-									<div class="form-label color-dark-2">Nombre del tarjetahbiente</div>
-									<div class="input-style-1 b-50 brd-0 type-2 color-3">
-										<input type="text" placeholder="Enter your card holder name">
-									</div>
-								</div>
-							</div>
-							<div class="col-xs-12 col-sm-6">
-								<div class="form-block type-2 clearfix">
-									<div class="form-label color-dark-2">Numero de tarjeta</div>
-									<div class="input-style-1 b-50 brd-0 type-2 color-3">
-										<input type="text" placeholder="Enter your card number">
-									</div>
-								</div>
-							</div>
-							<div class="col-xs-12 col-sm-6">
-								<div class="form-block type-2 clearfix">
-									<div class="form-label color-dark-2">Codigo de identificación</div>
-									<div class="input-style-1 b-50 brd-0 type-2 color-3">
-										<input type="text" placeholder="Enter your e-mail adress for verify">
-									</div>
-								</div>
-							</div>
-							<div class="col-xs-12 col-sm-6">
-								<div class="form-block type-2 clearfix">
-									<div class="form-label color-dark-2">Tipo de tarjeta</div>
-									<div class="row">
-										<div class="col-xs-12 col-sm-6">
-											<div class="drop-wrap drop-wrap-s-4 color-5">
-											  <div class="drop">
-												 <b>Month</b>
-													<a href="#" class="drop-list"><i class="fa fa-angle-down"></i></a>
-													<span>
-													    <a href="#">January</a>
-														<a href="#">February</a>
-													    <a href="#">March</a>
-														<a href="#">April</a>
-														<a href="#">May</a>
-														<a href="#">June</a>
-														<a href="#">Jul</a>
-														<a href="#">July</a>
-														<a href="#">August</a>
-														<a href="#">September</a>
-														<a href="#">October</a>
-														<a href="#">November</a>
-														<a href="#">December</a>
-													</span>
-											   </div>
-											</div>
-										</div>
-										<div class="col-xs-12 col-sm-6">
-											<div class="drop-wrap drop-wrap-s-4 color-5">
-											  <div class="drop">
-												 <b>Year</b>
-													<a href="#" class="drop-list"><i class="fa fa-angle-down"></i></a>
-													<span>
-													    <a href="#">2015</a>
-														<a href="#">2016</a>
-													    <a href="#">2017</a>
-														<a href="#">2018</a>
-														<a href="#">2019</a>
-														<a href="#">2020</a>
-													</span>
-											   </div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-xs-12 col-sm-6">
-								<div class="form-block type-2 clearfix">
-									<div class="form-label color-dark-2">Billing Zip Code</div>
-									<div class="input-style-1 b-50 brd-0 type-2 color-3">
-										<input type="text" placeholder="Enter billing zip code">
-									</div>
-								</div>
-							</div>
-						</div>
-							<div class="confirm-terms">
-								<div class="input-entry color-3">
-									<input class="checkbox-form" id="text-2" type="checkbox" name="checkbox" value="climat control">
-									<label class="clearfix" for="text-2">
-										<span class="sp-check"><i class="fa fa-check"></i></span>
-										<span class="checkbox-text">Al continuar usted accede a los<a class="color-dr-blue-2 link-dark-2" href="#"> Términos y Condiciones</a>.</span>
-									</label>
-								</div>
-							</div>
-					</div>
-					<input type="submit" class="c-button bg-dr-blue-2 hv-dr-blue-2-o" value="Confirmar reservación">
-				</form>
+          <input type="submit" class="c-button bg-dr-blue-2 hv-dr-blue-2-o" value="Confirmar reservación">
+				<% end %>
        		</div>
        		<div class="col-xs-12 col-md-4">
        			<div class="right-sidebar">
 
-					<div class="popular-tours bg-grey-2">
-						<h4 class="color-dark-2">popular tours</h4>
-						<div class="hotel-small style-2 clearfix">
-							<a class="hotel-img black-hover" href="#">
-								<img class="img-responsive radius-0" src="img/home_9/cruise_1.jpg" alt="">
-								<div class="tour-layer delay-1"></div>
-							</a>
-							<div class="hotel-desc">
-		    					<h5><span class="color-dark-2"><strong>$273</strong>/ person</span></h5>
-		    					<h4>HAWAIAN CRUISES</h4>
-								<div class="hotel-loc tt"><strong>19.07 - 26.07 / 7</strong> nights</div>
-							</div>
-						</div>
-						<div class="hotel-small style-2 clearfix">
-							<a class="hotel-img black-hover" href="#">
-								<img class="img-responsive radius-0" src="img/home_9/cruise_2.jpg" alt="">
-								<div class="tour-layer delay-1"></div>
-							</a>
-							<div class="hotel-desc">
-		    					<h5><span class="color-dark-2"><strong>$273</strong>/ person</span></h5>
-		    					<h4>TAHITI CRUISES</h4>
-								<div class="hotel-loc tt"><strong>19.07 - 26.07 / 7</strong> nights</div>
-							</div>
-						</div>
-						<div class="hotel-small style-2 clearfix">
-							<a class="hotel-img black-hover" href="#">
-								<img class="img-responsive radius-0" src="/img/home_9/cruise_3.jpg" alt="">
-								<div class="tour-layer delay-1"></div>
-							</a>
-							<div class="hotel-desc">
-		    					<h5><span class="color-dark-2"><strong>$273</strong>/ person</span></h5>
-		    					<h4>ASIA CRUISES</h4>
-								<div class="hotel-loc tt"><strong>19.07 - 26.07 / 7</strong> nights</div>
-							</div>
-						</div>
-					</div>
+              <div class="popular-tours bg-grey-2">
+                <h4 class="color-dark-2">hoteles similares</h4>
 
+                <% @similar.each do |hotel| %>
+                <div class="hotel-small style-2 clearfix">
+                    <%= link_to hotel_path(hotel), class: "hotel-img black-hover" do %>
+                    <%= image_tag hotel.small.url, class:'img-responsive radius-3' %>
+                    <div class="tour-layer delay-1"></div>
+                  <% end %>
+                  <div class="hotel-desc">
+                    <h5><span class="color-dark-2">desde <strong>$<%= number_with_delimiter(hotel.cost_per_night.to_i, :delimiter => ',') %></strong></span></h5>
+                    <h4><%= hotel.name %></h4>
+                    <div class="hotel-loc">Ubicación: <%= hotel.location %></div>
+                  </div>
+                </div>
+                <% end %>
+              </div>
           <div class="sidebar-text-label bg-dr-blue color-white">información útil</div>
 
           <div class="help-contact bg-grey-2">
