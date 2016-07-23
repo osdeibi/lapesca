@@ -5,7 +5,7 @@ class HotelsController < ApplicationController
     parse_amounts if params[:amount_end]
     @q = Hotel.all
     @q = Hotel.where('cost_per_night BETWEEN ? AND ?', @amount_start, @amount_end) if @amount_end
-    find_dates if params[:check_in] && params[:check_out]
+    find_dates if params[:check_in] != "" && params[:check_out] != ""
     @q = @q.ransack(params[:q])
     @hotels = @q.result(distinct: true).order(:id).page params[:page]
     paginate
