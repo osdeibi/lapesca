@@ -62,27 +62,30 @@
 								</li>
 								<li class="type-1"><a href="#">Actividades<span class="fa fa-angle-down"></span></a>
 									<ul class="dropmenu">
-										<li><a href="/tortuga_lora">Tortuga Lora</a></li>
+										<li><a href="/tortuga_lora-lapescatamaulipas">Tortuga Lora</a></li>
 										<li><a href="/paseo_en_lancha">Paseo en lancha</a></li>
 										<li><a href="/renta_de_kayaks">Renta de kayaks</a></li>
-										<li><a href="/pesca_en_lancha">Pesca en Lancha</a></li>
+										<li><a href="/pesca_en_lancha-lapescatamaulipas">Pesca en Lancha</a></li>
 										<li><a href="#">El Sabinito</a></li>
 									</ul>
 								</li>
-								<li class="type-1"><a href="/hotels">Hoteles<span class="fa fa-angle-down"></span></a>
+								<li class="type-1">
+									<%= link_to hotels_path do %>
+										Hoteles<span class="fa fa-angle-down"></span>
+									<% end %>
 									<ul class="dropmenu">
-										<li><a href="/hotels">Ver todos</a></li>
-										<li><a href="/hoteles/la_pescalinda">La Pescalinda</a></li>
-										<li><a href="/hoteles/tropicana">Bungalows tropicana</a></li>
-										<li><a href="/hoteles/palma_real">Palma Real Inn</a></li>
-										<li><a href="/hoteles/riviera_del_rio">Riviera del Rio</a></li>
-										<li><a href="/hoteles/nuevo_amanecer">Nuevo Amanecer</a></li>
-										<li><a href="/hoteles/marina_del_rio">Marina del Rio</a></li>
-										<li><a href="/hoteles/maria_esperanza">Maria Esperanza</a></li>
-										<li><a href="/hoteles/la_escollera">La Escollera</a></li>
-										<li><a href="/hoteles/villa_del_mar">Villa del mar</a></li>
-										<li><a href="/hoteles/hotel_blanquita">Hotel Blanquita</a></li>
-										<li><a href="/hoteles/punta_piedra">Punta Piedra</a></li>
+										<li><%= link_to 'Ver todos', hotels_path %></li>
+										<li><%= link_to 'La Pescalinda', hotel_path(Hotel.find_by(code: 'pescalinda')) %></li>
+										<li><%= link_to 'Bungalows Tropicana', hotel_path(Hotel.find_by(code: 'tropicana')) %></li>
+										<li><%= link_to 'Palma Real', hotel_path(Hotel.find_by(code: 'palma')) %></li>
+										<li><%= link_to 'Riviera del rio', hotel_path(Hotel.find_by(code: 'riviera')) %></li>
+										<li><%= link_to 'Nuevo Amanecer', hotel_path(Hotel.find_by(code: 'nuevoamanecer')) %></li>
+										<li><%= link_to 'Marina del rio', hotel_path(Hotel.find_by(code: 'marina')) %></li>
+										<li><%= link_to 'Maria Esperanza', hotel_path(Hotel.find_by(code: 'maria')) %></li>
+										<li><%= link_to 'La Escollera', hotel_path(Hotel.find_by(code: 'escollera')) %></li>
+										<li><%= link_to 'Villa del mar', hotel_path(Hotel.find_by(code: 'villa')) %></li>
+										<li><%= link_to 'Hotel Blanquita', hotel_path(Hotel.find_by(code: 'blanquita')) %></li>
+										<li><%= link_to 'Punta piedra', hotel_path(Hotel.find_by(code: 'puntapiedra')) %></li>
 									</ul>
 								</li>
 								<li class="type-1"><a href="/quienes_somos">Quienes somos<span class="fa fa-angle-down"></span></a>

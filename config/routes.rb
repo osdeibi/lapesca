@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   get '/hoteles/punta_piedra', to: 'hotels#punta_piedra', as: 'punta_piedra'
   get '/hoteles/maria_esperanza', to: 'hotels#maria_esperanza', as: 'maria_esperanza'
 
-  resources :hotels do
+  resources :hotels, :path => "hoteles-lapesca-tamaulipas" do
     member do
       get 'reservar'
     end
@@ -32,10 +32,10 @@ Rails.application.routes.draw do
   get '/terminos', to: 'pages#terms', as: 'terms'
   get '/quienes_somos', to: 'pages#about_us', as: 'about_us'
   get '/como_llegar', to: 'pages#map', as: 'map'
-  get '/pesca_en_lancha', to: 'pages#pesca_en_lancha', as: 'pesca_en_lancha'
+  get '/pesca_en_lancha-lapescatamaulipas', to: 'pages#pesca_en_lancha', as: 'pesca_en_lancha'
   get '/paseo_en_lancha', to: 'pages#paseo_en_lancha', as: 'paseo_en_lancha'
   get '/renta_de_kayaks', to: 'pages#renta_de_kayaks', as: 'renta_de_kayaks'
-  get '/tortuga_lora', to: 'pages#tortuga_lora', as: 'tortuga_lora'
+  get '/tortuga_lora-lapescatamaulipas', to: 'pages#tortuga_lora', as: 'tortuga_lora'
 
   get '/dashboard', to: 'dashboard#index', as: 'dashboard_index'
   get '/dashboard/calendar/:id', to: 'dashboard#calendar', as: 'calendar'
