@@ -5,7 +5,7 @@ class HotelsController < ApplicationController
     parse_amounts if params[:amount_end]
     @q = Hotel.all
     @q = Hotel.where('cost_per_night BETWEEN ? AND ?', @amount_start, @amount_end) if @amount_end
-    find_dates if params[:check_in] != "" && params[:check_out] != ""
+    find_dates if params[:check_in] && params[:check_out]
     @q = @q.ransack(params[:q])
     @hotels = @q.result(distinct: true).order(:id).page params[:page]
     paginate
@@ -100,6 +100,7 @@ class HotelsController < ApplicationController
   end
 
   def find_dates
+    if params[:check_in] != "" && params[:check_out] != ""
     @check_in = Date.strptime(params[:check_in], '%m/%d/%Y')
     @check_out = Date.strptime(params[:check_out], '%m/%d/%Y')
     @cds = CalendarDate.where(actual_date: @check_in..@check_out)
@@ -118,5 +119,6 @@ class HotelsController < ApplicationController
       @novacancy.push(Hotel.find_by(code: 'puntapiedra').id) if cd.puntapiedra == true
     end
     @q = @q.where(id: Hotel.all.pluck(:id) - @novacancy)
+  end
   end
 end
