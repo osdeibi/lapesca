@@ -84,8 +84,8 @@ class HotelsController < ApplicationController
 
   private
   def get_recommended_similar
-    @recommended = Hotel.where(id:1..4)
-    @similar = Hotel.where(id:4..6)
+    @recommended = Hotel.limit(4).order("RANDOM()")
+    @similar = Hotel.limit(3).order("RANDOM()")
   end
 
   def paginate

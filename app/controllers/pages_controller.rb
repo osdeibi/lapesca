@@ -27,4 +27,14 @@ class PagesController < ApplicationController
 
   def puerto_la_pesca
   end
+
+  def tortuga_lora
+    get_recommended_similar
+  end
+
+  private
+  def get_recommended_similar
+    @recommended = Hotel.limit(4).order("RANDOM()")
+    @similar = Hotel.limit(3).order("RANDOM()")
+  end
 end
