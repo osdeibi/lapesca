@@ -21,7 +21,7 @@
 	<div class="container">
        	<div class="row padd-90">
        		<div class="col-xs-12 col-md-8">
-            <%= form_for @reservation, class:"simple-form" do %>
+            <%= form_for @reservation, class:"simple-form" do |f| %>
 					<div class="simple-group">
 						<h3 class="small-title">Informacion personal</h3>
 						<div class="row">
@@ -29,7 +29,7 @@
                 <div class="form-block type-2 clearfix">
                   <div class="form-label color-dark-2">Fecha de entrada (Check-in)</div>
                   <div class="input-style-1 b-50 brd-0 type-2 color-3">
-                    <input type="date">
+                    <%= f.date_field :check_in %>
                   </div>
                 </div>
               </div>
@@ -37,7 +37,7 @@
                 <div class="form-block type-2 clearfix">
                   <div class="form-label color-dark-2">Fecha de salida (Check-out)</div>
                   <div class="input-style-1 b-50 brd-0 type-2 color-3">
-                    <input type="date">
+                    <%= f.date_field :check_out %>
                   </div>
                 </div>
               </div>
@@ -45,7 +45,7 @@
 								<div class="form-block type-2 clearfix">
 									<div class="form-label color-dark-2">Nombre</div>
 									<div class="input-style-1 b-50 brd-0 type-2 color-3">
-										<input type="text" placeholder="Juan">
+                    <%= f.text_field :name, placeholder: "Hugo" %>
 									</div>
 								</div>
 							</div>
@@ -53,7 +53,7 @@
 								<div class="form-block type-2 clearfix">
 									<div class="form-label color-dark-2">Apellidos</div>
 									<div class="input-style-1 b-50 brd-0 type-2 color-3">
-										<input type="text" placeholder="Perez Lopez">
+                    <%= f.text_field :last_name, placeholder: "De La Garza" %>
 									</div>
 								</div>
 							</div>
@@ -61,7 +61,7 @@
 								<div class="form-block type-2 clearfix">
 									<div class="form-label color-dark-2">Correo electrónico</div>
 									<div class="input-style-1 b-50 brd-0 type-2 color-3">
-										<input type="text" placeholder="Direccion e-mail de contacto">
+                    <%= f.email_field :email, placeholder: "Dirección e-mail de contacto" %>
 									</div>
 								</div>
 							</div>
@@ -78,15 +78,8 @@
 									<div class="form-label color-dark-2">Hotel</div>
 									<div class="drop-wrap drop-wrap-s-4 color-5">
 									  <div class="drop">
-										 <b>Tropicana</b>
-											<a href="#" class="drop-list"><i class="fa fa-angle-down"></i></a>
-											<span>
-											    <a href="#">Tropicana</a>
-												<a href="#">Pescalinda</a>
-												<a href="#">Marina del rio</a>
-												<a href="#">Hotel blanquita</a>
-												<a href="#">Punta piedra</a>
-											</span>
+										 <b><%= @hotel.name %></b>
+                     <%= f.hidden_field :hotel_id, value: @hotel.id %>
 									   </div>
 									</div>
 								</div>
@@ -95,7 +88,7 @@
 								<div class="form-block type-2 clearfix">
 									<div class="form-label color-dark-2">Telefono</div>
 									<div class="input-style-1 b-50 brd-0 type-2 color-3">
-										<input type="text" placeholder="Numero de contacto">
+									<%= f.text_field :phone, placeholder: "Número de contacto" %>
 									</div>
 								</div>
 							</div>
