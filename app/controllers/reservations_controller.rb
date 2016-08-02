@@ -2,12 +2,11 @@ class ReservationsController < ApplicationController
 
   def create
     @reservation = Reservation.new(reservation_params)
-    p @reservation
-    p @reservation.is_available?
     if @reservation.is_available? && @reservation.save
-    render plain: "ok"
+    redirect_to thank_you_path(token: @reservation.token)
   else
-    render json: {errors: @reservation.errors}, status: :unprocessable_entity
+    flash[:notice] = "Las fechas seleccionadas no están disponibles"
+    redirect_to reservar_hotel_path(@reservation.hotel)
   end
   end
 

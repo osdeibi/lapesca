@@ -17,3 +17,4 @@
 //= require jquery.viewportchecker.min
 //= require landing
 //= require map
+//= require jquery.notific8.min

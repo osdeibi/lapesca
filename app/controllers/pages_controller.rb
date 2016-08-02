@@ -32,6 +32,11 @@ class PagesController < ApplicationController
     get_recommended_similar
   end
 
+  def thank_you
+    get_recommended_similar
+    @reservation = Reservation.find_by(token: params[:token])
+  end
+
   private
   def get_recommended_similar
     @recommended = Hotel.limit(4).order("RANDOM()")

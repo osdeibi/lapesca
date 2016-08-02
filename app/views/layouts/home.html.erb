@@ -205,4 +205,10 @@
 	</footer>
 	<%= javascript_include_tag 'home' %>
 </body>
+
+<% if flash[:notice].present? %>
+<script>
+$.notific8('<%= flash[:notice] %>', { theme: 'ruby' });
+</script>
+<% end %>
 </html>

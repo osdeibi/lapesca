@@ -1,0 +1,129 @@
+<!-- INNER-BANNER -->
+<div class="inner-banner style-6">
+  <%= image_tag "lapescatamaulipas.jpg", class: "center-image", alt: "" %>
+  <div class="vertical-align">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-md-8 col-md-offset-2">
+          <ul class="banner-breadcrumb color-white clearfix">
+            <li><span>Tu reservación</span></li>
+          </ul>
+          <h2 class="color-white">¡Gracias!</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- DETAIL WRAPPER -->
+<div class="detail-wrapper">
+  <div class="container">
+    <div class="row padd-90">
+      <div class="col-xs-12 col-md-8">
+        <div class="detail-content-block">
+          <h3 class="small-title">Detalle de reservación</h3>
+          <div class="confirm-label bg-dr-blue-2 radius-5">
+            <img class="confirm-img" src="img/thx_icon.png" alt="">
+            <div class="confirm-title color-white">Thank You. Your Booking Order is Confirmed Now.</div>
+            <div class="confirm-text color-white-light">A confirmation email has been sent to your provided email address.</div>
+            <a href="#" class="confirm-print c-button b-40 bg-white hv-white-o">print details</a>
+          </div>
+        </div>
+        <div class="detail-content-block">
+          <h3 class="small-title">Información de registro</h3>
+          <div class="table-responsive">
+            <table class="table style-1 type-2 striped">
+              <tbody>
+                <tr>
+                  <td class="table-label color-grey">REFERENCIA DE RESERVACION</td>
+                  <td class="table-label color-dark-2"><strong><%= @reservation.get_reference %></strong></td>
+                </tr>
+                <tr>
+                  <td class="table-label color-grey">NOMBRE:</td>
+                  <td class="table-label color-dark-2"><strong><%= @reservation.name %></strong></td>
+                </tr>
+                <tr>
+                  <td class="table-label color-grey">APELLIDOS:</td>
+                  <td class="table-label color-dark-2"><strong><%= @reservation.last_name %></strong></td>
+                </tr>
+                <tr>
+                  <td class="table-label color-grey">HOTEL:</td>
+                  <td class="table-label color-dark-2"><strong><%= @reservation.hotel.name %></strong></td>
+                </tr>
+                <tr>
+                  <td class="table-label color-grey">FECHA DE LLEGADA:</td>
+                  <td class="table-label color-dark-2"><strong><%= @reservation.check_in.to_s %></strong></td>
+                </tr>
+                <tr>
+                  <td class="table-label color-grey">FECHA DE SALIDA:</td>
+                  <td class="table-label color-dark-2"><strong><%= @reservation.check_out.to_s %></strong></td>
+                </tr>
+                <tr>
+                  <td class="table-label color-grey">E-MAIL:</td>
+                  <td class="table-label color-dark-2"><strong><%= @reservation.email %></strong></td>
+                </tr>
+                <tr>
+                  <td class="table-label color-grey">TELEFONO DE CONTACTO:</td>
+                  <td class="table-label color-dark-2"><strong><%= @reservation.phone %></strong></td>
+                </tr>
+                <tr>
+                  <td class="table-label color-grey">ESTADO DE LA RESERVACIÓN:</td>
+                  <td class="table-label color-dark-2"><strong>Pendiente</strong></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="detail-content-block">
+          <div class="simple-text">
+            <h3>Payment</h3>
+            <p class="color-grey">Pellentesque ac turpis egestas, varius justo et, condimentum augue. Praesent aliquam, nisl feugiat vehicula condimentum, justo tellus scelerisque metus. Pellentesque ac turpis egestas, varius justo et, condimentum augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <div class="custom-panel bg-grey-2 radius-4">
+              <a class="color-dr-blue-2 link-dark-2" href="#">Payment is made by Credit Card Via Paypal.</a>
+            </div>
+          </div>
+        </div>
+        <div class="detail-content-block">
+          <div class="simple-text">
+            <h3>View Booking Details</h3>
+            <p class="color-grey">Pellentesque ac turpis egestas, varius justo et, condimentum augue. Praesent aliquam, nisl feugiat vehicula condimentum, justo tellus scelerisque metus. Pellentesque ac turpis egestas, varius justo et, condimentum augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <div class="custom-panel bg-grey-2 radius-4">
+              <a class="color-dr-blue-2 link-dark-2" href="#">https://www.letstravel.com/booking-details/?=f4acb19f-9542-4a5c-b8ee</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-4">
+        <div class="right-sidebar">
+
+          <div class="popular-tours bg-grey-2">
+            <h4 class="color-dark-2">hoteles similares</h4>
+
+            <% @similar.each do |hotel| %>
+            <div class="hotel-small style-2 clearfix">
+              <%= link_to hotel_path(hotel), class: "hotel-img black-hover" do %>
+              <%= image_tag hotel.small.url, class:'img-responsive radius-3' %>
+              <div class="tour-layer delay-1"></div>
+              <% end %>
+              <div class="hotel-desc">
+                <h5><span class="color-dark-2">desde <strong>$<%= number_with_delimiter(hotel.cost_per_night.to_i, :delimiter => ',') %></strong></span></h5>
+                <h4><%= hotel.name %></h4>
+                <div class="hotel-loc">Ubicación: <%= hotel.location %></div>
+              </div>
+            </div>
+            <% end %>
+          </div>
+
+          <div class="sidebar-text-label bg-dr-blue color-white">información útil</div>
+
+          <div class="help-contact bg-grey-2">
+            <h4 class="color-dark-2">¿Necesitas ayuda?</h4>
+            <p class="color-grey">Si tienes alguna duda respecto a tu reservación, contamos con un horario de atención al cliente de 9:00 AM a 5:00 PM de Lunes a Sábado.</p>
+            <a class="help-phone color-dark-2 link-dr-blue" href="tel:0200059600"><img src="/img/detail/phone24-dark.png" alt="">01 (835) 327-12-12</a>
+            <a style="font-size: 12px" class="help-mail color-dark-2 link-dr-blue" href="mailto:contacto@lapescatamaulipas.com"><img src="/img/detail/letter-dark.png" alt="">contacto@lapescatamaulipas.com</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
