@@ -40,7 +40,7 @@ Rails.application.routes.draw do
   get '/tortuga_lora-lapescatamaulipas', to: 'pages#tortuga_lora', as: 'tortuga_lora'
   get '/tu_reservacion', to: 'pages#thank_you', as: 'thank_you'
 
-  get '/dashboard', to: 'dashboard#index', as: 'dashboard_index'
+  get '/dashboard', to: 'dashboard#reservations', as: 'dashboard_index'
   get '/dashboard/calendar/:id', to: 'dashboard#calendar', as: 'calendar'
   get '/dashboard/clear_calendar/:id/:calendar_date_id', to: 'dashboard#clear_calendar_date', as: 'clear_calendar_date'
   get '/dashboard/fill_calendar/:id', to: 'dashboard#fill_calendar_date', as: 'fill_calendar_date'
