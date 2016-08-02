@@ -140,7 +140,7 @@
           if (title) {
             //$('#insert_form').html('<form action="http://localhost:3000/dashboard/calendar/<%= @hotel.id %>"' + ' name="fill_calendar_date" method="post" style="display:none;"><input type="hidden" name="started" value="" /></form>');
             //document.forms['fill_calendar_date'].submit();
-            window.location.href = "http://lapesca.herokuapp.com/dashboard/fill_calendar/" + <%= @hotel.id %> + "?started=" + started.toString();
+            window.location.href = "/dashboard/fill_calendar/" + <%= @hotel.id %> + "?started=" + started.toString();
           }
           $('#title').val('');
           calendar.fullCalendar('unselect');

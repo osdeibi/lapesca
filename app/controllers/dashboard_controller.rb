@@ -3,6 +3,10 @@ class DashboardController < ApplicationController
   def index
   end
 
+  def reservations
+    @reservations = Reservation.all
+  end
+
   def calendar
     @hotel = Hotel.find(params[:id])
     @calendar_dates = CalendarDate.where(@hotel.code => true) # true marks full capacity

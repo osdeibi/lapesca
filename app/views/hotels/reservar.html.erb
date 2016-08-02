@@ -78,7 +78,7 @@
 									<div class="form-label color-dark-2">Hotel</div>
 									<div class="drop-wrap drop-wrap-s-4 color-5">
 									  <div class="drop">
-										 <b><%= @hotel.name %></b>
+										 <b><%= @hotel.name + ' ($' + @hotel.cost_per_night.to_i.to_s + ' / Noche)' %></b>
                      <%= f.hidden_field :hotel_id, value: @hotel.id %>
 									   </div>
 									</div>

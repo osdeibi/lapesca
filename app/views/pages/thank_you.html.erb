@@ -67,6 +67,10 @@
                   <td class="table-label color-dark-2"><strong><%= @reservation.phone %></strong></td>
                 </tr>
                 <tr>
+                  <td class="table-label color-grey">TOTAL:</td>
+                  <td class="table-label color-dark-2"><strong>$<%= @reservation.hotel.cost_per_night.to_i * (@reservation.check_out - @reservation.check_in).to_i %>.00 MXN</strong></td>
+                </tr>
+                <tr>
                   <td class="table-label color-grey">ESTADO DE LA RESERVACIÓN:</td>
                   <td class="table-label color-dark-2"><strong>Pendiente</strong></td>
                 </tr>

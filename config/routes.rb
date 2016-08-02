@@ -45,6 +45,8 @@ Rails.application.routes.draw do
   get '/dashboard/clear_calendar/:id/:calendar_date_id', to: 'dashboard#clear_calendar_date', as: 'clear_calendar_date'
   get '/dashboard/fill_calendar/:id', to: 'dashboard#fill_calendar_date', as: 'fill_calendar_date'
 
+  get '/dashboard/reservations', to: 'dashboard#reservations', as: 'dashboard_reservations'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
