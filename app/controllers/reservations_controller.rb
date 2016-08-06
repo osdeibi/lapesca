@@ -3,6 +3,7 @@ class ReservationsController < ApplicationController
   def create
     @reservation = Reservation.new(reservation_params)
     if @reservation.is_available? && @reservation.save
+      ReservationMailer.pre_reservation_email(@reservation).deliver_now
     redirect_to thank_you_path(token: @reservation.token)
   else
     flash[:notice] = "Las fechas seleccionadas no están disponibles"
