@@ -1,4 +1,4 @@
-if true # Rails.env.staging? || Rails.env.production?
+if Rails.env.staging? || Rails.env.production?
   ActionMailer::Base.smtp_settings = {
     :user_name => ENV['GMAIL_USERNAME'],
     :password => ENV['GMAIL_PASSWORD'],
