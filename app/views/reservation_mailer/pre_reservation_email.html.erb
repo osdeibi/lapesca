@@ -34,7 +34,7 @@
 						<p class="lead">Recibimos tu solicitud para reservar en el hotel <%= @reservation.hotel.name %> del día <%= @reservation.check_in %> al <%= @reservation.check_out %>.</p>
 
 						<!-- A Real Hero (and a real human being) -->
-						<p><%= image_tag '/img/' + @reservation.hotel.code + '-mail.jpg' %></p><!-- /hero -->
+						<p><%= image_tag 'http://lapesca.herokuapp.com/img/' + @reservation.hotel.code + '-mail.jpg' %></p><!-- /hero -->
 
 						<!-- Callout Panel -->
 						<p class="callout">
