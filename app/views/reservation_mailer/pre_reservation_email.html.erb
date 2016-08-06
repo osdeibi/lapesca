@@ -1,14 +1,14 @@
 <!-- HEADER -->
-<table class="head-wrap" bgcolor="#999999">
+<table class="head-wrap" bgcolor="#fff">
 	<tr>
 		<td></td>
 		<td class="header container">
 
 				<div class="content">
-					<table bgcolor="#999999">
+					<table bgcolor="#fff">
 					<tr>
-						<td><img src="http://placehold.it/200x50/" /></td>
-						<td align="right"><h6 class="collapse">Hero</h6></td>
+						<td><%= image_tag 'logo-lapesca.png' %></td>
+						<td align="right"><h6 class="collapse">Solicitud de reservación</h6></td>
 					</tr>
 				</table>
 				</div>
@@ -30,8 +30,8 @@
 				<tr>
 					<td>
 
-						<h3>Welcome, Elijah Baily</h3>
-						<p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+						<h3>Hola, <%= @reservation.name %></h3>
+						<p class="lead">Recibimos tu solicitud para reservar en el hotel <%= @reservation.hotel.name %> del día <%= @reservation.check_in %> al <%= @reservation.check_out %>.</p>
 
 						<!-- A Real Hero (and a real human being) -->
 						<p><img src="http://placehold.it/600x300" /></p><!-- /hero -->
@@ -43,7 +43,7 @@
 
 						<h3>Title Ipsum <small>This is a note.</small></h3>
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-						<a class="btn">Click Me!</a>
+						<a class="btn">Ver mi reservación!</a>
 
 						<br/>
 						<br/>
@@ -58,8 +58,8 @@
 										<tr>
 											<td>
 
-												<h5 class="">Connect with Us:</h5>
-												<p class=""><a href="#" class="soc-btn fb">Facebook</a> <a href="#" class="soc-btn tw">Twitter</a> <a href="#" class="soc-btn gp">Google+</a></p>
+												<h5 class="">Síguenos en Facebook:</h5>
+												<p class=""><a href="https://www.facebook.com/PuertoLaPesca" class="soc-btn fb">Facebook</a> <a href="#" class="soc-btn tw">Twitter</a> <a href="#" class="soc-btn gp">Google+</a></p>
 
 
 											</td>
@@ -71,9 +71,9 @@
 										<tr>
 											<td>
 
-												<h5 class="">Contact Info:</h5>
-												<p>Phone: <strong>408.341.0600</strong><br/>
-                Email: <strong><a href="emailto:hseldon@trantor.com">hseldon@trantor.com</a></strong></p>
+												<h5 class="">Información de Contacto:</h5>
+												<p>Teléfono: <strong>01 (835) 327-12-12</strong><br/>
+                Email: <strong><a href="emailto:contacto@lapescatamaulipas.com">contacto@lapescatamaulipas.com</a></strong></p>
 
 											</td>
 										</tr>

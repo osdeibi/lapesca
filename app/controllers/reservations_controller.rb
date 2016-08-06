@@ -10,6 +10,11 @@ class ReservationsController < ApplicationController
   end
   end
 
+  def index
+    @reservation = Reservation.last
+    render 'reservation_mailer/pre_reservation_email', layout: 'mailer'
+  end
+
   private
   def reservation_params
     params.require(:reservation).permit(:name, :last_name, :email, :phone, :check_in, :check_out, :hotel_id)
