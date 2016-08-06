@@ -18,3 +18,4 @@
 //= require landing
 //= require map
 //= require jquery.notific8.min
+//= require jquery.validate.min

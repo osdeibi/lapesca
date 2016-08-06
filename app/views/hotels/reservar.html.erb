@@ -21,7 +21,7 @@
 	<div class="container">
        	<div class="row padd-90">
        		<div class="col-xs-12 col-md-8">
-            <%= form_for @reservation, class:"simple-form" do |f| %>
+            <%= form_for @reservation, id: "reservation_form", class:"simple-form" do |f| %>
 					<div class="simple-group">
 						<h3 class="small-title">Informacion personal</h3>
 						<div class="row">
@@ -29,7 +29,7 @@
                 <div class="form-block type-2 clearfix">
                   <div class="form-label color-dark-2">Fecha de entrada (Check-in)</div>
                   <div class="input-style-1 b-50 brd-0 type-2 color-3">
-                    <%= f.date_field :check_in %>
+                    <%= f.date_field :check_in, required: true %>
                   </div>
                 </div>
               </div>
@@ -37,7 +37,7 @@
                 <div class="form-block type-2 clearfix">
                   <div class="form-label color-dark-2">Fecha de salida (Check-out)</div>
                   <div class="input-style-1 b-50 brd-0 type-2 color-3">
-                    <%= f.date_field :check_out %>
+                    <%= f.date_field :check_out, required: true %>
                   </div>
                 </div>
               </div>
@@ -45,7 +45,7 @@
 								<div class="form-block type-2 clearfix">
 									<div class="form-label color-dark-2">Nombre</div>
 									<div class="input-style-1 b-50 brd-0 type-2 color-3">
-                    <%= f.text_field :name, placeholder: "Hugo" %>
+                    <%= f.text_field :name, placeholder: "Hugo", required: true %>
 									</div>
 								</div>
 							</div>
@@ -53,7 +53,7 @@
 								<div class="form-block type-2 clearfix">
 									<div class="form-label color-dark-2">Apellidos</div>
 									<div class="input-style-1 b-50 brd-0 type-2 color-3">
-                    <%= f.text_field :last_name, placeholder: "De La Garza" %>
+                    <%= f.text_field :last_name, placeholder: "De La Garza", required: true %>
 									</div>
 								</div>
 							</div>
@@ -61,7 +61,7 @@
 								<div class="form-block type-2 clearfix">
 									<div class="form-label color-dark-2">Correo electrónico</div>
 									<div class="input-style-1 b-50 brd-0 type-2 color-3">
-                    <%= f.email_field :email, placeholder: "Dirección e-mail de contacto" %>
+                    <%= f.email_field :email, placeholder: "Dirección e-mail de contacto", required: true %>
 									</div>
 								</div>
 							</div>
@@ -69,7 +69,7 @@
 								<div class="form-block type-2 clearfix">
 									<div class="form-label color-dark-2">Verificar correo</div>
 									<div class="input-style-1 b-50 brd-0 type-2 color-3">
-										<input type="text" placeholder="Verificar direccion e-mail">
+										<input type="text" name="confirm_email" placeholder="Verificar direccion e-mail">
 									</div>
 								</div>
 							</div>
@@ -88,7 +88,7 @@
 								<div class="form-block type-2 clearfix">
 									<div class="form-label color-dark-2">Telefono</div>
 									<div class="input-style-1 b-50 brd-0 type-2 color-3">
-									<%= f.text_field :phone, placeholder: "Número de contacto" %>
+									<%= f.text_field :phone, placeholder: "Número de contacto", required: true %>
 									</div>
 								</div>
 							</div>
@@ -118,7 +118,7 @@
                 <% @similar.each do |hotel| %>
                 <div class="hotel-small style-2 clearfix">
                     <%= link_to hotel_path(hotel), class: "hotel-img black-hover" do %>
-                    <%= image_tag hotel.small.url, class:'img-responsive radius-3' %>
+                    <%= image_tag hotel.code + '-small.jpg', class:'img-responsive radius-3' %>
                     <div class="tour-layer delay-1"></div>
                   <% end %>
                   <div class="hotel-desc">

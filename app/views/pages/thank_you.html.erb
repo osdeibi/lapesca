@@ -106,7 +106,7 @@
             <% @similar.each do |hotel| %>
             <div class="hotel-small style-2 clearfix">
               <%= link_to hotel_path(hotel), class: "hotel-img black-hover" do %>
-              <%= image_tag hotel.small.url, class:'img-responsive radius-3' %>
+              <%= image_tag hotel.code + '-small.jpg', class:'img-responsive radius-3' %>
               <div class="tour-layer delay-1"></div>
               <% end %>
               <div class="hotel-desc">
