@@ -1,4 +1,5 @@
 class DashboardController < ApplicationController
+  http_basic_authenticate_with name: "hdlgarza", password: ENV['GMAIL_PASSWORD']
 
   def index
   end
