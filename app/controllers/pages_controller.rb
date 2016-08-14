@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
   layout "home"
+  before_action :get_recommended_similar, only: [:tortuga_lora, :el_sabinito, :thank_you, :paseo_en_lancha]
 
   def home
   end
@@ -29,15 +30,15 @@ class PagesController < ApplicationController
   end
 
   def tortuga_lora
-    get_recommended_similar
   end
 
   def el_sabinito
-    get_recommended_similar
+  end
+
+  def paseo_en_lancha
   end
 
   def thank_you
-    get_recommended_similar
     @reservation = Reservation.find_by(token: params[:token])
   end
 
