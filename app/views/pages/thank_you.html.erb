@@ -24,9 +24,9 @@
           <h3 class="small-title">Detalle de reservación</h3>
           <div class="confirm-label bg-dr-blue-2 radius-5">
             <img class="confirm-img" src="img/thx_icon.png" alt="">
-            <div class="confirm-title color-white">Thank You. Your Booking Order is Confirmed Now.</div>
-            <div class="confirm-text color-white-light">A confirmation email has been sent to your provided email address.</div>
-            <a href="#" class="confirm-print c-button b-40 bg-white hv-white-o">print details</a>
+            <div class="confirm-title color-white">¡Gracias! Esta es una pre-reservación.</div>
+            <div class="confirm-text color-white-light">Un representante del hotel se pondrá en contacto contigo en 30 minutos aproximadamente. De 8:00am a 10:00pm todos los días del año (Horario&nbsp; &nbsp; que manejan los hoteles).  Tu habitación quedará confirmada una vez que realices el anticipo acordado con el representante del hotel.</div>
+            <a href="#" class="confirm-print c-button b-40 bg-white hv-white-o">IMPRIMIR DETALLES</a>
           </div>
         </div>
         <div class="detail-content-block">
@@ -80,19 +80,19 @@
         </div>
         <div class="detail-content-block">
           <div class="simple-text">
-            <h3>Payment</h3>
-            <p class="color-grey">Pellentesque ac turpis egestas, varius justo et, condimentum augue. Praesent aliquam, nisl feugiat vehicula condimentum, justo tellus scelerisque metus. Pellentesque ac turpis egestas, varius justo et, condimentum augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <h3>METODO DE PAGO</h3>
+            <p class="color-grey">Los pagos son realizados a la cuenta bancaría que representa al hotel, la cantidad y monto a depositar serán las acordadas vía llamada telefónica con el representante del hotel o vía correo electrónico según sea su caso.</p>
             <div class="custom-panel bg-grey-2 radius-4">
-              <a class="color-dr-blue-2 link-dark-2" href="#">Payment is made by Credit Card Via Paypal.</a>
+              <a class="color-dr-blue-2 link-dark-2" href="#">Pago mediante deposito en ventanilla bancaría, transferencia interbancaria o deposito en Oxxo. </a>
             </div>
           </div>
         </div>
         <div class="detail-content-block">
           <div class="simple-text">
-            <h3>View Booking Details</h3>
-            <p class="color-grey">Pellentesque ac turpis egestas, varius justo et, condimentum augue. Praesent aliquam, nisl feugiat vehicula condimentum, justo tellus scelerisque metus. Pellentesque ac turpis egestas, varius justo et, condimentum augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <h3>INFORMACIÓN DE TU RESERVACIÓN</h3>
+            <p class="color-grey">Tu reservación ya fue enviada y será procesada en seguida, llegara una pre-confirmación a tu correo electrónico y una vez que realices tu pago acordado con el representante del hotel y sea recibido el comprobante de pago se te enviara otro correo con la confirmación de tu hospedaje así como la información de tu reservación.</p>
             <div class="custom-panel bg-grey-2 radius-4">
-              <a class="color-dr-blue-2 link-dark-2" href="#">https://www.letstravel.com/booking-details/?=f4acb19f-9542-4a5c-b8ee</a>
+              <a class="color-dr-blue-2 link-dark-2" href="/tu_reservacion?token=<%= @reservation.token %>">https://lapesca.herokuapp.com/tu_reservacion?token=<%= @reservation.token %></a>
             </div>
           </div>
         </div>
