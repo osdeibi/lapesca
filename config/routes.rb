@@ -39,6 +39,7 @@ Rails.application.routes.draw do
   get '/renta_de_kayaks', to: 'pages#renta_de_kayaks', as: 'renta_de_kayaks'
   get '/tortuga_lora-lapescatamaulipas', to: 'pages#tortuga_lora', as: 'tortuga_lora'
   get '/tu_reservacion', to: 'pages#thank_you', as: 'thank_you'
+  get '/el_sabinito', to: 'pages#el_sabinito', as: 'el_sabinito'
 
   get '/dashboard', to: 'dashboard#reservations', as: 'dashboard_index'
   get '/dashboard/calendar/:id', to: 'dashboard#calendar', as: 'calendar'
