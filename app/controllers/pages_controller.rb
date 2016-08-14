@@ -32,6 +32,10 @@ class PagesController < ApplicationController
     get_recommended_similar
   end
 
+  def el_sabinito
+    get_recommended_similar
+  end
+
   def thank_you
     get_recommended_similar
     @reservation = Reservation.find_by(token: params[:token])
