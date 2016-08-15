@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   layout "home"
-  before_action :get_recommended_similar, only: [:tortuga_lora, :el_sabinito, :thank_you, :paseo_en_lancha]
+  before_action :get_recommended_similar, only: [:tortuga_lora, :el_sabinito, :thank_you, :paseo_en_lancha, :renta_de_kayaks]
 
   def home
   end
