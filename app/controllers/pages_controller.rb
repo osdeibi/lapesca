@@ -8,6 +8,10 @@ class PagesController < ApplicationController
   def gallery
   end
 
+  def gallery_detail
+    
+  end
+
   def privacy
   end
 

@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   root 'pages#home'
 
   get '/galeria', to: 'pages#gallery', as: 'gallery'
+  get '/galeria/detalle', to: 'pages#gallery_detail', as: 'gallery_detail'
 
   get '/hoteles/la_pescalinda', to: 'hotels#la_pescalinda', as: 'la_pescalinda'
   get '/hoteles/tropicana', to: 'hotels#tropicana', as: 'tropicana'
