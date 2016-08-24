@@ -77,9 +77,48 @@ class HotelsController < ApplicationController
     render 'show.html.erb'
   end
 
+  def hotel_blanquita
+    @hotel = Hotel.find(12)
+    get_recommended_similar
+    render 'show.html.erb'
+  end
+
+  def villa_del_sol
+    @hotel = Hotel.find(13)
+    get_recommended_similar
+    render 'show.html.erb'
+  end
+
   def show
     @hotel = Hotel.find(params[:id])
     get_recommended_similar
+
+    case @hotel.code
+    when 'pescalinda'
+      redirect_to '/hotel-lapescalinda'
+    when 'tropicana'
+      redirect_to '/bungalows-tropicana'
+    when 'palmareal'
+      redirect_to '/hotel-palma-real-inn'
+    when 'riviera'
+      redirect_to '/hotel-riviera-del-ro-reservaciones'
+    when 'nuevoamanecer'
+      redirect_to '/nuevo-amanecer'
+    when 'marina'
+      redirect_to '/hotel-marina-del-rio'
+    when 'villa'
+      redirect_to '/hotel-villa-del-mar'
+    when 'escollera'
+      redirect_to '/hotel-la-escollera'
+    when 'puntapiedra'
+      redirect_to '/hotel-punta-piedra-bungalows'
+    when 'maria'
+      redirect_to '/hotel-maria-esperanza'
+    when 'blanquita'
+      redirect_to '/hotel-blanquita'
+    when 'villadelsol'
+      redirect_to '/hotel-villa-del-sol'
+    end
   end
 
   private
