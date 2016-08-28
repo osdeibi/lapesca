@@ -14,6 +14,7 @@ class Hotel < ActiveRecord::Base
   paginates_per 6
 
   has_many :reservations
+  has_many :rooms
 
   def self.boolean_to_string(value)
     str = "No"

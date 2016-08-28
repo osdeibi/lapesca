@@ -9,7 +9,7 @@
 		  				<li><a class="link-blue-2" href="#">Hoteles</a> /</li>
               <li><span>reservar ahora</span></li>
 		  			</ul>
-		  			<h2 class="color-white"><%= @hotel.name %></h2>
+		  			<h2 class="color-white"><%= @reservation.hotel.name %></h2>
   				</div>
 			</div>
 		</div>
@@ -45,7 +45,7 @@
 								<div class="form-block type-2 clearfix">
 									<div class="form-label color-dark-2">Nombre</div>
 									<div class="input-style-1 b-50 brd-0 type-2 color-3">
-                    <%= f.text_field :name, placeholder: "Hugo", required: true %>
+                    <%= f.text_field :name, placeholder: "Tu nombre", required: true %>
 									</div>
 								</div>
 							</div>
@@ -53,7 +53,7 @@
 								<div class="form-block type-2 clearfix">
 									<div class="form-label color-dark-2">Apellidos</div>
 									<div class="input-style-1 b-50 brd-0 type-2 color-3">
-                    <%= f.text_field :last_name, placeholder: "De La Garza", required: true %>
+                    <%= f.text_field :last_name, placeholder: "Tu apellido", required: true %>
 									</div>
 								</div>
 							</div>
@@ -75,11 +75,11 @@
 							</div>
 							<div class="col-xs-12 col-sm-6">
 								<div class="form-block type-2 clearfix">
-									<div class="form-label color-dark-2">Hotel</div>
+									<div class="form-label color-dark-2">Tipo de Habitación</div>
 									<div class="drop-wrap drop-wrap-s-4 color-5">
 									  <div class="drop">
-										 <b><%= @hotel.name + ' ($' + @hotel.cost_per_night.to_i.to_s + ' / Noche)' %></b>
-                     <%= f.hidden_field :hotel_id, value: @hotel.id %>
+                         <%= f.select :room_id, options_for_select(@reservation.hotel.rooms.pluck(:name, :id)) %>
+                         <i class="fa fa-angle-down"></i>
 									   </div>
 									</div>
 								</div>
@@ -95,6 +95,7 @@
 							<div class="col-xs-12">
 								<div class="confirm-terms">
 									<div class="input-entry color-3">
+                    <%= f.hidden_field :hotel_id, value: @reservation.hotel_id %>
 										<input class="checkbox-form" id="text-1" type="checkbox" name="checkbox" value="climat control">
 										<label class="clearfix" for="text-1">
 											<span class="sp-check"><i class="fa fa-check"></i></span>

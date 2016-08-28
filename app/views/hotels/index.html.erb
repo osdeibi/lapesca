@@ -139,8 +139,8 @@
                   <% end %>
                 </div>
                 <div class="title hotel-middle clearfix cell-view">
-                  <div class="date list-hidden">July <strong>19th</strong> to July <strong>26th</strong></div>
-                  <div class="date grid-hidden"><strong>19.07 - 26.07 / 7</strong> night</div>
+                  <div class="date list-hidden"><%= hotel.location %></div>
+                  <div class="date grid-hidden"><%= hotel.location %></div>
                   <h4><b><%= link_to hotel_path(hotel) do %>
                     <%= hotel.name %>
                     <% end %></b></h4>

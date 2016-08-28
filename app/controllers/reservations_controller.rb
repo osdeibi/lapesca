@@ -23,7 +23,7 @@ class ReservationsController < ApplicationController
 
   private
   def reservation_params
-    params.require(:reservation).permit(:name, :last_name, :email, :phone, :check_in, :check_out, :hotel_id)
+    params.require(:reservation).permit(:name, :last_name, :email, :phone, :check_in, :check_out, :hotel_id, :room_id)
   end
 
   def validate_email

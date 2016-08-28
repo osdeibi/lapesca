@@ -1,6 +1,7 @@
 class Reservation < ActiveRecord::Base
   belongs_to :hotel
   before_create :add_token
+  belongs_to :room
 
   validates :name, :last_name, :email, :phone, :check_in, :check_out, presence: true
 
