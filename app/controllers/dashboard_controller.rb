@@ -1,5 +1,5 @@
 class DashboardController < ApplicationController
-  #http_basic_authenticate_with name: "hdlgarza", password: ENV['GMAIL_PASSWORD']
+  http_basic_authenticate_with name: "hdlgarza", password: ENV['GMAIL_PASSWORD']
 
   def index
   end
@@ -9,7 +9,8 @@ class DashboardController < ApplicationController
   end
 
   def confirm
-    Reservation.find(params[:id]).update(status: 1)
+    @reservation = Reservation.find(params[:id])
+    @reservation.update(status: 1)
     ReservationMailer.confirm_reservation_email(@reservation).deliver_now
     redirect_to '/dashboard/reservations'
   end
