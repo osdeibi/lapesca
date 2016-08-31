@@ -3,6 +3,11 @@ class ReservationMailer < ApplicationMailer
 
   def pre_reservation_email(reservation)
     @reservation = reservation
-    mail(to: @reservation.email, subject: 'Solicitud de reservación')
+    mail(to: @reservation.email, subject: 'Solicitud de reservación en ' + @reservation.hotel.name)
+  end
+
+  def confirm_reservation_email(reservation)
+    @reservation = reservation
+    mail(to: @reservation.email, subject: 'Confirmación de ' + @reservation.hotel.name)
   end
 end

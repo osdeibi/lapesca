@@ -8,7 +8,7 @@
 					<table bgcolor="#fff">
 					<tr>
 						<td><%= image_tag 'http://lapesca.herokuapp.com/img/logo-lapesca.png' %></td>
-						<td align="right"><h6 class="collapse">Solicitud de reservación en <%= @reservation.hotel.name %></h6></td>
+						<td align="right"><h6 class="collapse">Confirmacion de reservación en <%= @reservation.hotel.name %></h6></td>
 					</tr>
 				</table>
 				</div>
@@ -30,8 +30,8 @@
 				<tr>
 					<td>
 
-						<h3>¡Hola! Bienvenido, <%= @reservation.name + ' ' + @reservation.last_name %></h3>
-						<p class="lead">Recibimos tu solicitud para reservar en el hotel <u><%= @reservation.hotel.name %></u> del día <b><%= @reservation.check_in %></b> al <b><%= @reservation.check_out %></b>. Un representante del hotel se pondrá en contacto contigo lo más pronto posible para brindarte información y puedas confirmar tu hospedaje.</p>
+						<h3>¡Hola de nuevo! Gracias, <%= @reservation.name + ' ' + @reservation.last_name %></h3>
+						<p class="lead">Recibimos tu comprobante de anticipo para tu reservación en <u><%= @reservation.hotel.name %></u> del día <b><%= @reservation.check_in %></b> al <b><%= @reservation.check_out %></b>.</p>
 
 						<!-- A Real Hero (and a real human being) -->
 						<p><%= image_tag 'http://lapesca.herokuapp.com/img/' + @reservation.hotel.code + '-mail.jpg' %></p><!-- /hero -->
@@ -41,8 +41,8 @@
 							Ubicación del hotel: <%= @reservation.hotel.location %>. <%= link_to map_path do %>¡Ver en el mapa ahora! &raquo;<% end %>
 						</p><!-- /Callout Panel -->
 
-						<h3>PRE-RESERVACIÓN <small>Sin Confirmar</small></h3>
-						<p>Esta es una pre-reservación, tu reservación quedará confirmada una vez hecho el anticipo correspondiente a la cuenta asignada por el representante de cada hotel, una vez hecho tu anticipo correspondiente y que hayas notificado tu pago te llegara un correo electrónico de CONFIRMACIÓN el cual será la confirmación final de tu hospedaje. Una vez recibiendo ese correo no es necesario volver a marcar para confirmar tu hospedaje.</p>
+						<h3>RESERVACIÓN <small>Confirmada</small></h3>
+						<p>Esta es una CONFIRMACIÓN, el resto de tu pago será al momento de tu llegada directamente en la recepción del hotel. Una vez recibiendo este correo no es necesario volver a comunicarte para confirmar tu hospedaje.</p>
             <%= link_to 'Ver mi reservación!', 'http://lapesca.herokuapp.com/tu_reservacion?token=' + @reservation.token, class: 'btn' %>
 						<br/>
 						<br/>
@@ -51,11 +51,6 @@
 						<table class="social" width="100%">
 							<tr>
 								<td>
-
-
-
-
-
 									<!--- column 1 -->
 									<table align="left" class="column">
 										<tr>

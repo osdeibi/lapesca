@@ -45,47 +45,12 @@
           </div>
           <div class="x_content">
             <br />
-            <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
-
+            <form action="/" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
               <div class="form-group">
-                <label class="control-label col-md-2 col-sm-3 col-xs-12" for="first-name">Check in
+                <label class="control-label col-md-2 col-sm-3 col-xs-12" for="code">Codigo
                 </label>
                 <div class="col-md-4 col-sm-6 col-xs-12">
-                  <input type="date" id="first-name" class="form-control col-md-7 col-xs-12">
-                </div>
-
-                <label class="control-label col-md-2 col-sm-3 col-xs-12" for="last-name">Check out
-                </label>
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                  <input type="date" id="last-name" name="last-name" class="form-control col-md-7 col-xs-12">
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label class="control-label col-md-2 col-sm-3 col-xs-12" for="first-name">Nombre
-                </label>
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                  <input type="text" id="first-name" class="form-control col-md-7 col-xs-12">
-                </div>
-
-                <label class="control-label col-md-2 col-sm-3 col-xs-12" for="last-name">Apellidos
-                </label>
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                  <input type="text" id="last-name" name="last-name" class="form-control col-md-7 col-xs-12">
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label class="control-label col-md-2 col-sm-3 col-xs-12" for="first-name">Email
-                </label>
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                  <input type="text" id="first-name" class="form-control col-md-7 col-xs-12">
-                </div>
-
-                <label class="control-label col-md-2 col-sm-3 col-xs-12" for="last-name">Telefono
-                </label>
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                  <input type="text" id="last-name" name="last-name" class="form-control col-md-7 col-xs-12">
+                  <input type="text" id="code" class="form-control col-md-7 col-xs-12">
                 </div>
               </div>
 
@@ -119,7 +84,9 @@
               <thead>
                 <tr>
                   <th>Id</th>
+                  <th>Codigo</th>
                   <th>Hotel</th>
+                  <th>Habitacion</th>
                   <th>Nombre</th>
                   <th>Apellidos</th>
                   <th>Check-in</th>
@@ -127,6 +94,7 @@
                   <th>Email</th>
                   <th>Telefono</th>
                   <th>Estatus</th>
+                  <th></th>
                 </tr>
               </thead>
 
@@ -134,14 +102,22 @@
                 <% @reservations.each do |reservation| %>
                 <tr>
                   <td><%= reservation.id %></td>
+                  <td><%= reservation.token %></td>
                   <td><%= reservation.hotel.name %></td>
+                  <td><%= reservation.try(:room).try(:name) %></td>
                   <td><%= reservation.name %></td>
                   <td><%= reservation.last_name %></td>
                   <td><%= reservation.check_in.to_s %></td>
                   <td><%= reservation.check_out.to_s %></td>
                   <td><%= reservation.email %></td>
                   <td><%= reservation.phone %></td>
-                  <td>pendiente</td>
+                  <% if reservation.status == 0 %>
+                  <td>Pendiente</td>
+                    <td><u><%= link_to 'Confirmar', confirm_reservation_path(reservation) %></u></td>
+                    <% else %>
+                    <td>Confirmado</td>
+                      <td></td>
+                  <% end %>
                 </tr>
                 <% end %>
               </tbody>
