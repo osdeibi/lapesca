@@ -5,6 +5,8 @@ class Reservation < ActiveRecord::Base
 
   validates :name, :last_name, :email, :phone, :check_in, :check_out, presence: true
 
+  serialize  :rooms #, Hash
+
   def is_available?
     @cds = CalendarDate.where(actual_date: self.check_in..self.check_out)
     available = true

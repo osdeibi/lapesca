@@ -75,23 +75,57 @@
 							</div>
 							<div class="col-xs-12 col-sm-6">
 								<div class="form-block type-2 clearfix">
-									<div class="form-label color-dark-2">Tipo de Habitación</div>
-									<div class="drop-wrap drop-wrap-s-4 color-5">
-									  <div class="drop">
-                         <%= f.select :room_id, options_for_select(@reservation.hotel.rooms.pluck(:name, :id)) %>
-                         <i class="fa fa-angle-down"></i>
-									   </div>
-									</div>
-								</div>
-							</div>
-							<div class="col-xs-12 col-sm-6">
-								<div class="form-block type-2 clearfix">
 									<div class="form-label color-dark-2">Telefono</div>
 									<div class="input-style-1 b-50 brd-0 type-2 color-3">
 									<%= f.text_field :phone, placeholder: "Número de contacto", required: true %>
 									</div>
 								</div>
 							</div>
+              <div class="col-xs-12 col-sm-6">
+								<div class="form-block type-2 clearfix">
+									<div class="form-label color-dark-2">Hotel</div>
+									<div class="input-style-1 b-50 brd-0 type-2 color-3">
+                    <input type="text" placeholder="<%= @reservation.hotel.name %>" readonly/>
+									</div>
+								</div>
+							</div>
+              <% @iterator = 0 %>
+              <% @reservation.hotel.rooms.each do |room| %>
+              <div class="col-xs-12 col-sm-6">
+                <div class="form-block type-2 clearfix">
+                  <div class="form-label color-dark-2">Tipo de Habitación</div>
+                  <div class="drop-wrap drop-wrap-s-4 color-5">
+                    <div class="drop">
+                      <select name="reservation[rooms][<%= @iterator %>]"/>
+                        <option value="<%= room.name %>"><%= room.name %></option>
+                        </select>
+                     </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-6">
+                <div class="form-block type-2 clearfix">
+                  <div class="form-label color-dark-2">Cantidad</div>
+                  <div class="drop-wrap drop-wrap-s-4 color-5">
+                    <div class="drop">
+                      <select name="reservation[quantity][<%= @iterator %>]">
+                        <option>0</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                      </select>
+                         <i class="fa fa-angle-down"></i>
+                     </div>
+                  </div>
+                </div>
+              </div>
+              <% @iterator += 1 %>
+              <% end %>
 							<div class="col-xs-12">
 								<div class="confirm-terms">
 									<div class="input-entry color-3">

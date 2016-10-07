@@ -50,10 +50,12 @@
                   <td class="table-label color-grey">HOTEL:</td>
                   <td class="table-label color-dark-2"><strong><%= @reservation.hotel.name %></strong></td>
                 </tr>
+                <% @reservation.rooms.each do |room| %>
                 <tr>
                   <td class="table-label color-grey">HABITACIÓN:</td>
-                  <td class="table-label color-dark-2"><strong><%= @reservation.room.name %></strong></td>
+                  <td class="table-label color-dark-2"><strong><%= room[:name] %></strong> (Cantidad :<%= room[:quantity] %>)</td>
                 </tr>
+                <% end %>
                 <tr>
                   <td class="table-label color-grey">FECHA DE LLEGADA:</td>
                   <td class="table-label color-dark-2"><strong><%= @reservation.check_in.to_s %></strong></td>
