@@ -53,7 +53,7 @@
                 <% @reservation.rooms.each do |room| %>
                 <tr>
                   <td class="table-label color-grey">HABITACIÓN:</td>
-                  <td class="table-label color-dark-2"><strong><%= room[:name] %></strong> (Cantidad :<%= room[:quantity] %>)</td>
+                  <td class="table-label color-dark-2"><strong><%= Room.find(room[:id]).name %></strong> (Cantidad: <%= room[:quantity] %>)</td>
                 </tr>
                 <% end %>
                 <tr>
@@ -74,7 +74,7 @@
                 </tr>
                 <tr>
                   <td class="table-label color-grey">TOTAL:</td>
-                  <td class="table-label color-dark-2"><strong>$<%= @reservation.room.price.to_i * (@reservation.check_out - @reservation.check_in).to_i %>.00 MXN</strong></td>
+                  <td class="table-label color-dark-2"><strong>$<%= @reservation.cost.to_i * (@reservation.check_out - @reservation.check_in).to_i %>.00 MXN</strong></td>
                 </tr>
                 <tr>
                   <td class="table-label color-grey">ESTADO DE LA RESERVACIÓN:</td>

@@ -2,7 +2,7 @@ class ReservationsController < ApplicationController
 
   def create
     @reservation = Reservation.new(params.require(:reservation).permit(:name, :last_name, :email, :phone, :check_in, :check_out, :hotel_id))
-    set_rooms
+    @reservation.cost = set_rooms
 
   if validate_email && @reservation.is_available? && @reservation.save
       ReservationMailer.pre_reservation_email(@reservation).deliver_now
@@ -36,12 +36,16 @@ class ReservationsController < ApplicationController
     quantities = params[:reservation][:quantity]
     @rooms = Array.new
     iterator = 0
+    cost = 0.0
 
     rooms.each do |room|
-      @rooms.push({name: room[1], quantity: quantities[iterator.to_s].to_i}) unless quantities[iterator.to_s] == "0"
+      @rooms.push({id: room[1].to_i, quantity: quantities[iterator.to_s].to_i}) unless quantities[iterator.to_s] == "0"
+      cost += Room.find(room[1].to_i).price * quantities[iterator.to_s].to_f unless quantities[iterator.to_s] == "0"
       iterator += 1
     end
 
     @reservation.rooms = @rooms
+
+    return cost
   end
 end
