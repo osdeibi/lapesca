@@ -95,11 +95,9 @@
                 <div class="form-block type-2 clearfix">
                   <div class="form-label color-dark-2">Tipo de Habitación</div>
                   <div class="drop-wrap drop-wrap-s-4 color-5">
-                    <div class="drop">
-                      <select name="reservation[rooms][<%= @iterator %>]"/>
+                      <select class="drop" name="reservation[rooms][<%= @iterator %>]"/>
                         <option value="<%= room.id %>"><%= room.name %></option>
                         </select>
-                     </div>
                   </div>
                 </div>
               </div>
@@ -107,8 +105,7 @@
                 <div class="form-block type-2 clearfix">
                   <div class="form-label color-dark-2">Cantidad</div>
                   <div class="drop-wrap drop-wrap-s-4 color-5">
-                    <div class="drop">
-                      <select name="reservation[quantity][<%= @iterator %>]">
+                      <select class="drop" name="reservation[quantity][<%= @iterator %>]">
                         <option>0</option>
                         <option>1</option>
                         <option>2</option>
@@ -119,8 +116,6 @@
                         <option>7</option>
                         <option>8</option>
                       </select>
-                         <i class="fa fa-angle-down"></i>
-                     </div>
                   </div>
                 </div>
               </div>
