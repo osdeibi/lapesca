@@ -50,6 +50,7 @@ Rails.application.routes.draw do
   get '/dashboard/fill_calendar/:id', to: 'dashboard#fill_calendar_date', as: 'fill_calendar_date'
 
   get '/dashboard/reservations', to: 'dashboard#reservations', as: 'dashboard_reservations'
+  get '/dashboard/reservations/edit', to: 'reservations#show', as: 'dashboard_edit_reservation'
   get '/dashboard/confirm/:id', to: 'dashboard#confirm', as: 'confirm_reservation'
 
   # Example of regular route:

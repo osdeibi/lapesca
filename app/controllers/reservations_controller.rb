@@ -2,7 +2,7 @@ class ReservationsController < ApplicationController
 
   def create
     @reservation = Reservation.new(params.require(:reservation).permit(:name, :last_name, :email, :phone, :check_in, :check_out, :hotel_id))
-    @reservation.cost = set_rooms
+    set_rooms
 
   if validate_email && @reservation.is_available? && @reservation.save
       ReservationMailer.pre_reservation_email(@reservation).deliver_now
@@ -22,9 +22,29 @@ class ReservationsController < ApplicationController
     render 'reservation_mailer/pre_reservation_email', layout: 'mailer'
   end
 
+  def edit
+    @reservation = Reservation.find(params[:id])
+    render layout: 'dashboard'
+  end
+
+  def show
+    @reservation = Reservation.find_by(token: params[:token])
+    render 'edit', layout: 'dashboard'
+  end
+
+  def update
+    @reservation = Reservation.find(params[:id])
+    @reservation.update(update_params)
+    render 'edit', layout: 'dashboard'
+  end
+
   private
   def reservation_params
     params.require(:reservation).permit(:name, :last_name, :email, :phone, :check_in, :check_out, :hotel_id, :quantity, :rooms)
+  end
+
+  def update_params
+    params.require(:reservation).permit(:cost, :paid_amount, :reserve_amount)
   end
 
   def validate_email
@@ -45,7 +65,8 @@ class ReservationsController < ApplicationController
     end
 
     @reservation.rooms = @rooms
-
-    return cost
+    @reservation.cost = cost * (@reservation.check_out - @reservation.check_in).to_i 
+    @reservation.paid_amount = 0.0
+    @reservation.reserve_amount = cost * 0.5
   end
 end

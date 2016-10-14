@@ -74,7 +74,15 @@
                 </tr>
                 <tr>
                   <td class="table-label color-grey">TOTAL:</td>
-                  <td class="table-label color-dark-2"><strong>$<%= @reservation.cost.to_i * (@reservation.check_out - @reservation.check_in).to_i %>.00 MXN</strong></td>
+                  <td class="table-label color-dark-2"><strong>$<%= @reservation.cost.to_i %>.00 MXN</strong></td>
+                </tr>
+                <tr>
+                  <td class="table-label color-grey">CANTIDAD DE ANTICIPO:</td>
+                  <td class="table-label color-dark-2"><strong>$<%= @reservation.reserve_amount.to_i %>.00 MXN</strong></td>
+                </tr>
+                <tr>
+                  <td class="table-label color-grey">CANTIDAD PAGADA:</td>
+                  <td class="table-label color-dark-2"><strong>$<%= @reservation.paid_amount.to_i %>.00 MXN</strong></td>
                 </tr>
                 <tr>
                   <td class="table-label color-grey">ESTADO DE LA RESERVACIÓN:</td>
