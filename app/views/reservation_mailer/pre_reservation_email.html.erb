@@ -38,12 +38,12 @@
 
 						<!-- Callout Panel -->
 						<p class="callout">
-							Ubicación del hotel: <%= @reservation.hotel.location %>. <%= link_to map_path do %>¡Ver en el mapa ahora! &raquo;<% end %>
+							Ubicación del hotel: <%= @reservation.hotel.location %>. <%= link_to 'http://www.lapescatamaulipas.com/como_llegar' do %>¡Ver en el mapa ahora! &raquo;<% end %>
 						</p><!-- /Callout Panel -->
 
 						<h3>PRE-RESERVACIÓN <small>Sin Confirmar</small></h3>
 						<p>Esta es una pre-reservación, tu reservación quedará confirmada una vez hecho el anticipo correspondiente a la cuenta asignada por el representante de cada hotel, una vez hecho tu anticipo correspondiente y que hayas notificado tu pago te llegara un correo electrónico de CONFIRMACIÓN el cual será la confirmación final de tu hospedaje. Una vez recibiendo ese correo no es necesario volver a marcar para confirmar tu hospedaje.</p>
-            <%= link_to 'Ver mi reservación!', 'http://lapesca.herokuapp.com/tu_reservacion?token=' + @reservation.token, class: 'btn' %>
+            <%= link_to 'Ver mi reservación!', 'http://www.lapescatamaulipas.com/tu_reservacion?token=' + @reservation.token, class: 'btn' %>
 						<br/>
 						<br/>
 
