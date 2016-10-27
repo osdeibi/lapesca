@@ -38,6 +38,14 @@ class ReservationsController < ApplicationController
     render 'edit', layout: 'dashboard'
   end
 
+  def contacto
+    ReservationMailer.contact_email(params[:name], params[:email], params[:comment]).deliver_now
+    flash[:notice] = "Gracias, hemos recibido tu contacto"
+    p "SENT MAIL TO " + params[:name]
+    p params[:comment]
+    redirect_to '/'
+  end
+
   private
   def reservation_params
     params.require(:reservation).permit(:name, :last_name, :email, :phone, :check_in, :check_out, :hotel_id, :quantity, :rooms)
@@ -65,7 +73,7 @@ class ReservationsController < ApplicationController
     end
 
     @reservation.rooms = @rooms
-    @reservation.cost = cost * (@reservation.check_out - @reservation.check_in).to_i 
+    @reservation.cost = cost * (@reservation.check_out - @reservation.check_in).to_i
     @reservation.paid_amount = 0.0
     @reservation.reserve_amount = cost * 0.5
   end

@@ -44,6 +44,8 @@ Rails.application.routes.draw do
   get '/el_sabinito', to: 'pages#el_sabinito', as: 'el_sabinito'
   get '/clima', to: 'pages#weather', as: 'weather'
 
+  post '/contacto', to: 'reservations#contacto'
+
   get '/dashboard', to: 'dashboard#reservations', as: 'dashboard_index'
   get '/dashboard/calendar/:id', to: 'dashboard#calendar', as: 'calendar'
   get '/dashboard/clear_calendar/:id/:calendar_date_id', to: 'dashboard#clear_calendar_date', as: 'clear_calendar_date'

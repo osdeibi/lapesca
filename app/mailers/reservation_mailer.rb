@@ -10,4 +10,11 @@ class ReservationMailer < ApplicationMailer
     @reservation = reservation
     mail(to: @reservation.email, subject: 'Confirmación de ' + @reservation.hotel.name)
   end
+
+  def contact_email(name, email, text)
+    @text = text
+    @email = email
+    @name = name
+    mail(to: 'contacto@lapescatamaulipas.com', subject: 'Contacto de ' + name)
+  end
 end
