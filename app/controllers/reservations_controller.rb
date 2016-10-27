@@ -41,8 +41,6 @@ class ReservationsController < ApplicationController
   def contacto
     ReservationMailer.contact_email(params[:name], params[:email], params[:comment]).deliver_now
     flash[:notice] = "Gracias, hemos recibido tu contacto"
-    p "SENT MAIL TO " + params[:name]
-    p params[:comment]
     redirect_to '/'
   end
 
