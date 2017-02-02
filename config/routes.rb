@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   get '/hotel-maria-esperanza', to: 'hotels#maria_esperanza', as: 'maria_esperanza'
   get '/hotel-villa-del-sol', to: 'hotels#villa_del_sol', as: 'villa_del_sol'
 
-  resources :hotels, :path => "hoteles-lapesca-tamaulipas" do
+  resources :hotels, :path => "hotelesenlapesca" do
     member do
       get 'reservar'
     end
