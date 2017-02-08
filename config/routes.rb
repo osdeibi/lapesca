@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   get '/hotel-lapescalinda', to: 'hotels#la_pescalinda', as: 'la_pescalinda'
   get '/bungalows-tropicana', to: 'hotels#tropicana', as: 'tropicana'
-  get '/hotel-palma-real-inn', to: 'hotels#palma_real', as: 'palma_real'
+  get '/hotel-palma-real-inn-', to: 'hotels#palma_real', as: 'palma_real'
   get '/hotel-riviera-del-ro-reservaciones', to: 'hotels#riviera_del_rio', as: 'riviera_del_rio'
   get '/nuevo-amanecer', to: 'hotels#nuevo_amanecer', as: 'nuevo_amanecer'
   get '/hotel-marina-del-rio', to: 'hotels#marina_del_rio', as: 'marina_del_rio'
