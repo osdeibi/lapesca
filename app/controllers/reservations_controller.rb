@@ -1,7 +1,7 @@
 class ReservationsController < ApplicationController
 
   def create
-    @reservation = Reservation.new(params.require(:reservation).permit(:name, :last_name, :email, :phone, :check_in, :check_out, :hotel_id))
+    @reservation = Reservation.new(reservation_params)
     set_rooms
 
   if validate_email && @reservation.is_available? && @reservation.save
@@ -73,6 +73,6 @@ class ReservationsController < ApplicationController
     @reservation.rooms = @rooms
     @reservation.cost = cost * (@reservation.check_out - @reservation.check_in).to_i
     @reservation.paid_amount = 0.0
-    @reservation.reserve_amount = cost * 0.5
+    @reservation.reserve_amount = @reservation.cost * 0.5
   end
 end
