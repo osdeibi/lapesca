@@ -11,8 +11,7 @@ default: &default
 development:
   <<: *default
   database: lapesca_development
-  username: alansalinas
-  password:
+  username: Ezequiel
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -20,11 +19,9 @@ development:
 test:
   <<: *default
   database: lapesca_test
-  username:
-  password:
+  username: Ezequiel
 
 production:
   <<: *default
   database: lapesca_production
-  username:
-  password:
+  username: Ezequiel
