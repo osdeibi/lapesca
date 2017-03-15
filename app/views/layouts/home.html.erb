@@ -18,7 +18,7 @@
 	<%= javascript_include_tag 'home' %>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAiUoUtDPdfeOsARiAGKagvzA_3gM2swGU&amp;language=en"></script>
-	<title>Turismo La Pesca Tamaulipas</title>
+	<title><%= content_for?(:title) ? content_for(:title) : "Turismo La Pesca Tamaulipas" %></title>
 </head>
 <body data-color="theme-1">
 	<div id="fb-root"></div>
@@ -76,18 +76,18 @@
 									<% end %>
 									<ul class="dropmenu">
 										<li><%= link_to 'Ver todos', hotels_path %></li>
-										<li><%= link_to 'La Pescalinda', hotel_path(Hotel.find_by(code: 'pescalinda')) %></li>
-										<li><%= link_to 'Bungalows Tropicana', hotel_path(Hotel.find_by(code: 'tropicana')) %></li>
-										<li><%= link_to 'Palma Real', hotel_path(Hotel.find_by(code: 'palma')) %></li>
-										<li><%= link_to 'Riviera del rio', hotel_path(Hotel.find_by(code: 'riviera')) %></li>
-										<li><%= link_to 'Nuevo Amanecer', hotel_path(Hotel.find_by(code: 'nuevoamanecer')) %></li>
-										<li><%= link_to 'Marina del rio', hotel_path(Hotel.find_by(code: 'marina')) %></li>
-										<li><%= link_to 'Maria Esperanza', hotel_path(Hotel.find_by(code: 'maria')) %></li>
-										<li><%= link_to 'La Escollera', hotel_path(Hotel.find_by(code: 'escollera')) %></li>
-										<li><%= link_to 'Villa del mar', hotel_path(Hotel.find_by(code: 'villa')) %></li>
-										<li><%= link_to 'Hotel Blanquita', hotel_path(Hotel.find_by(code: 'blanquita')) %></li>
-										<li><%= link_to 'Punta piedra', hotel_path(Hotel.find_by(code: 'puntapiedra')) %></li>
-										<li><%= link_to 'Villa del Sol', hotel_path(Hotel.find_by(code: 'villadelsol')) %></li>
+										<li><%= link_to 'La Pescalinda', la_pescalinda_path %></li>
+										<li><%= link_to 'Bungalows Tropicana', tropicana_path %></li>
+										<li><%= link_to 'Palma Real', palma_real_path %></li>
+										<li><%= link_to 'Riviera del rio', riviera_del_rio_path %></li>
+										<li><%= link_to 'Nuevo Amanecer', nuevo_amanecer_path %></li>
+										<li><%= link_to 'Marina del rio', marina_del_rio_path %></li>
+										<li><%= link_to 'Maria Esperanza', maria_esperanza_path %></li>
+										<li><%= link_to 'La Escollera', la_escollera_path %></li>
+										<li><%= link_to 'Villa del mar', villa_del_mar_path %></li>
+										<li><%= link_to 'Hotel Blanquita', hotel_blanquita_path %></li>
+										<li><%= link_to 'Punta piedra', punta_piedra_path %></li>
+										<li><%= link_to 'Villa del Sol', villa_del_sol_path %></li>
 									</ul>
 								</li>
 								<li class="type-1"><a href="/quienes_somos">Quienes somos<span class="fa fa-angle-down"></span></a>
