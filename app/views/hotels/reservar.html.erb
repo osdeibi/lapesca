@@ -29,7 +29,7 @@
                 <div class="form-block type-2 clearfix">
                   <div class="form-label color-dark-2">Fecha de entrada (Check-in)</div>
                   <div class="input-style-1 b-50 brd-0 type-2 color-3">
-                    <%= f.date_field :check_in, required: true %>
+                    <%= f.text_field :check_in, required: true, class: "datepicker", placeholder: "Check In" %>
                   </div>
                 </div>
               </div>
@@ -37,7 +37,7 @@
                 <div class="form-block type-2 clearfix">
                   <div class="form-label color-dark-2">Fecha de salida (Check-out)</div>
                   <div class="input-style-1 b-50 brd-0 type-2 color-3">
-                    <%= f.date_field :check_out, required: true %>
+                    <%= f.text_field :check_out, required: true, class: "datepicker", placeholder: "Check Out" %>
                   </div>
                 </div>
               </div>
