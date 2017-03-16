@@ -3,12 +3,16 @@ class HotelsController < ApplicationController
 
   def index
     parse_amounts if params[:amount_end]
-    @q = Hotel.all
-    @q = Hotel.where('cost_per_night BETWEEN ? AND ?', @amount_start, @amount_end) if @amount_end
-    @q = Hotel.get_available_hotels(params[:check_in], params[:check_out], @q) if params[:check_in] && params[:check_out]
+    @q = Hotel.where(category: 0) 
+    @q = Hotel.where('cost_per_night BETWEEN ? AND ?', @amount_start, @amount_end).where(category: 0)  if @amount_end
+    @q = Hotel.get_available_hotels(params[:check_in], params[:check_out], @q).where(category: 0) if params[:check_in] && params[:check_out]
     @q = @q.ransack(params[:q])
     @hotels = @q.result(distinct: true).order(:score).page params[:page]
+    @hotels
     paginate
+    if params[:category].present?
+      @hotels = Hotel.where(category: params[:category]).order(:score)
+    end
   end
 
   def reservar
@@ -88,6 +92,12 @@ class HotelsController < ApplicationController
     render 'show.html.erb'
   end
 
+  def casa_blanca
+    @hotel = Hotel.find(14)
+    get_recommended_similar
+    render 'show.html.erb'
+  end
+
   def show
     @hotel = Hotel.find(params[:id])
     get_recommended_similar
@@ -97,10 +107,10 @@ class HotelsController < ApplicationController
       redirect_to '/hotel-lapescalinda'
     when 'tropicana'
       redirect_to '/bungalows-tropicana'
-    when 'palmareal'
-      redirect_to '/hotel-palma-real-inn'
+    when 'palma'
+      redirect_to '/hotel-palma-real'
     when 'riviera'
-      redirect_to '/hotel-riviera-del-ro-reservaciones'
+      redirect_to '/hotel-riviera-del-rio'
     when 'nuevoamanecer'
       redirect_to '/nuevo-amanecer'
     when 'marina'
@@ -117,6 +127,8 @@ class HotelsController < ApplicationController
       redirect_to '/hotel-blanquita'
     when 'villadelsol'
       redirect_to '/hotel-villa-del-sol'
+    when 'casablanca'
+      redirect_to '/casa-blanca'
     end
   end
 
