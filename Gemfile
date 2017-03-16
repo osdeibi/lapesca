@@ -45,6 +45,7 @@ gem "rack-timeout"
 gem "net-ssh"
 gem "sidekiq"
 
+gem 'awesome_print', "~> 1.6"
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

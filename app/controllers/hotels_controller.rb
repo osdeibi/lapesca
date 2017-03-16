@@ -7,13 +7,12 @@ class HotelsController < ApplicationController
     @q = Hotel.where('cost_per_night BETWEEN ? AND ?', @amount_start, @amount_end) if @amount_end
     @q = Hotel.get_available_hotels(params[:check_in], params[:check_out], @q) if params[:check_in] && params[:check_out]
     @q = @q.ransack(params[:q])
-    @hotels = @q.result(distinct: true).order(:id).page params[:page]
+    @hotels = @q.result(distinct: true).order(:score).page params[:page]
     paginate
   end
 
   def reservar
     get_recommended_similar
-    p @reservation
     @reservation = Reservation.new(hotel_id: params[:id]) unless @reservation
   end
 
