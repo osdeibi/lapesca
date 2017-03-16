@@ -16,23 +16,12 @@ class Hotel < ActiveRecord::Base
   has_many :reservations
   has_many :rooms
 
+  enum category: { hotel: 0, house: 1, bungalow: 2 }
+
   def self.boolean_to_string(value)
     str = "No"
     str = "Si" if value == true
     str
-  end
-
-  def self.get_category_string(value)
-    case value
-    when 2
-      str = 'bungalows'
-    when 3
-      str = 'casa'
-    else
-      str = 'hotel'
-    end
-
-    return str
   end
 
   def self.get_available_hotels(check_in, check_out, hotel_list)

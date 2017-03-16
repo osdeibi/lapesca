@@ -131,7 +131,7 @@
         <div class="detail-block bg-dr-blue">
           <h4 class="color-white">detalle</h4>
           <div class="details-desc">
-            <p class="color-grey-9">Tipo:  <span class="color-white"><%= Hotel.get_category_string(@hotel.category) %></span></p>
+            <p class="color-grey-9">Tipo:  <span class="color-white"><%= I18n.t("categories.#{@hotel.category}") %></span></p>
             <p class="color-grey-9">Costo por noche: <span class="color-white">$<%= number_with_delimiter(@hotel.cost_per_night.to_i, :delimiter => ',') %></span></p>
             <p class="color-grey-9">Categoría:
               <% @hotel.review_score.times do %>
