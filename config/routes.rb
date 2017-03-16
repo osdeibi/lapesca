@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get '/hotel-lapescalinda', to: 'hotels#la_pescalinda', as: 'la_pescalinda'
   get '/bungalows-tropicana', to: 'hotels#tropicana', as: 'tropicana'
   get '/hotel-palma-real', to: 'hotels#palma_real', as: 'palma_real'
-  get '/hotel-riviera-del-ro', to: 'hotels#riviera_del_rio', as: 'riviera_del_rio'
+  get '/hotel-riviera-del-rio', to: 'hotels#riviera_del_rio', as: 'riviera_del_rio'
   get '/nuevo-amanecer', to: 'hotels#nuevo_amanecer', as: 'nuevo_amanecer'
   get '/hotel-marina-del-rio', to: 'hotels#marina_del_rio', as: 'marina_del_rio'
   get '/hotel-la-escollera', to: 'hotels#la_escollera', as: 'la_escollera'
@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   get '/hotel-punta-piedra-bungalows', to: 'hotels#punta_piedra', as: 'punta_piedra'
   get '/hotel-maria-esperanza', to: 'hotels#maria_esperanza', as: 'maria_esperanza'
   get '/hotel-villa-del-sol', to: 'hotels#villa_del_sol', as: 'villa_del_sol'
+  get '/casa-blanca', to: 'hotels#casa_blanca', as: 'casablanca'
 
   resources :hotels, :path => "hotelesenlapesca" do
     member do
