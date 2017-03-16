@@ -22,6 +22,9 @@ module Lapesca
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+    config.i18n.default_locale = :es
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
+
 
     config.assets.precompile += ['*.js', '*.css']
 

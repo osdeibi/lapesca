@@ -1,0 +1,10 @@
+es:
+  activerecord:
+    attributes:
+      hotel:
+        category:
+          
+  categories:
+    hotel: "Hotel"
+    house: "Casa"
+    bungalow: "Bungalow"
