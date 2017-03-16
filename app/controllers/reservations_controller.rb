@@ -2,19 +2,21 @@ class ReservationsController < ApplicationController
 
   def create
     @reservation = Reservation.new(reservation_params)
+    @reservation.check_in = format_date(reservation_params[:check_in])
+    @reservation.check_out = format_date(reservation_params[:check_out])
     set_rooms
 
-  if validate_email && @reservation.is_available? && @reservation.save
+    if validate_email && @reservation.is_available? && @reservation.save
       ReservationMailer.pre_reservation_email(@reservation).deliver_now
-    redirect_to thank_you_path(token: @reservation.token)
-  else
-    if !validate_email
-    flash[:notice] = "El mail confirmado no es igual al mail de contacto"
-  else
-    flash[:notice] = "Las fechas seleccionadas no están disponibles"
-  end
-  redirect_to reservar_hotel_path(@reservation.hotel)
-  end
+      redirect_to thank_you_path(token: @reservation.token)
+    else
+      if !validate_email
+      flash[:notice] = "El mail confirmado no es igual al mail de contacto"
+      else
+        flash[:notice] = "Las fechas seleccionadas no están disponibles"
+      end
+      redirect_to reservar_hotel_path(@reservation.hotel)
+    end
   end
 
   def index
@@ -45,6 +47,11 @@ class ReservationsController < ApplicationController
   end
 
   private
+  def format_date(date_at)
+    check = date_at.split("/")  
+    "#{check.third}-#{check.first}-#{check.second}" 
+  end
+
   def reservation_params
     params.require(:reservation).permit(:name, :last_name, :email, :phone, :check_in, :check_out, :hotel_id, :quantity, :rooms)
   end
