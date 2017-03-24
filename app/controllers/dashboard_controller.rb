@@ -1,6 +1,7 @@
 class DashboardController < ApplicationController
+  before_action :set_hotels
   http_basic_authenticate_with name: "hdlgarza", password: ENV['GMAIL_PASSWORD']
-
+  
   def index
   end
 
@@ -42,5 +43,11 @@ class DashboardController < ApplicationController
       @cd = CalendarDate.create(@hotel.code => true, :actual_date => cd)
     end
     redirect_to :calendar
+  end
+
+  private
+
+  def set_hotels 
+    @hotels = Hotel.all
   end
 end
