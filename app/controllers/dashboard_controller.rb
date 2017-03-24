@@ -1,7 +1,7 @@
 class DashboardController < ApplicationController
   before_action :set_hotels
   http_basic_authenticate_with name: "hdlgarza", password: ENV['GMAIL_PASSWORD']
-  
+
   def index
   end
 
@@ -47,7 +47,7 @@ class DashboardController < ApplicationController
 
   private
 
-  def set_hotels 
+  def set_hotels
     @hotels = Hotel.all
   end
 end

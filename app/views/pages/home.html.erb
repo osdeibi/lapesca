@@ -101,86 +101,23 @@
     </div>
     <div class="row">
       <div class="swiper-container" data-autoplay="0" data-loop="0" data-speed="1000" data-slides-per-view="responsive" data-mob-slides="1" data-xs-slides="2" data-sm-slides="2" data-md-slides="3" data-lg-slides="3" data-add-slides="3">
-        <div class="swiper-wrapper">
+      <div class="swiper-wrapper">
+        <% @recommended_hotels.each do |hotel| %>
           <div class="swiper-slide">
             <div class="tour-item style-5">
               <div class="radius-top">
-                <%= image_tag Hotel.find(1).home.url %>
+                <%= image_tag hotel.home.url %>
               </div>
               <div class="tour-desc bg-dr-blue-2">
-                <h4><a class="tour-title color-white" href="#">La Pescalinda</a></h4>
-                <div class="tour-text color-white-light">Cuenta con 22 habitaciones para cuatro y seis personas, aire acondicionado, muelle propio y alberca, a 2 km de la playa.</div>
-                <div class="tour-person color-white">desde <span>$850 MXN</span></div>
-                <%= link_to hotel_path(Hotel.find(1)), class: "c-button b-40 bg-white hv-white-o" do %><span>ver más</span><% end %>
+                <h4><a class="tour-title color-white" href="#"><%= hotel.name %></a></h4>
+                <div class="tour-text color-white-light"><%= hotel.description %></div>
+                <div class="tour-person color-white">desde <span><%= hotel.cost_per_night %> MXN</span></div>
+                <%= link_to hotel_path(hotel), class: "c-button b-40 bg-white hv-white-o" do %><span>ver más</span><% end %>
               </div>
             </div>
           </div>
-          <div class="swiper-slide">
-            <div class="tour-item style-5">
-              <div class="radius-top">
-                <%= image_tag Hotel.find(2).home.url %>
-              </div>
-              <div class="tour-desc bg-dr-blue-2">
-                <h4><a class="tour-title color-white" href="#">bungalows tropicana</a></h4>
-                <div class="tour-text color-white-light">Bungalows para desde 4 hasta 10 personas con vista al río, asadores, palapa y abarrotes. Cuenta con acceso a servicios de cocineta y refrigerador.</div>
-                <div class="tour-person color-white">desde <span>$700 MXN</span></div>
-                <%= link_to hotel_path(Hotel.find(2)), class: "c-button b-40 bg-white hv-white-o" do %><span>ver más</span><% end %>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="tour-item style-5">
-              <div class="radius-top">
-                <%= image_tag Hotel.find(3).home.url %>
-              </div>
-              <div class="tour-desc bg-dr-blue-2">
-                <h4><a class="tour-title color-white" href="#">palma real</a></h4>
-                <div class="tour-text color-white-light">Cuenta con 26 habitaciones, aire acondicionado, muelle, alberca con palapas y asadores así tambien como un restaurante.</div>
-                <div class="tour-person color-white">desde <span>$1,200 MXN</span></div>
-                <%= link_to hotel_path(Hotel.find(3)), class: "c-button b-40 bg-white hv-white-o" do %><span>ver más</span><% end %>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="tour-item style-5">
-              <div class="radius-top">
-                <%= image_tag Hotel.find(4).home.url %>
-              </div>
-              <div class="tour-desc bg-dr-blue-2">
-                <h4><a class="tour-title color-white" href="#">riviera del río</a></h4>
-                <div class="tour-text color-white-light">A un costado del río, cuenta con 30 habitaciones y ofrece asadores, palapas con alberca, abarrotes y restaurant.</div>
-                <div class="tour-person color-white">desde <span>$1,000 MXN</span></div>
-                <%= link_to hotel_path(Hotel.find(4)), class: "c-button b-40 bg-white hv-white-o" do %><span>ver más</span><% end %>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="tour-item style-5">
-              <div class="radius-top">
-                <%= image_tag Hotel.find(5).home.url %>
-              </div>
-              <div class="tour-desc bg-dr-blue-2">
-                <h4><a class="tour-title color-white" href="#">nuevo amanecer</a></h4>
-                <div class="tour-text color-white-light">Cuartos para cuatro personas, ofrece alberca con asadores y palapas así como muelle para pescar en el río.</div>
-                <div class="tour-person color-white">desde <span>$600</span></div>
-                <%= link_to hotel_path(Hotel.find(5)), class: "c-button b-40 bg-white hv-white-o" do %><span>ver más</span><% end %>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="tour-item style-5">
-              <div class="radius-top">
-                <%= image_tag Hotel.find(6).home.url %>
-              </div>
-              <div class="tour-desc bg-dr-blue-2">
-                <h4><a class="tour-title color-white" href="#">marina del río</a></h4>
-                <div class="tour-text color-white-light">Cuenta con 16 habitaciones y ofrece muelle para pescar, palapas con asadores, renta de lanchas y restaurant.</div>
-                <div class="tour-person color-white">desde <span>$1,000</span></div>
-                <%= link_to hotel_path(Hotel.find(6)), class: "c-button b-40 bg-white hv-white-o" do %><span>ver más</span><% end %>
-              </div>
-            </div>
-          </div>
-        </div>
+        <% end %>
+      </div>
         <div class="pagination poin-style-2"></div>
       </div>
     </div>

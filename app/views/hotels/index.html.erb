@@ -50,15 +50,14 @@
             <h4 class="sidebar-title color-dark-2">categorias</h4>
             <ul class="sidebar-category color-1">
               <li class="active">
-                <a class="cat-drop" href="#">hoteles <span class="fr">(<%= Hotel.where(category: 0).count %>)</span></a>
+                <a class="cat-drop" href="#">hoteles <span class="fr">(<%= Hotel.hotel.count + Hotel.bungalow.count %>)</span></a>
                 <ul>
                   <li><a href=<%= hotels_path(category: 0) %>>todos (<%= Hotel.where(category: 0).count %>)</a></li>
-                  <li><a href="#">habitaciones (<%= Hotel.where(category: 0).count%>)</a></li>
-                  <li><a href="#">bungalows (<%= Hotel.where(category: 2).count%>)</a></li>
+                  <li><a href=<%= hotels_path(category: 2) %>>bungalows (<%= Hotel.where(category: 2).count%>)</a></li>
                 </ul>
               </li>
               <li>
-                <a class="cat-drop" href="#">casas <span class="fr">(<%= Hotel.where(category: 1).count%>)</span></a>
+                <a class="cat-drop" href=<%= hotels_path(category: 1) %>>casas <span class="fr">(<%= Hotel.where(category: 1).count%>)</span></a>
                 <ul>
                   <li><a href=<%= hotels_path(category: 1) %>>todas (<%= Hotel.where(category: 1).count%>)</a></li>
                 </ul>
