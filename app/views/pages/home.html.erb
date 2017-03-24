@@ -111,7 +111,7 @@
               <div class="tour-desc bg-dr-blue-2">
                 <h4><a class="tour-title color-white" href="#"><%= hotel.name %></a></h4>
                 <div class="tour-text color-white-light"><%= hotel.description %></div>
-                <div class="tour-person color-white">desde <span><%= hotel.cost_per_night %> MXN</span></div>
+                <div class="tour-person color-white">desde <span>$<%= hotel.cost_per_night %> MXN</span></div>
                 <%= link_to hotel_path(hotel), class: "c-button b-40 bg-white hv-white-o" do %><span>ver más</span><% end %>
               </div>
             </div>
