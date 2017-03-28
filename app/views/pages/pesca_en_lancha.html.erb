@@ -30,10 +30,8 @@
 					   <b>hotels</b>
 						<a href="#" class="arrow-down"><i class="fa fa-angle-down"></i></a>
 						 <ul class="nav-tabs tpl-tabs tabs-style-1">
-							<li class="active click-tabs"><a href="#one" data-toggle="tab" aria-expanded="false"><span class="fa fa-camera"></span>Photos</a></li>
-							<li class="click-tabs"><a href="#two" data-toggle="tab" aria-expanded="false"><span class="fa fa-map-marker"></span>On the map</a></li>
-							<li class="click-tabs"><a href="#three" data-toggle="tab" aria-expanded="false"><span class="fa fa-video-camera"></span>Video</a></li>
-							<li class="click-tabs"><a href="#four" data-toggle="tab" aria-expanded="false"><span class="fa fa-comment"></span>Reviews</a></li>
+							<li class="active click-tabs"><a href="#one" data-toggle="tab" aria-expanded="false"><span class="fa fa-camera"></span>Fotos</a></li>
+							<li class="click-tabs"><a href="#two" data-toggle="tab" aria-expanded="false"><span class="fa fa-map-marker"></span>¿Necesitas ayuda?</a></li>
 						 </ul>
 					 </div>
 
@@ -90,99 +88,9 @@
 					</div>
 
 					<div class="tab-pane" id="two">
-                      <div id="map-canvas" class="style-1" data-lat="33.664467" data-lng="-117.601586" data-zoom="6" data-style="6">             </div>
-                        <div class="addresses-block">
-							<a data-lat="36.1920723" data-lng="-112.0853326" data-string="Santa Monica Hotel"></a>
-						</div>
+					<%= render "contact" %>
 					</div>
-					<div class="tab-pane" id="three">
-                       <iframe src="https://player.vimeo.com/video/140416017?title=0&amp;byline=0&amp;portrait=0"></iframe>
-					</div>
-					<div class="tab-pane" id="four">
-                     <div class="reviews">
-                      <div class="row">
-                      	<div class="col-md-6">
-                      		<div class="progress-wrapper">
-                      		  <h4>Traveler rating</h4>
-								<div class="progress-block">
-									<div class="progress-label">Excellent</div>
-									<div class="progress">
-										<div class="progress-bar bg-dr-blue-2" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" data-to="100" data-speed="3000" style="width: 0%;">
-										</div>
-									</div>
-								</div>
-								<div class="progress-block">
-									<div class="progress-label">Very Good</div>
-									<div class="progress">
-										<div class="progress-bar bg-dr-blue-2" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" data-to="75" data-speed="3000" style="width: 0%;">
-										</div>
-									</div>
-								</div>
-								<div class="progress-block">
-									<div class="progress-label">Average</div>
-									<div class="progress">
-										<div class="progress-bar bg-dr-blue-2" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" data-to="50" data-speed="3000" style="width: 0%;">
-										</div>
-									</div>
-								</div>
-								<div class="progress-block">
-									<div class="progress-label">Poor</div>
-									<div class="progress">
-										<div class="progress-bar bg-dr-blue-2" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" data-to="60" data-speed="3000" style="width: 0%;">
-										</div>
-									</div>
-								</div>
-							</div>
-                      	</div>
-                      	<div class="col-md-6">
-                      	  <div class="summary">
-                      	  	 <h4>Summary</h4>
-                     		<div class="summ-block">
-                    		  <h5>Equipment</h5>
-                     		  <div class="rate">
-								<span class="fa fa-star color-yellow"></span>
-								<span class="fa fa-star color-yellow"></span>
-								<span class="fa fa-star color-yellow"></span>
-								<span class="fa fa-star"></span>
-								<span class="fa fa-star"></span>
-							  </div>
-                     		</div>
-                     		<div class="summ-block">
-                    		  <h5>Climate </h5>
-                     		  <div class="rate">
-								<span class="fa fa-star color-yellow"></span>
-								<span class="fa fa-star color-yellow"></span>
-								<span class="fa fa-star color-yellow"></span>
-								<span class="fa fa-star color-yellow"></span>
-								<span class="fa fa-star"></span>
-							  </div>
-                     		</div>
-                     		<div class="summ-block">
-                    		  <h5>Facility</h5>
-                     		  <div class="rate">
-								<span class="fa fa-star color-yellow"></span>
-								<span class="fa fa-star color-yellow"></span>
-								<span class="fa fa-star color-yellow"></span>
-								<span class="fa fa-star color-yellow"></span>
-								<span class="fa fa-star"></span>
-							  </div>
-                     		</div>
-                      		<div class="summ-block">
-                    		  <h5>Safely</h5>
-                     		  <div class="rate">
-								<span class="fa fa-star color-yellow"></span>
-								<span class="fa fa-star color-yellow"></span>
-								<span class="fa fa-star"></span>
-								<span class="fa fa-star"></span>
-								<span class="fa fa-star"></span>
-							  </div>
-                     		</div>
-                      	  </div>
-                      	</div>
-                      </div>
-                      <a href="#" class="c-button b-40 bg-red-3 hv-red-3-o">Write a review</a>
-                      </div>
-					</div>
+					
 				    </div>
 				 </div>
 				</div>
@@ -286,22 +194,7 @@
 				<% end %>
 			</div>
 			<div class="col-xs-12 col-sm-4">
-				<div class="contact-about">
-					<h4 class="color-dark-2"><strong>contact info</strong></h4>
-					<p class="color-grey-3">Donec gravida euismod felis, quis dictum justo scelerisque in. Aenean nec lacus ipsum. Suspendisse vel lobortis libero, eu imperdiet purus.  Aenean nec lacus ipsum.</p>
-				</div>
-				<div class="contact-info">
-					<h4 class="color-dark-2"><strong>Información de contacto</strong></h4>
-					<div class="contact-line color-grey-3"><img src="img/phone_icon_2_dark.png" alt="">Telefono: <a class="color-dark-2" href="tel:018353271212">01 (835) 327 1212</a></div>
-					<div class="contact-line color-grey-3"><img src="img/mail_icon_b_dark.png" alt="">Email: <a class="color-dark-2 tt" style="font-size:95%;" href="#">contacto@lapescatamaulipas.com</a></div>
-					<div class="contact-line color-grey-3"><img src="img/loc_icon_dark.png" alt="">Dirección: <span class="color-dark-2 tt">La Pesca, Tamaulipas. México</span></div>
-				</div>
-				<div class="contact-socail">
-					<a class="color-grey-3 link-dr-blue-2" href="#"><i class="fa fa-facebook"></i></a>
-					<a class="color-grey-3 link-dr-blue-2" href="#"><i class="fa fa-twitter"></i></a>
-					<a class="color-grey-3 link-dr-blue-2" href="#"><i class="fa fa-instagram"></i></a>
-				</div>
-			</div>
+				<%= render "contact" %>
 		</div>
 	</div>
 </div>
