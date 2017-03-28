@@ -3,8 +3,11 @@ es:
     attributes:
       hotel:
         category:
-          
+
   categories:
     hotel: "Hotel"
     house: "Casa"
     bungalow: "Bungalow"
+
+  pending: "Pendiente"
+  confirmed: "Confirmada"

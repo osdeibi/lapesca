@@ -3,13 +3,14 @@ class PagesController < ApplicationController
   before_action :get_recommended_similar, only: [:tortuga_lora, :el_sabinito, :thank_you, :paseo_en_lancha, :renta_de_kayaks]
 
   def home
+    @recommended_hotels = Hotel.order(:score).limit(5)
   end
 
   def gallery
   end
 
   def gallery_detail
-    
+
   end
 
   def privacy
