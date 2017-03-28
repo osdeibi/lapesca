@@ -96,7 +96,7 @@
 
           <h5>La Pesca</h5>
 
-          <div class="embed-responsive embed-responsive-16by9">
+          <div class="embed-responsive-item embed-responsive-16by9">
             <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/7t9bfSXgmII" frameborder="0" allowfullscreen></iframe>
           </div>
         </div>
@@ -208,3 +208,9 @@
   </div>
 </div>
 </div>
+<script>
+  $(window).load(function(){
+    $("iframe.embed-responsive-item").css("height", "400px");
+    $("iframe.embed-responsive-item").css("width", "100%");
+  });
+</script>
