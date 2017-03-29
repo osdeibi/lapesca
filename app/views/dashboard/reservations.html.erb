@@ -92,7 +92,7 @@
                   <th>Check-out</th>
                   <th>Email</th>
                   <th>Telefono</th>
-                  <th>Estatus</th>
+                  <th>Estado</th>
                   <th></th>
                   <th></th>
                 </tr>
@@ -110,12 +110,12 @@
                   <td><%= reservation.check_out.to_s %></td>
                   <td><%= reservation.email %></td>
                   <td><%= reservation.phone %></td>
-                  <% if reservation.status == 0 %>
-                  <td>Pendiente</td>
+                  <% if reservation.pending? %>
+                    <td>Pendiente</td>
                     <td><u><%= link_to 'Confirmar', confirm_reservation_path(reservation) %></u></td>
-                    <% else %>
+                  <% else %>
                     <td>Confirmado</td>
-                      <td></td>
+                    <td></td>
                   <% end %>
                   <td><%= link_to 'Editar', edit_reservation_path(reservation) %></td>
                 </tr>

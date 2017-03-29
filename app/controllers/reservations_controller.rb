@@ -1,5 +1,5 @@
 class ReservationsController < ApplicationController
-
+  before_action :set_hotels
   def create
     @reservation = Reservation.new(reservation_params)
     @reservation.check_in = format_date(reservation_params[:check_in])
@@ -81,5 +81,8 @@ class ReservationsController < ApplicationController
     @reservation.cost = cost * (@reservation.check_out - @reservation.check_in).to_i
     @reservation.paid_amount = 0.0
     @reservation.reserve_amount = @reservation.cost * 0.5
+  end
+  def set_hotels
+    @hotels = Hotel.all
   end
 end
