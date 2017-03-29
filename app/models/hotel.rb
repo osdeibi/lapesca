@@ -27,8 +27,6 @@ class Hotel < ActiveRecord::Base
   def self.get_available_hotels(check_in, check_out, hotel_list)
     @available = hotel_list
     if check_in != "" && check_out != ""
-    check_in = Date.strptime(check_in, '%m/%d/%Y')
-    check_out = Date.strptime(check_out, '%m/%d/%Y')
     @cds = CalendarDate.where(actual_date: check_in..check_out)
     @novacancy = Array.new
     @cds.each do |cd|
