@@ -12,6 +12,6 @@ module Dashboard::HotelsHelper
   end
 
   def hotels_status
-    [["Activo",1],["Inactivo",0]]
+    [["Activo", :active],["Inactivo", :inactive]]
   end
 end

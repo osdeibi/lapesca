@@ -42,6 +42,6 @@ class Dashboard::HotelsController < DashboardController
     params.require(:hotel).permit :id, :name, :code, :cost_per_night, :grill, :pool, :dock,
                                   :restaurant, :shacks, :pet_friendly, :tv, :air_conditioner,
                                   :review_score, :location, :description, :long_description,
-                                  :category
+                                  :category, :latitude, :longitude, :status
   end
 end

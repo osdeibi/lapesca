@@ -17,15 +17,14 @@
 <body class="nav-md">
   <div class="container body">
     <div class="main_container">
-
       <!-- sidebar menu -->
       <%= render "layouts/sidebar" %>
       <!-- top navigation -->
       <%= render "layouts/topnav" %>
       <!-- /top navigation -->
       <div class="right_col" role="main">
-        <%= yield %>
         <%= render "layouts/show_message" %>
+        <%= yield %>
         <!-- footer content -->
         <%= render "layouts/footer" %>
         <!-- /footer content -->
