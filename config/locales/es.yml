@@ -31,10 +31,8 @@ es:
       room:
         name: Nombre
         price: Precio
-
   dashboard:
-    hotels:
-      create:
-        success: Hotel creado correctamente
-      update:
-        success: Hotel actualizado correctamente
+    create:
+      success: fue creado correctamente
+    update:
+      success: fue actualizado correctamente
