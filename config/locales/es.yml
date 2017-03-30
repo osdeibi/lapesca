@@ -23,6 +23,10 @@ es:
         code: Código
         score: Puntaje
         air_conditioner: Aire Acondicionado
+        home: Recomendados
+        index: Buscador
+        pages: Index
+        small: Similares
 
   dashboard:
     create:
