@@ -1,0 +1,74 @@
+<div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+  <%= f.label :name, class: 'control-label' %>
+  <%= f.text_field :name, class: 'form-control' %>
+</div>
+
+<div class="col-md-3 col-sm-6 col-xs-12 form-group has-feedback">
+  <%= f.label :code, class: 'control-label' %>
+  <%= f.text_field :code, class: 'form-control' %>
+</div>
+
+<div class="col-md-3 col-sm-6 col-xs-12 form-group has-feedback">
+  <%= f.label :cost_per_night, class: 'control-label' %>
+  <%= f.text_field :cost_per_night, class: 'form-control' %>
+</div>
+
+<div class="col-md-2 col-sm-6 col-xs-12 form-group has-feedback">
+  <%= f.label :grill, class: 'control-label' %>
+  <%= f.select :grill, yes_no, {}, { class: 'form-control' } %>
+</div>
+
+<div class="col-md-2 col-sm-6 col-xs-12 form-group has-feedback">
+  <%= f.label :pool, class: 'control-label' %>
+  <%= f.select :pool, yes_no, {}, { class: 'form-control' } %>
+</div>
+
+<div class="col-md-2 col-sm-6 col-xs-12 form-group has-feedback">
+  <%= f.label :dock, class: 'control-label' %>
+  <%= f.select :dock, yes_no, {}, { class: 'form-control' } %>
+</div>
+
+<div class="col-md-2 col-sm-6 col-xs-12 form-group has-feedback">
+  <%= f.label :restaurant, class: 'control-label' %>
+  <%= f.select :restaurant, yes_no, {}, { class: 'form-control' } %>
+</div>
+
+<div class="col-md-2 col-sm-6 col-xs-12 form-group has-feedback">
+  <%= f.label :shacks, class: 'control-label' %>
+  <%= f.select :shacks, yes_no, {}, { class: 'form-control' } %>
+</div>
+
+<div class="col-md-2 col-sm-6 col-xs-12 form-group has-feedback">
+  <%= f.label :pet_friendly, class: 'control-label' %>
+  <%= f.select :pet_friendly, yes_no, {}, { class: 'form-control' } %>
+</div>
+
+<div class="col-md-2 col-sm-6 col-xs-12 form-group has-feedback">
+  <%= f.label :tv, class: 'control-label' %>
+  <%= f.select :tv, yes_no, {}, { class: 'form-control' } %>
+</div>
+
+<div class="col-md-2 col-sm-6 col-xs-12 form-group has-feedback">
+  <%= f.label :air_conditioner, class: 'control-label' %>
+  <%= f.select :air_conditioner, yes_no, {}, { class: 'form-control' } %>
+</div>
+
+<div class="col-md-2 col-sm-6 col-xs-12 form-group has-feedback">
+  <%= f.label :review_score, class: 'control-label' %>
+  <%= f.select :review_score, review_score, {}, { class: 'form-control' } %>
+</div>
+
+<div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+  <%= f.label :location, class: 'control-label' %>
+  <%= f.text_field :location, class: 'form-control' %>
+</div>
+
+<div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+  <%= f.label :description, class: 'control-label' %>
+  <%= f.text_field :description, class: 'form-control' %>
+</div>
+
+<div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+  <%= f.label :long_description, class: 'control-label' %>
+  <%= f.text_field :long_description, class: 'form-control' %>
+</div>

@@ -96,6 +96,27 @@
             <div class="menu_section">
               <h3>Menu</h3>
               <ul class="nav side-menu">
+                <li><a><i class="fa fa-building"></i> Hoteles <span class="fa fa-chevron-down"></span></a>
+                  <ul class="nav child_menu" style="display: none">
+                    <li><%= link_to "Todos los Hoteles", dashboard_hotels_path(category: 0) %></li>
+                    <li><%= link_to "Nuevo Hotel", new_dashboard_hotel_path(category: 0) %></li>
+                  </ul>
+                </li>
+
+                <li><a><i class="fa fa-home"></i> Casas <span class="fa fa-chevron-down"></span></a>
+                  <ul class="nav child_menu" style="display: none">
+                    <li><%= link_to "Todos los Casas", dashboard_hotels_path(category: 1) %></li>
+                    <li><%= link_to "Nuevo Casa", new_dashboard_hotel_path(category: 1) %></li>
+                  </ul>
+                </li>
+
+                <li><a><i class="fa fa-university"></i> Bungalows  <span class="fa fa-chevron-down"></span></a>
+                  <ul class="nav child_menu" style="display: none">
+                    <li><%= link_to "Todos los Bungalows", dashboard_hotels_path(category: 2) %></li>
+                    <li><%= link_to "Nuevo Bungalow", new_dashboard_hotel_path(category: 2) %></li>
+                  </ul>
+                </li>
+
                 <li><a><i class="fa fa-edit"></i> Registro <span class="fa fa-chevron-down"></span></a>
                   <ul class="nav child_menu" style="display: none">
                     <li><a href="/dashboard/reservations">Reservaciones</a>
@@ -106,7 +127,7 @@
                 </li>
                 <li><a><i class="fa fa-calendar"></i> Calendarios <span class="fa fa-chevron-down"></span></a>
                   <ul class="nav child_menu" style="display: none">
-                    <% @hotels.each do |hotel| %>
+                    <% Hotel.all.each do |hotel| %>
                       <li>
                         <a href="/dashboard/calendar/<%= hotel.id %>"><%= hotel.name %></a>
                       </li>
@@ -143,6 +164,7 @@
       <!-- /top navigation -->
 
       <%= yield %>
+
 
       <!-- footer content -->
       <footer>

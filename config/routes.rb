@@ -28,6 +28,10 @@ Rails.application.routes.draw do
     end
   end
 
+  namespace :dashboard do
+    resources :hotels
+  end
+
   resources :reservations
 
   get '/puerto_la_pesca', to: 'pages#puerto_la_pesca', as: 'puerto_la_pesca'

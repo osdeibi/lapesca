@@ -47,6 +47,8 @@ gem "sidekiq"
 
 gem 'awesome_print', "~> 1.6"
 
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.1'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
