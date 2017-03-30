@@ -25,6 +25,7 @@ module Lapesca
     config.i18n.default_locale = :es
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
 
+    config.autoload_paths += Dir["#{config.root}/lib/**/"]
 
     config.assets.precompile += ['*.js', '*.css']
 
