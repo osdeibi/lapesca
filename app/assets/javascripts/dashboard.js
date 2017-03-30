@@ -6,3 +6,7 @@
 //= require chart.min
 //= require skycons.min
 //= require turbolinks
+//= require custom
+//= require fullcalendar.min
+//= require icheck.min
+//= require pace.min
