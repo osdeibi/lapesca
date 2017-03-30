@@ -1,0 +1,73 @@
+<div class="col-md-3 left_col">
+  <div class="left_col scroll-view">
+    <div class="navbar nav_title" style="border: 0;">
+      <a href="/dashboard" class="site_title"><i class="fa fa-bed"></i> <span>La Pesca</span></a>
+    </div>
+    <div class="clearfix"></div>
+    <!-- menu prile quick info -->
+    <div class="profile">
+      <div class="profile_pic">
+        <%= image_tag 'hugo-perfil.png', class: 'img-circle profile_img', alt: '...' %>
+      </div>
+      <div class="profile_info">
+        <span>Bienvenido,</span>
+        <h2>Hugo De la Garza</h2>
+      </div>
+    </div>
+    <br />
+    <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+
+      <div class="menu_section">
+        <h3>Menu</h3>
+        <ul class="nav side-menu">
+          <li><a><i class="fa fa-building"></i> Hoteles <span class="fa fa-chevron-down"></span></a>
+            <ul class="nav child_menu" style="display: none">
+              <li><%= link_to "Todos los Hoteles", dashboard_hotels_path(category: 0) %></li>
+              <li><%= link_to "Nuevo Hotel", new_dashboard_hotel_path(category: 0) %></li>
+            </ul>
+          </li>
+
+          <li><a><i class="fa fa-home"></i> Casas <span class="fa fa-chevron-down"></span></a>
+            <ul class="nav child_menu" style="display: none">
+              <li><%= link_to "Todos los Casas", dashboard_hotels_path(category: 1) %></li>
+              <li><%= link_to "Nuevo Casa", new_dashboard_hotel_path(category: 1) %></li>
+            </ul>
+          </li>
+
+          <li><a><i class="fa fa-university"></i> Bungalows  <span class="fa fa-chevron-down"></span></a>
+            <ul class="nav child_menu" style="display: none">
+              <li><%= link_to "Todos los Bungalows", dashboard_hotels_path(category: 2) %></li>
+              <li><%= link_to "Nuevo Bungalow", new_dashboard_hotel_path(category: 2) %></li>
+            </ul>
+          </li>
+
+          <li><a><i class="fa fa-edit"></i> Registro <span class="fa fa-chevron-down"></span></a>
+            <ul class="nav child_menu" style="display: none">
+              <li><a href="/dashboard/reservations">Reservaciones</a>
+              </li>
+              <li><a href="index2.html">Hoteles</a>
+              </li>
+            </ul>
+          </li>
+          <li><a><i class="fa fa-calendar"></i> Calendarios <span class="fa fa-chevron-down"></span></a>
+            <ul class="nav child_menu" style="display: none">
+              <% Hotel.all.each do |hotel| %>
+                <li>
+                  <a href="/dashboard/calendar/<%= hotel.id %>"><%= hotel.name %></a>
+                </li>
+              <% end %>
+            </ul>
+          </li>
+          <li><a><i class="fa fa-file-text"></i> Reportes <span class="fa fa-chevron-down"></span></a>
+            <ul class="nav child_menu" style="display: none">
+              <li><a href="general_elements.html">Reporte de reservaciones</a>
+              </li>
+              <li><a href="media_gallery.html">Factura a hoteles</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

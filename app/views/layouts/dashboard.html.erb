@@ -3,179 +3,33 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <!-- Meta, title, CSS, favicons, etc. -->
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>La Pesca | Dashboard </title>
   <%= csrf_meta_tags %>
-  <!--<%= stylesheet_link_tag 'dashboard' %>
-  <%= javascript_include_tag 'dashboard' %>-->
-
-  <link href="/css/bootstrap.min.css" rel="stylesheet">
-
-  <link href="/fonts/css/font-awesome.min.css" rel="stylesheet">
-  <link href="/css/animate.min.css" rel="stylesheet">
-
-  <!-- Custom styling plus plugins -->
-  <link href="/css/custom.css" rel="stylesheet">
-  <link href="/css/icheck/flat/green.css" rel="stylesheet">
-
-  <link href="/css/calendar/fullcalendar.css" rel="stylesheet">
-  <link href="/css/calendar/fullcalendar.print.css" rel="stylesheet" media="print">
-
-  <script src="/js/jquery.min.js"></script>
-
-  <script src="/js/bootstrap.min.js"></script>
-
-  <script src="/js/nprogress.js"></script>
-
-  <!-- bootstrap progress js -->
-  <script src="/js/progressbar/bootstrap-progressbar.min.js"></script>
-
-  <!-- icheck -->
-  <script src="/js/icheck/icheck.min.js"></script>
-
-  <script src="/js/custom.js"></script>
-
-  <script src="/js/moment/moment.min.js"></script>
-  <script src="/js/calendar/fullcalendar.min.js"></script>
-  <!-- pace -->
-  <script src="/js/pace/pace.min.js"></script>
-
-  <!-- Bootstrap core CSS -->
-
+  <%= stylesheet_link_tag    'dashboard', media: 'all', 'data-turbolinks-track' => 'reload' %>
+  <%= javascript_include_tag 'dashboard', 'data-turbolinks-track' => 'reload' %>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-
-  <!--[if lt IE 9]>
-  <script src="../assets/js/ie8-responsive-file-warning.js"></script>
-  <![endif]-->
-
-  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-  <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  <![endif]-->
-
 </head>
 
 <body class="nav-md">
-
   <div class="container body">
-
-
     <div class="main_container">
-
-      <div class="col-md-3 left_col">
-        <div class="left_col scroll-view">
-
-          <div class="navbar nav_title" style="border: 0;">
-            <a href="/dashboard" class="site_title"><i class="fa fa-bed"></i> <span>La Pesca</span></a>
-          </div>
-          <div class="clearfix"></div>
-
-
-          <!-- menu prile quick info -->
-          <div class="profile">
-            <div class="profile_pic">
-              <%= image_tag 'hugo-perfil.png', class: 'img-circle profile_img', alt: '...' %>
-            </div>
-            <div class="profile_info">
-              <span>Bienvenido,</span>
-              <h2>Hugo De la Garza</h2>
-            </div>
-          </div>
-          <!-- /menu prile quick info -->
-
-          <br />
-
-          <!-- sidebar menu -->
-          <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
-
-            <div class="menu_section">
-              <h3>Menu</h3>
-              <ul class="nav side-menu">
-                <li><a><i class="fa fa-building"></i> Hoteles <span class="fa fa-chevron-down"></span></a>
-                  <ul class="nav child_menu" style="display: none">
-                    <li><%= link_to "Todos los Hoteles", dashboard_hotels_path(category: 0) %></li>
-                    <li><%= link_to "Nuevo Hotel", new_dashboard_hotel_path(category: 0) %></li>
-                  </ul>
-                </li>
-
-                <li><a><i class="fa fa-home"></i> Casas <span class="fa fa-chevron-down"></span></a>
-                  <ul class="nav child_menu" style="display: none">
-                    <li><%= link_to "Todos los Casas", dashboard_hotels_path(category: 1) %></li>
-                    <li><%= link_to "Nuevo Casa", new_dashboard_hotel_path(category: 1) %></li>
-                  </ul>
-                </li>
-
-                <li><a><i class="fa fa-university"></i> Bungalows  <span class="fa fa-chevron-down"></span></a>
-                  <ul class="nav child_menu" style="display: none">
-                    <li><%= link_to "Todos los Bungalows", dashboard_hotels_path(category: 2) %></li>
-                    <li><%= link_to "Nuevo Bungalow", new_dashboard_hotel_path(category: 2) %></li>
-                  </ul>
-                </li>
-
-                <li><a><i class="fa fa-edit"></i> Registro <span class="fa fa-chevron-down"></span></a>
-                  <ul class="nav child_menu" style="display: none">
-                    <li><a href="/dashboard/reservations">Reservaciones</a>
-                    </li>
-                    <li><a href="index2.html">Hoteles</a>
-                    </li>
-                  </ul>
-                </li>
-                <li><a><i class="fa fa-calendar"></i> Calendarios <span class="fa fa-chevron-down"></span></a>
-                  <ul class="nav child_menu" style="display: none">
-                    <% Hotel.all.each do |hotel| %>
-                      <li>
-                        <a href="/dashboard/calendar/<%= hotel.id %>"><%= hotel.name %></a>
-                      </li>
-                    <% end %>
-                  </ul>
-                </li>
-                <li><a><i class="fa fa-file-text"></i> Reportes <span class="fa fa-chevron-down"></span></a>
-                  <ul class="nav child_menu" style="display: none">
-                    <li><a href="general_elements.html">Reporte de reservaciones</a>
-                    </li>
-                    <li><a href="media_gallery.html">Factura a hoteles</a>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <!-- /sidebar menu -->
-        </div>
-      </div>
-
+  
+      <!-- sidebar menu -->
+      <%= render "layouts/sidebar" %>
       <!-- top navigation -->
-      <div class="top_nav">
-
-        <div class="nav_menu">
-          <nav class="" role="navigation">
-            <div class="nav toggle">
-              <a id="menu_toggle"><i class="fa fa-bars"></i></a>
-            </div>
-          </nav>
-        </div>
-
-      </div>
+      <%= render "layouts/topnav" %>
       <!-- /top navigation -->
-
-      <%= yield %>
-
-
-      <!-- footer content -->
-      <footer>
-        <div class="pull-right">
-          Copyright 2016 <a href="http://www.lapescatamaulipas.com">Lapescatamaulipas.com</a>
-        </div>
-        <div class="clearfix"></div>
-      </footer>
-      <!-- /footer content -->
+      <div class="right_col" role="main">
+        <%= yield %>
+        <%= render "layouts/show_message" %>
+        <!-- footer content -->
+        <%= render "layouts/footer" %>
+        <!-- /footer content -->
       </div>
-
     </div>
   </div>
 
