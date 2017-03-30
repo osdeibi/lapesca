@@ -1,2 +1,31 @@
 es:
-  hello: "Hello world"
+  activerecord:
+    models:
+      hotel: Hotel
+
+    attributes:
+      hotel:
+        name: Nombre
+        cost_per_night: Costo por Noche
+        description: Descripción
+        grill: Azador
+        pool: Pileta
+        dock: Muelle
+        restaurant: Cocina
+        shacks: Palapas
+        pet_friendly: Mascotas
+        available: Disponible
+        review_score: Estrellas
+        category: Categoría
+        location: Ubicación
+        long_description: Descripción Larga
+        tv: Cable TV
+        code: Código
+        score: Puntaje
+        air_conditioner: Aire Acondicionado
+
+  dashboard:
+    create:
+      success: fue creado correctamente
+    update:
+      success: fue actualizado correctamente

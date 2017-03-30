@@ -1,8 +1,48 @@
 <div class="x_panel">
   <div class="x_title">
-    <h2>Listado de <%= @category %><small>...</small></h2>
+    <h2>Listado de <%= I18n.t("categories.#{@category}") %></h2>
     <div class="clearfix"></div>
   </div>
+
+  <div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="x_panel">
+        <div class="x_content">
+        <div class="table-responsive">
+          <table id="index-staff-student"
+                 class="table table-striped responsive-utilities jambo_table">
+            <thead>
+              <tr class="success">
+                <th colspan="7">
+                  <div class="text-center col-md-3 col-sm-3 col-xs-12 pull-right">
+                    <%#= select_tag 'filter-resolutions', options_for_select(student_statuses_values), { include_blank: t('.filter'), class: 'form-control status-filter'}%>
+                  </div>
+                </th>
+              </tr>
+              <tr class="headings">
+                <th><%= Hotel.human_attribute_name(:name) %></th>
+                <th><%= Hotel.human_attribute_name(:code) %></th>
+                <th><%= Hotel.human_attribute_name(:cost_per_night) %></th>
+                <th><%= Hotel.human_attribute_name(:review_score) %></th>
+                <th><%= Hotel.human_attribute_name(:score) %></th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @hotels.each do |hotel| %>
+                <tr>
+                  <th><%= link_to hotel.name, edit_dashboard_hotel_path(hotel) %></th>
+                  <th><%= hotel.code %></th>
+                  <th><%= hotel.cost_per_night %></th>
+                  <th><%= hotel.review_score %></th>
+                  <th><%= hotel.score %></th>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+        </div>
+      </div>
+    </div>
 
   <div class="x_content">
   </div>

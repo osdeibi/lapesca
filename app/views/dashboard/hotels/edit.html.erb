@@ -1,3 +1,4 @@
+<div class="right_col" role="main">
 <div class="">
   <div class="page-title">
   </div>
@@ -5,7 +6,7 @@
 
   <div class="x_panel">
     <div class="x_title">
-      <h2>Nuevo <%= I18n.t("categories.#{@hotel.category}") %><small>Complete el formulario</small></h2>
+      <h2>Editar <%= I18n.t("categories.#{@hotel.category}") %><small>Complete el formulario</small></h2>
       <div class="clearfix"></div>
       <div class="x_content">
         <%= form_for [:dashboard, @hotel], html: { class: 'form-horizontal
@@ -19,7 +20,7 @@
           <div class="form-group pull-right">
             <div class="col-xs-12">
               <%= link_to fa_icon("times", text: "Cancelar"), :back, class: "btn btn-default" %>
-              <%= f.button fa_icon("plus", text: "Crear #{I18n.t("categories.#{@hotel.category}")}"), class: 'btn btn-success', type: "submit", data: { disable_with: 'Cargando...' }, id: "submit" %>
+              <%= f.button fa_icon("pencil", text: "Editar #{I18n.t("categories.#{@hotel.category}")}"), class: 'btn btn-success', type: "submit", data: { disable_with: 'Cargando...' }, id: "submit" %>
             </div>
           </div>
         <% end %>
@@ -27,3 +28,4 @@
     </div>
   </div>
 </div>
+
