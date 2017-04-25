@@ -30,6 +30,7 @@ Rails.application.routes.draw do
 
   namespace :dashboard do
     resources :hotels
+    resources :rooms
   end
 
   resources :reservations

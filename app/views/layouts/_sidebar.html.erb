@@ -48,6 +48,13 @@
             </ul>
           </li>
 
+          <li><a><i class="fa fa-university"></i> Habitaciones <span class="fa fa-chevron-down"></span></a>
+            <ul class="nav child_menu" style="display: none">
+              <li><%= link_to "Todas los Habitaciones", dashboard_rooms_path %></li>
+              <li><%= link_to "Nueva Habitación", new_dashboard_room_path %></li>
+            </ul>
+          </li>
+
           <li><a><i class="fa fa-edit"></i> Registro <span class="fa fa-chevron-down"></span></a>
             <ul class="nav child_menu" style="display: none">
               <li><a href="/dashboard/reservations">Reservaciones</a>

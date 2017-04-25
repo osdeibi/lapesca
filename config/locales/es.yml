@@ -28,6 +28,9 @@ es:
         pages: Index
         small: Similares
         status: Estado
+      room:
+        name: Nombre
+        price: Precio
 
   dashboard:
     create:
