@@ -17,6 +17,7 @@ class Hotel < ActiveRecord::Base
   has_many :rooms
 
   enum category: { hotel: 0, house: 1, bungalow: 2, country: 3 }
+  enum status: { inactive: 0, active: 1 }
 
   def self.boolean_to_string(value)
     (value)? "Si" : "No"

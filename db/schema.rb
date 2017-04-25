@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170324143909) do
+ActiveRecord::Schema.define(version: 20170425222220) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -72,6 +72,7 @@ ActiveRecord::Schema.define(version: 20170324143909) do
     t.string   "code"
     t.integer  "score"
     t.boolean  "air_conditioner"
+    t.integer  "status"
   end
 
   create_table "reservations", force: :cascade do |t|

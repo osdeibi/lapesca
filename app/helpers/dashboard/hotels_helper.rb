@@ -10,4 +10,8 @@ module Dashboard::HotelsHelper
   def hotels_category
     [["Hotel",0],["Casa",1],["Bungalow",2]]
   end
+
+  def hotels_status
+    [["Activo",1],["Inactivo",0]]
+  end
 end

@@ -27,6 +27,7 @@ es:
         index: Buscador
         pages: Index
         small: Similares
+        status: Estado
 
   dashboard:
     create:
