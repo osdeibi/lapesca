@@ -41,6 +41,7 @@ class Dashboard::HotelsController < DashboardController
   def hotel_params
     params.require(:hotel).permit :id, :name, :code, :cost_per_night, :grill, :pool, :dock,
                                   :restaurant, :shacks, :pet_friendly, :tv, :air_conditioner,
-                                  :review_score, :location, :description, :long_description
+                                  :review_score, :location, :description, :long_description,
+                                  :category
   end
 end

@@ -41,6 +41,13 @@
             </ul>
           </li>
 
+          <li><a><i class="fa fa-university"></i> Quintas <span class="fa fa-chevron-down"></span></a>
+            <ul class="nav child_menu" style="display: none">
+              <li><%= link_to "Todas los Quintas", dashboard_hotels_path(category: 3) %></li>
+              <li><%= link_to "Nueva Quinta", new_dashboard_hotel_path(category: 3) %></li>
+            </ul>
+          </li>
+
           <li><a><i class="fa fa-edit"></i> Registro <span class="fa fa-chevron-down"></span></a>
             <ul class="nav child_menu" style="display: none">
               <li><a href="/dashboard/reservations">Reservaciones</a>

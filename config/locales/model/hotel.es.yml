@@ -8,6 +8,7 @@ es:
     hotel: "Hotel"
     house: "Casa"
     bungalow: "Bungalow"
+    country: "Quinta"
 
   pending: "Pendiente"
   confirmed: "Confirmada"
