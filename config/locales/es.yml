@@ -33,7 +33,8 @@ es:
         price: Precio
 
   dashboard:
-    create:
-      success: fue creado correctamente
-    update:
-      success: fue actualizado correctamente
+    hotels:
+      create:
+        success: Hotel creado correctamente
+      update:
+        success: Hotel actualizado correctamente
