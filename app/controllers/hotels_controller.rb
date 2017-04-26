@@ -3,16 +3,22 @@ class HotelsController < ApplicationController
 
   def index
     parse_amounts if params[:amount_end]
-    @q = Hotel.where(category: 0) 
-    @q = Hotel.where('cost_per_night BETWEEN ? AND ?', @amount_start, @amount_end).where(category: 0)  if @amount_end
-    @q = Hotel.get_available_hotels(params[:check_in], params[:check_out], @q).where(category: 0) if params[:check_in] && params[:check_out]
-    @q = @q.ransack(params[:q])
-    @hotels = @q.result(distinct: true).order(:score).page params[:page]
-    @hotels
+    @form   = filter
+    @hotels = @form.order(:score).page params[:page]
     paginate
-    if params[:category].present?
-      @hotels = Hotel.where(category: params[:category]).order(:score)
+    #revisar
+    @hotels = Hotel.where(category: params[:category]).order(:score) if params[:category].present?
+  end
+
+  def filter
+    @form = Hotel.hotel
+    if @amount_end.present?
+      @form = @form.where('cost_per_night BETWEEN ? AND ?', @amount_start, @amount_end).hotel
     end
+    if params[:check_in] && params[:check_out]
+      @form = Hotel.get_available_hotels(params[:check_in], params[:check_out], @form).hotel
+    end
+    @form.result(distinct: true).ransack(params[:form])
   end
 
   def reservar

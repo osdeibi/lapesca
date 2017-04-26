@@ -11,7 +11,7 @@
         <li><span class="color-blue-2">hoteles</span></li>
       </ul>
       <h2 class="color-white">Todos los hoteles para tí</h2>
-      <h4 class="color-white">Encontramos: <span><%= @q.result(distinct: true).count %></span> opciones</h4>
+      <h4 class="color-white">Encontramos: <span><%= @form.count %></span> opciones</h4>
     </div>
   </div>
 </div>
@@ -19,7 +19,7 @@
 <div class="list-wrapper bg-grey-2">
   <div class="container">
     <div class="row">
-      <%= search_form_for @q do |f| %>
+      <%= search_form_for @form do |f| %>
         <div class="col-xs-12 col-sm-4 col-md-3">
           <div class="sidebar bg-white clearfix">
             <div class="sidebar-block">
