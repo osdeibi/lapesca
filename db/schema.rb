@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170425222220) do
+ActiveRecord::Schema.define(version: 20170426144444) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,7 +33,10 @@ ActiveRecord::Schema.define(version: 20170425222220) do
     t.boolean  "casablanca"
     t.boolean  "riviera"
     t.boolean  "villadelsol"
+    t.integer  "hotel_id"
   end
+
+  add_index "calendar_dates", ["hotel_id"], name: "index_calendar_dates_on_hotel_id", using: :btree
 
   create_table "hotels", force: :cascade do |t|
     t.string   "name"
@@ -109,6 +112,7 @@ ActiveRecord::Schema.define(version: 20170425222220) do
 
   add_index "rooms", ["hotel_id"], name: "index_rooms_on_hotel_id", using: :btree
 
+  add_foreign_key "calendar_dates", "hotels"
   add_foreign_key "reservations", "hotels"
   add_foreign_key "reservations", "rooms"
   add_foreign_key "rooms", "hotels"
