@@ -11,7 +11,7 @@
         <li><span class="color-blue-2">hoteles</span></li>
       </ul>
       <h2 class="color-white">Todos los hoteles para tí</h2>
-      <h4 class="color-white">Encontramos: <span><%= @form.count %></span> opciones</h4>
+      <h4 class="color-white">Encontramos: <span><%= @form.result(distinct: true).count %></span> opciones</h4>
     </div>
   </div>
 </div>
@@ -60,12 +60,6 @@
                   <a class="cat-drop" href=<%= hotels_path(category: 1) %>>casas <span class="fr">(<%= Hotel.where(category: 1).count%>)</span></a>
                   <ul>
                     <li><a href=<%= hotels_path(category: 1) %>>todas (<%= Hotel.where(category: 1).count%>)</a></li>
-                  </ul>
-                </li>
-                <li>
-                  <a class="cat-drop" href=<%= hotels_path(category: 3) %>>quintas <span class="fr">(<%= Hotel.where(category: 3).count%>)</span></a>
-                  <ul>
-                    <li><a href=<%= hotels_path(category: 3) %>>todas (<%= Hotel.where(category: 3).count%>)</a></li>
                   </ul>
                 </li>
               </ul>

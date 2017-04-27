@@ -75,9 +75,9 @@ ActiveRecord::Schema.define(version: 20170426144444) do
     t.string   "code"
     t.integer  "score"
     t.boolean  "air_conditioner"
-    t.integer  "status"
     t.string   "latitude"
     t.string   "longitude"
+    t.integer  "status"
   end
 
   create_table "reservations", force: :cascade do |t|
