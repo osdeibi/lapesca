@@ -62,6 +62,12 @@
                     <li><a href=<%= hotels_path(category: 1) %>>todas (<%= Hotel.where(category: 1).count%>)</a></li>
                   </ul>
                 </li>
+                <li>
+                  <a class="cat-drop" href=<%= hotels_path(category: 3) %>>quintas <span class="fr">(<%= Hotel.where(category: 3).count%>)</span></a>
+                  <ul>
+                    <li><a href=<%= hotels_path(category: 3) %>>todas (<%= Hotel.where(category: 3).count%>)</a></li>
+                  </ul>
+                </li>
               </ul>
             </div>
             <div class="sidebar-block">
