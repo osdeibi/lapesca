@@ -31,5 +31,8 @@ module Lapesca
 
     config.autoload_paths += %W(#{config.root}/lib)
     config.autoload_paths += %W(#{config.root}/vendor)
+
+    # Rails.application.middleware.use Rack::Timeout
+    # Rack::Timeout.timeout = 40 
   end
 end

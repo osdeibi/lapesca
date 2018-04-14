@@ -36,3 +36,8 @@ es:
       success: fue creado correctamente
     update:
       success: fue actualizado correctamente
+    hotels:
+      update:
+        success: fue actualizado correctamente
+      create:
+        success: fue creado correctamente
