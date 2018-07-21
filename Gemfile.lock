@@ -116,7 +116,7 @@ GEM
     polyamorous (1.3.1)
       activerecord (>= 3.0)
     puma (3.8.2)
-    rack (1.6.5)
+    rack (1.6.10)
     rack-protection (1.5.3)
       rack
     rack-test (0.6.3)
@@ -177,7 +177,7 @@ GEM
       redis (~> 3.2, >= 3.2.1)
     spring (2.0.1)
       activesupport (>= 4.2)
-    sprockets (3.7.1)
+    sprockets (3.7.2)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
     sprockets-rails (3.2.0)
@@ -226,6 +226,13 @@ DEPENDENCIES
   sdoc (~> 0.4.0)
   sidekiq
   spring
+  sprockets (>= 3.7.2)
   turbolinks
   uglifier (>= 1.3.0)
   web-console (~> 2.0)
+
+RUBY VERSION
+   ruby 2.1.2p95
+
+BUNDLED WITH
+   1.16.2

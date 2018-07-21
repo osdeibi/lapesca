@@ -26,6 +26,7 @@ gem 'paperclip'
 gem 'kaminari'
 gem 'ransack'
 
+gem 'sprockets', '>= 3.7.2'
 
 ########
 # => API
