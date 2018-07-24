@@ -52,17 +52,17 @@ class HotelsController < ApplicationController
     render 'show.html.erb'
   end
 
-  def riviera_del_rio
-    @hotel = Hotel.find(4)
-    get_recommended_similar
-    render 'show.html.erb'
-  end
+  # def riviera_del_rio
+  #   @hotel = Hotel.find(4)
+  #   get_recommended_similar
+  #   render 'show.html.erb'
+  # end
 
-  def nuevo_amanecer
-    @hotel = Hotel.find(5)
-    get_recommended_similar
-    render 'show.html.erb'
-  end
+  # def nuevo_amanecer
+  #   @hotel = Hotel.find(5)
+  #   get_recommended_similar
+  #   render 'show.html.erb'
+  # end
 
   def marina_del_rio
     @hotel = Hotel.find(6)
@@ -70,11 +70,11 @@ class HotelsController < ApplicationController
     render 'show.html.erb'
   end
 
-  def villa_del_mar
-    @hotel = Hotel.find(9)
-    get_recommended_similar
-    render 'show.html.erb'
-  end
+  # def villa_del_mar
+  #   @hotel = Hotel.find(9)
+  #   get_recommended_similar
+  #   render 'show.html.erb'
+  # end
 
   def la_escollera
     @hotel = Hotel.find(8)
@@ -88,11 +88,11 @@ class HotelsController < ApplicationController
     render 'show.html.erb'
   end
 
-  def maria_esperanza
-    @hotel = Hotel.find(11)
-    get_recommended_similar
-    render 'show.html.erb'
-  end
+  # def maria_esperanza
+  #   @hotel = Hotel.find(11)
+  #   get_recommended_similar
+  #   render 'show.html.erb'
+  # end
 
   def hotel_blanquita
     @hotel = Hotel.find(12)
@@ -112,6 +112,18 @@ class HotelsController < ApplicationController
     render 'show.html.erb'
   end
 
+  def casita_pesca
+    @hotel = Hotel.find(17)
+    get_recommended_similar
+    render 'show.html.erb'
+  end
+
+  def casa_rustica
+    @hotel = Hotel.find(18)
+    get_recommended_similar
+    render 'show.html.erb'
+  end
+
   def show
     @hotel = Hotel.find(params[:id])
     get_recommended_similar
@@ -123,20 +135,20 @@ class HotelsController < ApplicationController
       redirect_to '/bungalows-tropicana'
     when 'palma'
       redirect_to '/hotel-palma-real'
-    when 'riviera'
-      redirect_to '/hotel-riviera-del-rio'
-    when 'nuevoamanecer'
-      redirect_to '/nuevo-amanecer'
+    # when 'riviera'
+    #   redirect_to '/hotel-riviera-del-rio'
+    # when 'nuevoamanecer'
+    #   redirect_to '/nuevo-amanecer'
     when 'marina'
       redirect_to '/hotel-marina-del-rio'
-    when 'villa'
-      redirect_to '/hotel-villa-del-mar'
+    # when 'villa'
+    #   redirect_to '/hotel-villa-del-mar'
     when 'escollera'
       redirect_to '/hotel-la-escollera'
     when 'puntapiedra'
       redirect_to '/hotel-punta-piedra-bungalows'
-    when 'maria'
-      redirect_to '/hotel-maria-esperanza'
+    # when 'maria'
+    #   redirect_to '/hotel-maria-esperanza'
     when 'blanquita'
       redirect_to '/hotel-blanquita'
     when 'villadelsol'

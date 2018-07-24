@@ -79,12 +79,12 @@
 										<li><%= link_to 'La Pescalinda', la_pescalinda_path %></li>
 										<li><%= link_to 'Bungalows Tropicana', tropicana_path %></li>
 										<li><%= link_to 'Palma Real', palma_real_path %></li>
-										<li><%= link_to 'Riviera del rio', riviera_del_rio_path %></li>
-										<li><%= link_to 'Nuevo Amanecer', nuevo_amanecer_path %></li>
+										<!-- <li><%#= link_to 'Riviera del rio', riviera_del_rio_path %></li> -->
+										<!-- <li><%#= link_to 'Nuevo Amanecer', nuevo_amanecer_path %></li> -->
 										<li><%= link_to 'Marina del rio', marina_del_rio_path %></li>
-										<li><%= link_to 'Maria Esperanza', maria_esperanza_path %></li>
+										<!-- <li><%#= link_to 'Maria Esperanza', maria_esperanza_path %></li> -->
 										<li><%= link_to 'La Escollera', la_escollera_path %></li>
-										<li><%= link_to 'Villa del mar', villa_del_mar_path %></li>
+										<!-- <li><%#= link_to 'Villa del mar', villa_del_mar_path %></li> -->
 										<li><%= link_to 'Hotel Blanquita', hotel_blanquita_path %></li>
 										<li><%= link_to 'Punta piedra', punta_piedra_path %></li>
 										<li><%= link_to 'Villa del Sol', villa_del_sol_path %></li>
@@ -191,7 +191,7 @@
 				<div class="row">
 					<div class="col-md-12">
 						<div class="copyright">
-							<span>&copy; 2017 Todos los derechos reservados. Lapescatamaulipas.com</span>
+							<span>&copy; <%= Time.zone.now.year %> Todos los derechos reservados. Lapescatamaulipas.com</span>
 						</div>
 						<ul>
 							<li><a class="link-aqua" href="/privacidad">Políticas de Privacidad </a></li>

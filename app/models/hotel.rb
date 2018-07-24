@@ -13,9 +13,9 @@ class Hotel < ActiveRecord::Base
 
   paginates_per 6
 
-  has_many :reservations
-  has_many :calendar_dates
-  has_many :rooms
+  has_many :reservations, dependent: :destroy 
+  has_many :calendar_dates, dependent: :destroy
+  has_many :rooms, dependent: :destroy
 
   enum category: { hotel: 0, house: 1, bungalow: 2, country: 3 }
   
