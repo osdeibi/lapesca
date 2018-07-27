@@ -113,7 +113,7 @@
                     <td>Pendiente</td>
                     <td><u><%= link_to 'Confirmar', confirm_reservation_path(reservation) %></u></td>
                   <% else %>
-                    <td>Confirmado</td>
+                    <td><%= t("#{reservation.status}") %></td>
                     <td></td>
                   <% end %>
                   <td><%= link_to 'Editar', edit_reservation_path(reservation) %></td>

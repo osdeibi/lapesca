@@ -1,3 +1,4 @@
+<%= render partial: 'no_available' %>
 <!-- INNER-BANNER -->
 <div class="inner-banner style-6">
   <%= image_tag "lapescatamaulipas.jpg", class: "center-image", alt: "" %>
@@ -165,3 +166,9 @@
        	</div>
 	</div>
 </div>
+<script type="text/javascript">
+  if ('<%= params[:not_available] %>') {
+    $('#no-available-dates').modal('show')
+  }
+    
+</script>

@@ -7,7 +7,7 @@ class Reservation < ActiveRecord::Base
 
   serialize  :rooms #, Hash
 
-  enum status: { pending: 0, confirmed: 1 }
+  enum status: { pending: 0, confirmed: 1, rejected: 2 }
 
   def is_available?
     CalendarDate.where(actual_date: self.check_in..self.check_out, hotel_id: self.hotel_id).blank?

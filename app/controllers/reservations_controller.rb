@@ -9,13 +9,13 @@ class ReservationsController < ApplicationController
     if validate_email && @reservation.is_available? && @reservation.save
       ReservationMailer.pre_reservation_email(@reservation).deliver_now
       redirect_to thank_you_path(token: @reservation.token)
-    else
-      if !validate_email
+    elsif !validate_email
       flash[:notice] = "El mail confirmado no es igual al mail de contacto"
-      else
-        flash[:notice] = "Las fechas seleccionadas no están disponibles"
-      end
-      redirect_to reservar_hotel_path(@reservation.hotel)
+      redirect_to :back
+    else
+      @reservation.status = :rejected
+      @reservation.save
+      redirect_to reservar_hotel_path(@reservation.hotel, not_available: true)
     end
   end
 
