@@ -10,12 +10,13 @@ class Reservation < ActiveRecord::Base
   enum status: { pending: 0, confirmed: 1 }
 
   def is_available?
-    @cds = CalendarDate.where(actual_date: self.check_in..self.check_out)
-    available = true
-    @cds.each do |cd|
-      available = false if cd[self.hotel.code] == true
-    end
-    return available
+    CalendarDate.where(actual_date: self.check_in..self.check_out, hotel_id: self.hotel_id).blank?
+    # @cds = CalendarDate.where(actual_date: self.check_in..self.check_out)
+    # available = true
+    # @cds.each do |cd|
+    #   available = false if cd.hotel_id == self.hotel_id
+    # end
+    # return available
   end
 
   def get_reference

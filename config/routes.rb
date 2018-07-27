@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   # get '/hotel-riviera-del-rio', to: 'hotels#riviera_del_rio', as: 'riviera_del_rio'
   # get '/nuevo-amanecer', to: 'hotels#nuevo_amanecer', as: 'nuevo_amanecer'
   get '/hotel-marina-del-rio', to: 'hotels#marina_del_rio', as: 'marina_del_rio'
-  get '/hotel-la-escollera', to: 'hotels#la_escollera', as: 'la_escollera'
+  # get '/hotel-la-escollera', to: 'hotels#la_escollera', as: 'la_escollera'
   get '/hotel-blanquita', to: 'hotels#hotel_blanquita', as: 'hotel_blanquita'
   # get '/hotel-villa-del-mar', to: 'hotels#villa_del_mar', as: 'villa_del_mar'
   get '/hotel-punta-piedra-bungalows', to: 'hotels#punta_piedra', as: 'punta_piedra'

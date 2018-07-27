@@ -76,11 +76,11 @@ class HotelsController < ApplicationController
   #   render 'show.html.erb'
   # end
 
-  def la_escollera
-    @hotel = Hotel.find(8)
-    get_recommended_similar
-    render 'show.html.erb'
-  end
+  # def la_escollera
+  #   @hotel = Hotel.find(8)
+  #   get_recommended_similar
+  #   render 'show.html.erb'
+  # end
 
   def punta_piedra
     @hotel = Hotel.find(10)
@@ -143,8 +143,8 @@ class HotelsController < ApplicationController
       redirect_to '/hotel-marina-del-rio'
     # when 'villa'
     #   redirect_to '/hotel-villa-del-mar'
-    when 'escollera'
-      redirect_to '/hotel-la-escollera'
+    # when 'escollera'
+    #  redirect_to '/hotel-la-escollera'
     when 'puntapiedra'
       redirect_to '/hotel-punta-piedra-bungalows'
     # when 'maria'
