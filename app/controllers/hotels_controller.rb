@@ -112,6 +112,19 @@ class HotelsController < ApplicationController
     render 'show.html.erb'
   end
 
+  def huachinango
+    @hotel = Hotel.find(15)
+    get_recommended_similar
+    render 'show.html.erb'
+  end
+
+  def gaviota
+    @hotel = Hotel.find(16)
+    get_recommended_similar
+    render 'show.html.erb'
+  end
+
+
   def casita_pesca
     @hotel = Hotel.find(17)
     get_recommended_similar
@@ -153,8 +166,12 @@ class HotelsController < ApplicationController
       redirect_to '/hotel-blanquita'
     when 'villadelsol'
       redirect_to '/hotel-villa-del-sol'
+    when 'gaviota'
+      redirect_to '/gaviota'
     when 'casablanca'
       redirect_to '/casa-blanca'
+    when 'huachinango'
+      redirect_to '/huachinango'
     end
   end
 

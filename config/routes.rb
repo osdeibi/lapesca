@@ -21,8 +21,10 @@ Rails.application.routes.draw do
   # get '/hotel-maria-esperanza', to: 'hotels#maria_esperanza', as: 'maria_esperanza'
   get '/hotel-villa-del-sol', to: 'hotels#villa_del_sol', as: 'villa_del_sol'
   get '/casa-blanca', to: 'hotels#casa_blanca', as: 'casablanca'
+  get '/gaviota', to: 'hotels#gaviota', as: 'gaviota'
   get '/casa-rustica', to: 'hotels#casa_rustica', as: 'casa_rustica'
   get '/casita-pesca', to: 'hotels#casita_pesca', as: 'casita_pesca'
+  get '/huachinango', to: 'hotels#huachinango', as: 'huachinango'
 
   resources :hotels, :path => "hotelesenlapesca" do
     member do
